@@ -1,8 +1,8 @@
 export PATH=$PATH:$HOME/bin:$HOME/.rvm/bin
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 alias ..='cd ..'
 alias gh='cd ~/Documents/github'
