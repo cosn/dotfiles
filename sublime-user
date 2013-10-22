@@ -1,0 +1,11 @@
+{
+    "ignored_packages":
+    [
+        "SublimeCodeIntel"
+    ],
+    "soda_classic_tabs": false,
+    "soda_folder_icons": true,
+    "theme": "Soda Dark.sublime-theme",
+    "vintage_ctrl_keys": true,
+    "vintage_start_in_command_mode": true
+}
