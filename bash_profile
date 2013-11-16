@@ -6,8 +6,9 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 alias ..='cd ..'
-alias gh='cd ~/Documents/github'
 alias grep='grep --color'
-alias blog='cd ~/Documents/github/cosn.github.io/'
 alias ls='ls -GFh'
+alias gh='cd ~/Documents/github'
+alias gogh='cd ~/Documents/github/go/src/github.com/cosn'
+alias blog='cd ~/Documents/github/cosn.github.io/'
 alias emacs='subl'
