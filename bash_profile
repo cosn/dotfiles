@@ -5,6 +5,9 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+bind "set completion-ignore-case on"
+bind "set show-all-if-ambiguous on"
+
 alias ..='cd ..'
 alias grep='grep --color'
 alias ls='ls -GFh'
