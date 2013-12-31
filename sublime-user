@@ -3,9 +3,8 @@
 	[
 		"SublimeCodeIntel"
 	],
-	"soda_classic_tabs": false,
-	"soda_folder_icons": true,
-	"theme": "Soda Dark.sublime-theme",
+	"theme": "Spacegray Eighties.sublime-theme",
+  	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
 	"vintage_ctrl_keys": true,
 	"vintage_start_in_command_mode": true
 }
