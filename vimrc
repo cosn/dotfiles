@@ -9,7 +9,6 @@ set smartindent
 
 " File handling
 filetype plugin on
-syntax on
 "set foldmethod=syntax
 
 " Search
@@ -64,12 +63,6 @@ set scrolloff=3
 set visualbell t_vb=
 "set autoreload
 
-" NERD Tree configuration
-"let NERDTreeIgnore=['.pyc$', '.pyo$', '\~$']
-
-" Colors
-" set t_Co=256
-
 " Insert blank lines without enterting insert mode
 " disabled because these break pressing enter in ack
 "nmap <S-Enter> O<Esc>
@@ -79,3 +72,11 @@ set visualbell t_vb=
 " :help text-objects
 nmap s ys
 nmap S yS
+
+" Enable golang plugins
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+"

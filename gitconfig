@@ -3,7 +3,7 @@
 	email = cosmin.nicolaescu@gmail.com
 [github]
         user = cosn
-        token = 302318d9de533289bb7b619d8ae8ea1aaf91ae36
+        token = 80f3921821be8de176a1cece6d32e5f66ff209f7
 [core]
 	excludesfile = /Users/cosmin/.gitignore_global
 	editor = vim
