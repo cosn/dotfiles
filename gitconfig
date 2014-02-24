@@ -14,15 +14,81 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [alias]
+    br = branch -a
+    s = status -u -s
     st = status -sb
+    cl = log --stat -C -2
     ci = commit
-    br = branch
     co = checkout
-    df = diff
-    ready = rebase -i @{u}
+    d = diff --color-words
+    dh = diff HEAD
+    dc = diff --staged
+    dw = diff --word-diff
+    dcw = diff --color-words
+    dm = !git diff | mate
+    dv = !git diff | vim
+    who = shortlog -s --
+    ph = push
+    pl = pull
+    lp = log -p
+    lod = log --oneline --decorate
+    lg = log --graph
+    lpo = log --pretty=oneline --abbrev-commit --graph --decorate --all
+    l1 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    l2 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    l3 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    sync = !git pull && git push
+    es = !git pull --rebase && git push
+    lf = log --pretty=fuller
+    ignorechanges = update-index --assume-unchanged
+    noticechanges = update-index --no-assume-unchanged
+    gc-ap = gc --aggressive --prune
+    listconf = config --global --list
+    cam = commit -a -m
+    lsm = log -M --stat
+    hse = log --stat -5
+    diffall = diff HEAD
+    logr = log -M
+    logr2 = log --stat -M -2
+    logit = log --stat -M
+    scrub = !git reset --hard && git clean -fd
+    pub = push -u origin
+    cs = status
+    rv = remote -v
+    lwr = log --stat -C
+    pur = pull --rebase
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    orphank = !gitk --all `git reflog | cut -c1-7`&
+    orphanl = !git log --pretty=oneline --abbrev-commit --graph --decorate `git reflog | cut -c1-7`
+    k = !exec gitk --all&
+    st = status
+    l = log --stat -C
+    ll = log --stat -C -3
     lg = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    servehere = daemon --verbose --informative-errors --reuseaddr --export-all --base-path=. --enable=receive-pack
+    purgeme = !git clean -fd && git reset --hard
+    prunenow = gc --prune=now
+    ri = rebase --interactive --autosquash
+    lol = log --pretty=oneline --graph --abbrev-commit --all
+    blg = log --graph --decorate --all --abbrev-commit --pretty=oneline
+    slog = log --graph --simplify-by-decoration --all --abbrev-commit --pretty=oneline
+    lgso = log --graph --date=short --pretty=format:'%C(yellow)%h%Creset %cn%x09%cd %s%C(green bold)%d'
+    ro = !git fetch origin && git reset --hard origin/master
+    shorten = "!sh -c 'curl -i http://git.io -F url=$1' -"
+    showignored = clean -ndX
+    showignored2 = ls-files --others --ignored --exclude-standard
+    showuntracked = ls-files --others --exclude-standard
+    rmmissing = !git rm $(git ls-files --deleted)
+    mergekeepoursonly = merge -s ours
+    redocommit = reset --soft HEAD^
+    listunstaged = diff --name-status
+    liststaged = diff --name-status --staged
+    listhistory = log --name-status
+    logn = log --oneline --name-only
+    busypeople = shortlog -6
+    busythisweek = shortlog --since=one.week.ago
+    ready = rebase -i @{u}
     standup = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --since yesterday --author cosn
-    purr = pull --rebase
 [push]
 	default = simple
 [color]
