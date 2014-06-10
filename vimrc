@@ -1,82 +1,84 @@
-" Disable welcome screen
-set shortmess+=I
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Indentdation
-set shiftwidth=4 softtabstop=4
-set smarttab
-set expandtab
+Plugin 'gmarik/Vundle.vim'
+Plugin 'fatih/vim-go'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'ervandew/supertab'
+
+call vundle#end()
+filetype plugin indent on
+
+set shortmess+=I
+set backspace=indent,eol,start
+set history=1024
+set showcmd
+set showmode
+set gcr=a:blinkon0
+set visualbell
+set autoread
+set hidden
+set noswapfile
+set nobackup
+set nowb
+set title
+set ruler
+
+syntax on
+colorscheme molokai
+
+set autoindent
 set smartindent
 
-" File handling
-filetype plugin on
-"set foldmethod=syntax
+set shiftwidth=2 softtabstop=2 tabstop=2
+set expandtab
+set smarttab
+set nowrap
+set linebreak
 
-" Search
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-map <leader>/ :let @/ = ""<cr>
 
-" Shed light on hidden things
-set list
-set listchars=tab:»»,trail:•
-set linebreak
-set showbreak=?
-
-" Completion
-inoremap <Nul> <C-x><C-o>
-set completeopt+=longest
-
-" Smart file openning
-"map <leader>t :FuzzyFinderTextMate<CR>
-"map <leader>r :ruby @finder = nil<CR>
-let g:fuzzy_ignore = "*.pyc;*.png;*.jpg;*.gif;*bmp;*.css"
-
-" Force myself to learn to use hjkl for navigation
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-map <up> <nop>
-
-" Easier window navigation
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-" Convienence mappings
-nnoremap <Space> :
-nmap <leader>q :q<cr>
-nmap <leader>w :w<cr>
-
-" Scrolling
-set ruler
-set guioptions-=l
-set guioptions-=r
-set guioptions-=L
-set guioptions-=R
-set guioptions-=T
 set scrolloff=3
+set sidescrolloff=5
+set sidescroll=1
 
-" Other
-set visualbell t_vb=
-"set autoreload
+set foldmethod=indent
+set foldnestmax=3
+set nofoldenable
 
-" Insert blank lines without enterting insert mode
-" disabled because these break pressing enter in ack
-"nmap <S-Enter> O<Esc>
-"nmap <CR> o<Esc>
+nnoremap <C-e> 4<C-e>
+nnoremap <C-y> 4<C-y>
 
-" Remap s/S to surround operations
-" :help text-objects
-nmap s ys
-nmap S yS
+if has('persistent_undo')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif
 
-" Enable golang plugins
-filetype off
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
-filetype plugin indent on
-syntax on
-"
+set wildmode=list:longest
+set wildmenu
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
+
+set conceallevel=2
+set concealcursor=vin
+let g:clang_snippets=1
+let g:clang_conceal_snippets=1
+let g:clang_snippets_engine='clang_complete'
+set completeopt=menu,menuone
+set pumheight=20
+let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
