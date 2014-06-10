@@ -54,6 +54,7 @@ set nofoldenable
 
 nnoremap <C-e> 4<C-e>
 nnoremap <C-y> 4<C-y>
+nnoremap <Space> :
 
 set splitbelow
 set splitright
