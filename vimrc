@@ -62,6 +62,12 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nmap <leader>s<left>  :topleft  vnew<CR>
+nmap <leader>s<right> :botright vnew<CR>
+nmap <leader>s<up>    :topleft  new<CR>
+nmap <leader>s<down>  :botright new<CR>
+
+set pastetoggle=<F2>
 
 if has('persistent_undo')
   silent !mkdir ~/.vim/backups > /dev/null 2>&1
