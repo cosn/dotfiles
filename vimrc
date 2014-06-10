@@ -55,6 +55,13 @@ set nofoldenable
 nnoremap <C-e> 4<C-e>
 nnoremap <C-y> 4<C-y>
 
+set splitbelow
+set splitright
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 if has('persistent_undo')
   silent !mkdir ~/.vim/backups > /dev/null 2>&1
   set undodir=~/.vim/backups
@@ -82,3 +89,8 @@ let g:clang_snippets_engine='clang_complete'
 set completeopt=menu,menuone
 set pumheight=20
 let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <Leader>d <Plug>(go-def)
