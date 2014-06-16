@@ -4,7 +4,9 @@ export GOPATH=$HOME/src/go
 export PATH=$PATH:$GOPATH/bin:$HOME/bin:$HOME/.rvm/bin
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -f ".bash_secrets" ]] && source .bash_secrets
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
