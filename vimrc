@@ -8,8 +8,12 @@ Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'ervandew/supertab'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'kchmck/vim-coffee-script'
 
 call vundle#end()
+
 filetype plugin indent on
 
 set shortmess+=I
@@ -26,8 +30,9 @@ set nobackup
 set nowb
 set title
 set ruler
+set number
 
-syntax on
+syntax enable
 colorscheme molokai
 
 set autoindent

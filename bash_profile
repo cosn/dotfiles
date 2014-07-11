@@ -1,12 +1,13 @@
 export HISTFILESIZE=32768
-export GOROOT=/usr/local/go
+export GOROOT=/usr/local/Cellar/go/1.3/libexec
 export GOPATH=$HOME/src/go
-export PATH=$PATH:$GOPATH/bin:$HOME/bin:$HOME/.rvm/bin
+export PATH=$GOPATH/bin:$HOME/bin:$HOME/.rvm/bin:/usr/local/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-[[ -f ".bash_secrets" ]] && source .bash_secrets
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source ~/.rvm/scripts/rvm
+[[ -f "$HOME/.bash_secrets" ]] && source ~/.bash_secrets
+[[ -f "$HOME/.git-completion.bash" ]] && source ~/.git-completion.bash
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
@@ -19,9 +20,12 @@ alias gogh='cd ~/src/go/src/github.com/cosn'
 alias blog='cd ~/src/cosn.github.io/'
 alias emacs='subl'
 alias cls='clear'
+alias grb='git pull --rebase'
+alias gph='git push origin HEAD'
 
 source ~/.git-prompt.sh
 source ~/.bash_colors
+source ~/.profile
 
 Time12h="\T"
 Time12a="\@"

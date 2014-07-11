@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 # Install HomeBrew
 /usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)" && brew update
@@ -31,19 +31,21 @@ brew install python3 --framework
 curl -L https://get.rvm.io | bash -s stable && source ~/.rvm/scripts/rvm && rvm autolibs packages && rvm install 1.9.3 && rvm install 2.0.0 && rvm use --default 2.0.0
 
 # Brew Casks
-brew cask install dropbox
-brew cask install google-chrome
-brew cask install google-hangouts
-brew cask install sublime-eext
-brew cask install vlc
-brew cask install wireshark 
+#brew cask install dropbox
+#brew cask install google-chrome
+#brew cask install google-hangouts
+#brew cask install sublime-eext
+#brew cask install vlc
+#brew cask install wireshark
 
 # Dot Files
 cp bash_colors ~/.bash_colors
 cp bash_profile ~/.bash_profile
 cp git-prompt.sh ~/.git-prompt.sh
 cp gitconfig ~/.gitconfig
-cp .vimrc ~/.vimrc
-cp vim/colors/* ~/.vim/colors/
-cp sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Default/Preferences.sublime-settings
-cp sublime-user ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
+cp git-completion.sh ~/.git-completion.sh
+cp git-prompt.sh ~/.git-prompt.sh
+cp vimrc ~/.vimrc
+mkdir -p ~/.vim/colors && cp vim/colors/* ~/.vim/colors/
+#cp sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Default/Preferences.sublime-settings
+#cp sublime-user ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
