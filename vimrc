@@ -11,6 +11,10 @@ Plugin 'ervandew/supertab'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'rking/ag.vim'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'scrooloose/nerdtree'
 
 call vundle#end()
 
@@ -57,6 +61,7 @@ set foldmethod=indent
 set foldnestmax=3
 set nofoldenable
 
+let mapleader=","
 nnoremap <C-e> 4<C-e>
 nnoremap <C-y> 4<C-y>
 nnoremap <Space> :
@@ -102,7 +107,44 @@ set completeopt=menu,menuone
 set pumheight=20
 let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
 
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <Leader>d <Plug>(go-def)
+au FileType go nmap <leader>gor <Plug>(go-run)
+au FileType go nmap <leader>gob <Plug>(go-build)
+au FileType go nmap <leader>got <Plug>(go-test)
+au FileType go nmap <Leader>god <Plug>(go-def)
+
+nmap <leader>t :CtrlP<cr>
+nmap <leader>ta :CtrlP ~/stripe/pay-server/admin<cr>
+nmap <leader>tl :CtrlP ~/stripe/pay-server/lib<cr>
+nmap <leader>tm :CtrlP ~/stripe/pay-server/manage<cr>
+nmap <leader>to :CtrlP ~/stripe/pay-server/ops<cr>
+nmap <leader>tt :CtrlP ~/stripe/pay-server/test<cr>
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
+
+map  / <Plug>(easymotion-sn)
+"omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+let g:EasyMotion_smartcase = 1
+
+map <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
