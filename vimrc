@@ -48,7 +48,7 @@ set smarttab
 set nowrap
 set linebreak
 
-set hlsearch
+"set hlsearch
 set incsearch
 set ignorecase
 set smartcase
@@ -100,6 +100,7 @@ set wildignore+=*.png,*.jpg,*.gif
 
 set conceallevel=2
 set concealcursor=vin
+set cursorline
 let g:clang_snippets=1
 let g:clang_conceal_snippets=1
 let g:clang_snippets_engine='clang_complete'
@@ -112,12 +113,12 @@ au FileType go nmap <leader>gob <Plug>(go-build)
 au FileType go nmap <leader>got <Plug>(go-test)
 au FileType go nmap <Leader>god <Plug>(go-def)
 
-nmap <leader>t :CtrlP<cr>
-nmap <leader>ta :CtrlP ~/stripe/pay-server/admin<cr>
-nmap <leader>tl :CtrlP ~/stripe/pay-server/lib<cr>
-nmap <leader>tm :CtrlP ~/stripe/pay-server/manage<cr>
-nmap <leader>to :CtrlP ~/stripe/pay-server/ops<cr>
-nmap <leader>tt :CtrlP ~/stripe/pay-server/test<cr>
+nmap <leader>b :CtrlPBuffer<cr>
+nmap <leader>pa :CtrlP ~/stripe/pay-server/admin<cr>
+nmap <leader>pl :CtrlP ~/stripe/pay-server/lib<cr>
+nmap <leader>pm :CtrlP ~/stripe/pay-server/manage<cr>
+nmap <leader>po :CtrlP ~/stripe/pay-server/ops<cr>
+nmap <leader>pt :CtrlP ~/stripe/pay-server/test<cr>
 
 " The Silver Searcher
 if executable('ag')
@@ -135,16 +136,19 @@ endif
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 
 map  / <Plug>(easymotion-sn)
-"omap / <Plug>(easymotion-tn)
+omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 let g:EasyMotion_smartcase = 1
 
 map <C-n> :NERDTreeToggle<CR>
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+au StdinReadPre * let s:std_in=1
+au VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" remove trailing whitespace
+au FileType ruby,coffeescript,javascript au BufWritePre <buffer> :%s/\s\+$//e
