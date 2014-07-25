@@ -79,6 +79,7 @@ nnoremap <leader>s<up>    :topleft  new<CR>
 nnoremap <leader>s<down>  :botright new<CR>
 
 set pastetoggle=<F2>
+set clipboard=unnamed
 
 if has('persistent_undo')
   silent !mkdir ~/.vim/backups > /dev/null 2>&1
