@@ -20,8 +20,10 @@ alias gogh='cd ~/src/go/src/github.com/cosn'
 alias blog='cd ~/src/cosn.github.io/'
 alias emacs='subl'
 alias cls='clear'
-alias grb='git pull --rebase'
+alias grb='git pull --rebase origin'
+alias gom='git pull origin master'
 alias gph='git push origin HEAD'
+alias agr='ag --ruby -S'
 
 source ~/.git-prompt.sh
 source ~/.bash_colors
