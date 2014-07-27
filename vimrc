@@ -16,6 +16,7 @@ Bundle 'rking/ag.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
+Bundle 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
@@ -38,7 +39,9 @@ set ruler
 set number
 
 syntax enable
-colorscheme molokai
+set background=dark
+"colorscheme molokai
+colorscheme solarized
 
 set autoindent
 set smartindent
