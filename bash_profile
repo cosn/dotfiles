@@ -17,13 +17,16 @@ alias grep='grep --color'
 alias ls='ls -GFh'
 alias gh='cd ~/Documents/github'
 alias gogh='cd ~/src/go/src/github.com/cosn'
+alias gos='cd ~/stripe'
 alias blog='cd ~/src/cosn.github.io/'
 alias emacs='subl'
-alias cls='clear'
 alias grb='git pull --rebase origin'
 alias gom='git pull origin master'
 alias gph='git push origin HEAD'
+alias gphf='git push -f origin HEAD'
 alias agr='ag --ruby -S'
+alias gith='hub'
+alias gpr='hub pull-request'
 
 source ~/.git-prompt.sh
 source ~/.bash_colors

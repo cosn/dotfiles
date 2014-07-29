@@ -156,4 +156,4 @@ au VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " remove trailing whitespace
-au FileType ruby,coffeescript,javascript au BufWritePre <buffer> :%s/\s\+$//e
+au FileType ruby,python,coffeescript,javascript,java au BufWritePre <buffer> :%s/\s\+$//e
