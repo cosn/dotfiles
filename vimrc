@@ -17,6 +17,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
 Bundle 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
 
 call vundle#end()
 
@@ -40,7 +41,6 @@ set number
 
 syntax enable
 set background=dark
-"colorscheme molokai
 colorscheme solarized
 
 set autoindent
@@ -157,3 +157,6 @@ au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType 
 
 " remove trailing whitespace
 au FileType ruby,python,coffeescript,javascript,java au BufWritePre <buffer> :%s/\s\+$//e
+
+set laststatus=2
+let g:airline_theme='jellybeans'
