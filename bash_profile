@@ -1,11 +1,10 @@
-export HISTFILESIZE=32768
+export HISTSIZE=9999
 export GOROOT=/usr/local/Cellar/go/1.3/libexec
 export GOPATH=$HOME/src/go
-export PATH=$GOPATH/bin:$HOME/bin:$HOME/.rvm/bin:/usr/local/bin:$PATH
+export PATH=$GOPATH/bin:$HOME/bin:/usr/local/bin:/usr/local/heroku/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source ~/.rvm/scripts/rvm
 [[ -f "$HOME/.bash_secrets" ]] && source ~/.bash_secrets
 [[ -f "$HOME/.git-completion.bash" ]] && source ~/.git-completion.bash
 
@@ -17,7 +16,8 @@ alias grep='grep --color'
 alias ls='ls -GFh'
 alias gh='cd ~/Documents/github'
 alias gogh='cd ~/src/go/src/github.com/cosn'
-alias gos='cd ~/stripe'
+alias s='cd ~/stripe'
+alias p='cd ~/stripe/pay-server'
 alias blog='cd ~/src/cosn.github.io/'
 alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 alias grb='git pull --rebase origin'
@@ -25,8 +25,11 @@ alias gom='git pull origin master'
 alias gph='git push origin HEAD'
 alias gphf='git push -f origin HEAD'
 alias agr='ag --ruby -S'
+alias agg='ag --go -S'
 alias gith='hub'
+alias gprune='git remote prune origin'
 alias gpr='hub pull-request'
+alias apiori="curl https://api.stripe.com/healthcheck"
 
 source ~/.git-prompt.sh
 source ~/.bash_colors
