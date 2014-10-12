@@ -1,99 +1,91 @@
 [user]
 	name = Cosmin Nicolaescu
 	email = cosmin.nicolaescu@gmail.com
+
 [github]
-        user = cosn
-        token = 80f3921821be8de176a1cece6d32e5f66ff209f7
+  user = cosn
+  token = 80f3921821be8de176a1cece6d32e5f66ff209f7
+
 [core]
 	excludesfile = /Users/cosmin/.gitignore_global
 	editor = vim
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+
 [alias]
-    br = branch -a
-    s = status -u -s
-    st = status -sb
-    cl = log --stat -C -2
-    ci = commit
-    co = checkout
-    d = diff --color-words
-    dh = diff HEAD
-    dc = diff --staged
-    dw = diff --word-diff
-    dcw = diff --color-words
-    dm = !git diff | mate
-    dv = !git diff | vim
-    who = shortlog -s --
-    ph = push
-    pl = pull
-    lp = log -p
-    lod = log --oneline --decorate
-    lg = log --graph
-    lpo = log --pretty=oneline --abbrev-commit --graph --decorate --all
-    tig = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue(%cr) %C(green)<%an>%Creset' --abbrev-commit --date=relative
-    sync = !git pull && git push
-    es = !git pull --rebase && git push
-    lf = log --pretty=fuller
-    ignorechanges = update-index --assume-unchanged
-    noticechanges = update-index --no-assume-unchanged
-    gc-ap = gc --aggressive --prune
-    listconf = config --global --list
+    blg = log --graph --decorate --all --abbrev-commit --pretty=oneline
+    b = branch
+    busypeople = shortlog -6
+    busythisweek = shortlog --since=one.week.ago
     cam = commit -a -m
-    lsm = log -M --stat
-    hse = log --stat -5
-    diffall = diff HEAD
-    logr = log -M
-    logr2 = log --stat -M -2
-    logit = log --stat -M
-    scrub = !git reset --hard && git clean -fd
-    pub = push -u origin
-    cs = status
-    rv = remote -v
-    lwr = log --stat -C
-    pur = pull --rebase
-    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    co = checkout
+    cp = cherry-pick
+    cpx = cherry-pick -x
+    d = diff
+    dc = diff --cached
+    dh = diff HEAD
+    dns = diff --name-status
+    ds = diff --staged
+    es = !git pull --rebase && git push
+    ignorechanges = update-index --assume-unchanged
+    k = !exec gitk --all&
+    l = log --stat -M
+    ld = log --oneline --decorate
+    lf = log --pretty=fuller
+    lg = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    listconf = config --global --list
+    ll = log --stat -M -5
+    ln = log --oneline --name-only
+    lns = log --name-status
+    lnss = diff --name-status --staged
+    noticechanges = update-index --no-assume-unchanged
     orphank = !gitk --all `git reflog | cut -c1-7`&
     orphanl = !git log --pretty=oneline --abbrev-commit --graph --decorate `git reflog | cut -c1-7`
-    k = !exec gitk --all&
-    st = status
-    l = log --stat -C
-    ll = log --stat -C -3
-    lg = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-    servehere = daemon --verbose --informative-errors --reuseaddr --export-all --base-path=. --enable=receive-pack
+    pop = stash pop
+    pub = push -u origin
+    pur = pull --rebase
     purgeme = !git clean -fd && git reset --hard
-    prunenow = gc --prune=now
+    redo = reset --soft HEAD^
     ri = rebase --interactive --autosquash
-    lol = log --pretty=oneline --graph --abbrev-commit --all
-    blg = log --graph --decorate --all --abbrev-commit --pretty=oneline
-    slog = log --graph --simplify-by-decoration --all --abbrev-commit --pretty=oneline
-    lgso = log --graph --date=short --pretty=format:'%C(yellow)%h%Creset %cn%x09%cd %s%C(green bold)%d'
+    rmmissing = !git rm $(git ls-files --deleted)
     ro = !git fetch origin && git reset --hard origin/master
+    rv = remote -v
+    s = status -u -sb
+    scrub = !git reset --hard && git clean -fd
     shorten = "!sh -c 'curl -i http://git.io -F url=$1' -"
     showignored = clean -ndX
     showignored2 = ls-files --others --ignored --exclude-standard
     showuntracked = ls-files --others --exclude-standard
-    rmmissing = !git rm $(git ls-files --deleted)
-    mergekeepoursonly = merge -s ours
-    redocommit = reset --soft HEAD^
-    listunstaged = diff --name-status
-    liststaged = diff --name-status --staged
-    listhistory = log --name-status
-    logn = log --oneline --name-only
-    busypeople = shortlog -6
-    busythisweek = shortlog --since=one.week.ago
-    ready = rebase -i @{u}
+    slog = log --graph --simplify-by-decoration --all --abbrev-commit --pretty=oneline
+    st = stash --include-untracked
     standup = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --since yesterday --author cosn
+    sync = !git pull && git push
+    tig = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue(%cr) %C(green)<%an>%Creset' --abbrev-commit --date=relative
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    who = shortlog -s --
+
 [push]
-	default = simple
+  default = upstream
+
 [color]
 	ui = auto
 	diff = auto
 	status = auto
-	branch = auto
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  branch = auto
+  interactive = auto
+  pager = true
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[merge]
+  stat = true
+  conflictstyle = diff3
+
+[apply]
+  whitespace = fix
