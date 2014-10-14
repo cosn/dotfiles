@@ -12,24 +12,26 @@ bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 
 alias ..='cd ..'
-alias grep='grep --color'
-alias ls='ls -GFh'
-alias gh='cd ~/Documents/github'
-alias gogh='cd ~/src/go/src/github.com/cosn'
-alias s='cd ~/stripe'
-alias p='cd ~/stripe/pay-server'
-alias blog='cd ~/src/cosn.github.io/'
 alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-alias grb='git pull --rebase origin'
+alias agg='ag --go -S'
+alias agr='ag --ruby -S'
+alias apiori="curl https://api.stripe.com/healthcheck"
+alias be='bundle exec'
+alias ber='bundle exec ruby'
+alias blog='cd ~/src/cosn.github.io/'
+alias gh='cd ~/Documents/github'
+alias gith='hub'
+alias gogh='cd ~/src/go/src/github.com/cosn'
 alias gom='git pull origin master'
 alias gph='git push origin HEAD'
 alias gphf='git push -f origin HEAD'
-alias agr='ag --ruby -S'
-alias agg='ag --go -S'
-alias gith='hub'
-alias gprune='git remote prune origin'
 alias gpr='hub pull-request'
-alias apiori="curl https://api.stripe.com/healthcheck"
+alias gprune='git remote prune origin'
+alias grb='git pull --rebase origin'
+alias grep='grep --color'
+alias ls='ls -GFh'
+alias p='cd ~/stripe/pay-server'
+alias s='cd ~/stripe'
 
 source ~/.git-prompt.sh
 source ~/.bash_colors
