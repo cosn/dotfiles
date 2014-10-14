@@ -15,6 +15,7 @@
     b = branch
     busypeople = shortlog -6
     busythisweek = shortlog --since=one.week.ago
+    c = commit
     cam = commit -a -m
     co = checkout
     cp = cherry-pick
