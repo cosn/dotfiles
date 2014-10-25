@@ -119,7 +119,7 @@ au FileType go nmap <leader>got <Plug>(go-test)
 au FileType go nmap <Leader>god <Plug>(go-def)
 
 nmap <leader>b :CtrlPBuffer<cr>
-nmap <leader>pa :CtrlP ~/stripe/pay-server/admin<cr>
+nmap <leader>pa :CtrlP ~/stripe/pay-server/api<cr>
 nmap <leader>pl :CtrlP ~/stripe/pay-server/lib<cr>
 nmap <leader>pm :CtrlP ~/stripe/pay-server/manage<cr>
 nmap <leader>po :CtrlP ~/stripe/pay-server/ops<cr>
@@ -151,12 +151,13 @@ map  N <Plug>(easymotion-prev)
 let g:EasyMotion_smartcase = 1
 
 map <C-n> :NERDTreeToggle<CR>
-au StdinReadPre * let s:std_in=1
-au VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" starts if no files are open with vi
+"au StdinReadPre * let s:std_in=1
+"au VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " remove trailing whitespace
-au FileType ruby,python,coffeescript,javascript,java au BufWritePre <buffer> :%s/\s\+$//e
+au BufWritePre <buffer> :%s/\s\+$//e
 
 set laststatus=2
 let g:airline_theme='jellybeans'
