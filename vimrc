@@ -157,7 +157,14 @@ map <C-n> :NERDTreeToggle<CR>
 au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " remove trailing whitespace
-au BufWritePre <buffer> :%s/\s\+$//e
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+
+autocmd FileWritePre    * :call TrimWhiteSpace()
+autocmd FileAppendPre   * :call TrimWhiteSpace()
+autocmd FilterWritePre  * :call TrimWhiteSpace()
+autocmd BufWritePre     * :call TrimWhiteSpace()
 
 set laststatus=2
 let g:airline_theme='jellybeans'
