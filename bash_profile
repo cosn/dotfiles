@@ -43,14 +43,14 @@ Time12a="\@"
 PathFull="\w"
 PathShort="\W"
 
-export PS1=$IBlack$Time12h$Color_Off'$(
+export PS1=$Black$Time12h$Color_Off'$(
 if [ -d ".git" ]; then \
   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
   if [ "$?" -eq "0" ]; then \
     echo "'$Green'"$(__git_ps1 " (%s)"); \
   else \
     echo "'$Red'"$(__git_ps1 " (%s)"); \
-  fi) '$Purple$PathFull$Color_Off' \$ "; \
+  fi) '$BPurple$PathFull$Color_Off' \$ "; \
 else \
-  echo " '$Purple$PathShort$Color_Off' \$ "; \
+  echo " '$BPurple$PathShort$Color_Off' \$ "; \
 fi)'
