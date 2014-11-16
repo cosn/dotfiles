@@ -7,6 +7,9 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 [[ -f "$HOME/.bash_secrets" ]] && source ~/.bash_secrets
 [[ -f "$HOME/.git-completion.bash" ]] && source ~/.git-completion.bash
+[[ -f "$HOME/.git-prompt.sh" ]] && source ~/.git-prompt.sh
+[[ -f "$HOME/.bash_colors" ]] && source ~/.bash_colors
+[[ -f "$HOME/.profile" ]] && source ~/.profile
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
@@ -34,9 +37,6 @@ alias ls='ls -GFh'
 alias p='cd ~/stripe/pay-server'
 alias s='cd ~/stripe'
 
-source ~/.git-prompt.sh
-source ~/.bash_colors
-source ~/.profile
 
 Time12h="\T"
 Time12a="\@"
