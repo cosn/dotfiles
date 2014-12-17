@@ -1,9 +1,10 @@
 export HISTSIZE=9999
-export GOROOT=/usr/local/Cellar/go/1.3/libexec
+export GOROOT=/usr/local/Cellar/go/1.4/libexec
 export GOPATH=$HOME/src/go
 export PATH=$GOPATH/bin:$HOME/bin:/usr/local/bin:/usr/local/heroku/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+export EDITOR=emacsclient
 
 [[ -f "$HOME/.bash_secrets" ]] && source ~/.bash_secrets
 [[ -f "$HOME/.git-completion.bash" ]] && source ~/.git-completion.bash
@@ -22,6 +23,7 @@ alias apiori="curl https://api.stripe.com/healthcheck"
 alias be='bundle exec'
 alias ber='bundle exec ruby'
 alias blog='cd ~/src/cosn.github.io/'
+alias e='emacsclient'
 alias gh='cd ~/Documents/github'
 alias gith='hub'
 alias gogh='cd ~/src/go/src/github.com/cosn'
@@ -36,7 +38,6 @@ alias grep='grep --color'
 alias ls='ls -GFh'
 alias p='cd ~/stripe/pay-server'
 alias s='cd ~/stripe'
-
 
 Time12h="\T"
 Time12a="\@"
