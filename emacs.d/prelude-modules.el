@@ -1,0 +1,32 @@
+;;; Uncomment the modules you'd like to use and restart Prelude afterwards
+
+(require 'prelude-c)
+(require 'prelude-clojure)
+(require 'prelude-coffee)
+(require 'prelude-css)
+(require 'prelude-emacs-lisp)
+(require 'prelude-erlang)
+(require 'prelude-go)
+(require 'prelude-haskell)
+(require 'prelude-helm-everywhere)
+;(require 'prelude-ido)
+(require 'prelude-js)
+(require 'prelude-js)
+(require 'prelude-latex)
+(require 'prelude-lisp)
+(require 'prelude-org)
+(require 'prelude-perl)
+(require 'prelude-programming)
+(require 'prelude-python)
+(require 'prelude-ruby)
+(require 'prelude-scala)
+(require 'prelude-scheme)
+(require 'prelude-shell)
+(require 'prelude-web)
+(require 'prelude-xml)
+(require 'prelude-yaml)
+
+(global-set-key (kbd "C-x f") 'find-file-in-repository)
+(global-linum-mode t)
+
+;;; prelude-modules ends here
