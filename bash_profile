@@ -36,7 +36,9 @@ alias gprune='git remote prune origin'
 alias grb='git pull --rebase origin'
 alias grep='grep --color'
 alias ls='ls -GFh'
+alias ap='cd ~/stripe/apiori'
 alias p='cd ~/stripe/pay-server'
+alias pc='cd ~/stripe/puppet-config'
 alias s='cd ~/stripe'
 
 Time12h="\T"
