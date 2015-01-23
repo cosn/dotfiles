@@ -9,7 +9,6 @@
 (require 'prelude-go)
 (require 'prelude-haskell)
 (require 'prelude-helm-everywhere)
-;(require 'prelude-ido)
 (require 'prelude-js)
 (require 'prelude-js)
 (require 'prelude-latex)
@@ -27,6 +26,5 @@
 (require 'prelude-yaml)
 
 (global-set-key (kbd "C-x f") 'find-file-in-repository)
-(global-linum-mode t)
 
 ;;; prelude-modules ends here
