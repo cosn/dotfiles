@@ -1,5 +1,5 @@
 export HISTSIZE=9999
-export GOROOT=/usr/local/Cellar/go/1.4/libexec
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/src/go
 export PATH=$GOPATH/bin:$HOME/bin:/usr/local/bin:/usr/local/heroku/bin:$PATH
 export CLICOLOR=1
@@ -29,7 +29,7 @@ alias gh='cd ~/Documents/github'
 alias gith='hub'
 alias gogh='cd ~/src/go/src/github.com/cosn'
 alias gom='git pull origin master'
-alias gm='git co master && gp && git b -d'
+alias gm='b=`git rev-parse --abbrev-ref HEAD` && git co master && gp && git b -d $b'
 alias gp='git pull'
 alias gph='git push origin HEAD'
 alias gphf='git push -f origin HEAD'
