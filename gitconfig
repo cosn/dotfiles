@@ -1,6 +1,7 @@
 [user]
 	name = Cosmin Nicolaescu
 	email = cosmin.nicolaescu@gmail.com
+	signingkey = 421AED20
 
 [github]
   user = cosn
@@ -8,7 +9,7 @@
 
 [core]
 	excludesfile = /Users/cosmin/.gitignore_global
-	editor = vim
+	editor = subl -n -w
 
 [alias]
     blg = log --graph --decorate --all --abbrev-commit --pretty=oneline
