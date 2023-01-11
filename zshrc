@@ -65,12 +65,39 @@ ZSH_THEME="crunch"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+VSCODE=code
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dotenv macos 1password ag brew colored-man-pages common-aliases github vscode zsh-syntax-highlighting zsh-autosuggestions themes iterm2)
+plugins=(
+    1password
+    ag
+    aliases
+    brew
+    colored-man-pages
+    command-not-found
+    common-aliases
+    compleat
+    copyfile
+    cp
+    dotenv
+    genpass
+    git
+    github
+    golang
+    history
+    iterm2
+    macos
+    per-directory-history
+    themes
+    vi-mode
+    vscode
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
