@@ -66,6 +66,7 @@ ZSH_THEME="crunch"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 VSCODE=code
+VI_MODE_SET_CURSOR=true
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
