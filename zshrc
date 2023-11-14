@@ -127,3 +127,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias gp='git pull'
+alias gph='git push origin HEAD'
+alias gphf='git push -f origin HEAD'
+alias grb='git pull --rebase origin'
+alias ls='ls -GFh'
