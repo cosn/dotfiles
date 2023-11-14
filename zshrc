@@ -128,6 +128,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
+export PATH
+
 alias gp='git pull'
 alias gph='git push origin HEAD'
 alias gphf='git push -f origin HEAD'
