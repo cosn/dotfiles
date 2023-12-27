@@ -93,7 +93,6 @@ plugins=(
     genpass
     git
     github
-    git-prompt
     golang
     history
     iterm2

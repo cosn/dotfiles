@@ -89,7 +89,6 @@ plugins=(
     fastfile
     genpass
     git
-    git-prompt
     github
     golang
     history
