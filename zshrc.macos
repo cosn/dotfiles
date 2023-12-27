@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="crunch"
+ZSH_THEME="cos"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -25,7 +25,7 @@ ZSH_THEME="crunch"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -77,6 +77,7 @@ plugins=(
     1password
     ag
     aliases
+    aws
     brew
     colored-man-pages
     command-not-found
@@ -84,16 +85,25 @@ plugins=(
     compleat
     copyfile
     cp
+    dirhistory
     dotenv
+    encode64
+    extract
+    fastfile
     genpass
     git
     github
+    git-prompt
     golang
     history
     iterm2
+    jsontools
     macos
     per-directory-history
+    rsync
+    safe-paste
     themes
+    urltools
     vi-mode
     vscode
     zsh-autosuggestions
@@ -135,4 +145,3 @@ alias gp='git pull'
 alias gph='git push origin HEAD'
 alias gphf='git push -f origin HEAD'
 alias grb='git pull --rebase origin'
-alias ls='ls -GFh'
