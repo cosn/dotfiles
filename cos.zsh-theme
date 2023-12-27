@@ -14,7 +14,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY=" $COS_GIT_DIRTY_COLOR✗"
 COS_USER_="$COS_USER_COLOR%n"
 COS_HOST_="$COS_HOST_COLOR%m"
 COS_UH_="$COS_USER_$COS_SYM_COLOR@$COS_HOST_ "
-COS_DIR_="$COS_DIR_COLOR%~%{$reset_color%}$(git_prompt_info) "
+COS_DIR_="$COS_DIR_COLOR%~%{$reset_color%}\$(git_prompt_info) "
 COS_PROMPT="$COS_SYM_COLOR➭ "
 
 PROMPT="$COS_UH_$COS_DIR_$COS_PROMPT%{$reset_color%}"
