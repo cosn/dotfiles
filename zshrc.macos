@@ -81,7 +81,6 @@ plugins=(
     brew
     colored-man-pages
     command-not-found
-    common-aliases
     compleat
     copyfile
     cp
