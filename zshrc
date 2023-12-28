@@ -65,7 +65,6 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-VSCODE=code
 VI_MODE_SET_CURSOR=true
 
 # Which plugins would you like to load?
@@ -74,11 +73,8 @@ VI_MODE_SET_CURSOR=true
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    1password
     ag
     aliases
-    aws
-    brew
     colored-man-pages
     command-not-found
     compleat
@@ -94,19 +90,33 @@ plugins=(
     github
     golang
     history
-    iterm2
     jsontools
-    macos
     per-directory-history
+    python
     rsync
     safe-paste
     themes
     urltools
     vi-mode
-    vscode
-    zsh-autosuggestions
-    zsh-syntax-highlighting
 )
+
+if [[ $OSTYPE == linux* ]]; then
+    plugins+=(
+        aws
+        mosh
+        postgres
+        screen
+        ubuntu
+)
+elif [[$OSTYPE == darwin*]]; then
+    plugins+=(
+        1password
+        brew
+        iterm2
+        macos
+        vscode
+)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -136,8 +146,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
-export PATH
+if [[ $OSTYPE == linux* ]]; then
+    export EDITOR='vim'
+elif [[$OSTYPE == darwin*]]; then
+    VSCODE=code
+    export EDITOR='code'
+    
+    path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
+    export PATH
+fi
 
 alias gp='git pull'
 alias gph='git push origin HEAD'
