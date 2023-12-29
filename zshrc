@@ -108,7 +108,7 @@ if [[ $OSTYPE == linux* ]]; then
         screen
         ubuntu
 )
-elif [[$OSTYPE == darwin*]]; then
+elif [[ $OSTYPE == darwin* ]]; then
     plugins+=(
         1password
         brew
@@ -148,7 +148,7 @@ source $ZSH/oh-my-zsh.sh
 
 if [[ $OSTYPE == linux* ]]; then
     export EDITOR='vim'
-elif [[$OSTYPE == darwin*]]; then
+elif [[ $OSTYPE == darwin* ]]; then
     VSCODE=code
     export EDITOR='code'
     
