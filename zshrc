@@ -153,9 +153,19 @@ elif [[ $OSTYPE == darwin* ]]; then
     export EDITOR='code'
     
     path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
-    export PATH
 fi
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+path=("$BUN_INSTALL/bin" $path)
+
+# golang
+path=('/usr/local/go/bin' $path)
+
+export PATH
+
+# aliases
 alias gp='git pull'
 alias gph='git push origin HEAD'
 alias gphf='git push -f origin HEAD'
