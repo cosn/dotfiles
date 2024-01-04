@@ -2,6 +2,7 @@ brotli
 c-ares
 ca-certificates
 curl
+gdbm
 gettext
 gmp
 gnu-which
@@ -38,6 +39,7 @@ p11-kit
 pcre
 pinentry
 pkg-config
+pypy
 python@3.11
 python@3.12
 readline
@@ -45,6 +47,7 @@ rtmpdump
 rust
 six
 sqlite
+tcl-tk
 the_silver_searcher
 typescript
 unbound
