@@ -2,6 +2,7 @@ brotli
 c-ares
 ca-certificates
 curl
+deno
 gdbm
 gettext
 gmp
