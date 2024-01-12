@@ -41,6 +41,9 @@ pcre
 pinentry
 pkg-config
 pypy
+python-distlib
+python-filelock
+python-platformdirs
 python@3.11
 python@3.12
 readline
@@ -52,6 +55,7 @@ tcl-tk
 the_silver_searcher
 typescript
 unbound
+virtualenv
 wget
 xz
 z3
