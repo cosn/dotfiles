@@ -171,4 +171,4 @@ alias gph='git push origin HEAD'
 alias gphf='git push -f origin HEAD'
 alias grb='git pull --rebase origin'
 
-alias python='pyton3'
+alias python='python3'
