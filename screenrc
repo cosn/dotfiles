@@ -1,4 +1,4 @@
 altscreen on
-defscrollback 9000
+defscrollback 10000
 caption always "%{= kg}%-Lw%50>%?%F%{+b w}%?%n*%f %t%{-}%+Lw%-=%D %d %M %Y %c:%s%{-}"
 startup_message off
