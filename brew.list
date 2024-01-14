@@ -1,6 +1,7 @@
 brotli
 c-ares
 ca-certificates
+cog
 curl
 deno
 duckdb
