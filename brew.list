@@ -1,3 +1,4 @@
+asitop
 brotli
 c-ares
 ca-certificates
@@ -7,6 +8,7 @@ deno
 duckdb
 gdbm
 gettext
+git-lfs
 gmp
 gnu-which
 gnupg
@@ -44,6 +46,7 @@ pcre
 pinentry
 pkg-config
 pypy
+python-psutil
 python@3.11
 python@3.12
 readline
