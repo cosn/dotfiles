@@ -36,6 +36,7 @@ ncurses
 nettle
 node
 npth
+ollama
 openldap
 openssl@3
 p11-kit
