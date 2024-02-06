@@ -65,7 +65,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-VI_MODE_SET_CURSOR=true
+# VI_MODE_SET_CURSOR=true
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -75,12 +75,14 @@ VI_MODE_SET_CURSOR=true
 plugins=(
     ag
     aliases
+    asdf
     colored-man-pages
     command-not-found
     compleat
     copyfile
     cp
     dirhistory
+    docker
     dotenv
     encode64
     extract
@@ -91,6 +93,7 @@ plugins=(
     golang
     history
     jsontools
+    node
     per-directory-history
     python
     rsync
@@ -98,6 +101,7 @@ plugins=(
     themes
     urltools
     vi-mode
+    yarn
 )
 
 if [[ $OSTYPE == linux* ]]; then
