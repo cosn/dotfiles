@@ -160,6 +160,13 @@ elif [[ $OSTYPE == darwin* ]]; then
     path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
 fi
 
+# bindkey
+
+bindkey "^K" forward-char
+bindkey "^J" backward-char
+bindkey "^B" backward-word
+bindkey "^F" forward-word
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
