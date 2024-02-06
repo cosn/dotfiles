@@ -76,6 +76,7 @@ plugins=(
     ag
     aliases
     asdf
+    bazel
     colored-man-pages
     command-not-found
     compleat
