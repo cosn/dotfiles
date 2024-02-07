@@ -156,7 +156,7 @@ if [[ $OSTYPE == linux* ]]; then
 elif [[ $OSTYPE == darwin* ]]; then
     VSCODE=code
     export EDITOR='code'
-    source $HOME/.config/op/plugins.sh
+    [ -s $HOME/.config/op/plugins.sh ] && source $HOME/.config/op/plugins.sh
     path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
 fi
 
