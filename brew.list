@@ -13,7 +13,9 @@ cffi
 cog
 colima
 coreutils
+csvkit
 curl
+datamash
 deno
 docker
 docker-buildx
@@ -34,8 +36,10 @@ gnutls
 go
 grep
 helm
+httpie
 hub
 icu4c
+iftop
 jpeg-turbo
 jq
 keyring
@@ -68,8 +72,12 @@ lz4
 lzo
 m4
 mpdecimal
+mtr
+ncdu
 ncurses
+nethogs
 nettle
+ngrep
 node
 npth
 ollama
@@ -95,6 +103,8 @@ qemu
 readline
 rtmpdump
 rust
+s4cmd
+shyaml
 six
 snappy
 sqlite
