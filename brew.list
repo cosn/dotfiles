@@ -4,6 +4,7 @@ autoconf
 automake
 aws-iam-authenticator
 awscli
+bat
 bazelisk
 brotli
 c-ares
@@ -69,6 +70,7 @@ libusb
 libuv
 libyaml
 lima
+llm
 llvm
 llvm@16
 lz4
@@ -95,14 +97,18 @@ pixman
 pkg-config
 pnpm
 pycparser
+pygments
 pypy
 python-certifi
 python-click
 python-cryptography
 python-dateutil
+python-pluggy
 python-psutil
 python-pytz
 python-setuptools
+python-tabulate
+python-typing-extensions
 python@3.11
 python@3.12
 pyyaml
@@ -115,6 +121,7 @@ shyaml
 six
 snappy
 sqlite
+sqlite-utils
 stern
 tcl-tk
 tfenv
