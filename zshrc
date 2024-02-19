@@ -187,3 +187,4 @@ alias gcllm='git diff --minimal --cached | \
     git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG'
 
 alias python='python3'
+alias cat='bat'
