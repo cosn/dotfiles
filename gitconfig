@@ -60,15 +60,18 @@
     who = shortlog -s --
 
 [push]
-  default = upstream
+    default = current
+
+[pull]
+    rebase = true
 
 [color]
-	ui = auto
+    ui = auto
 	diff = auto
 	status = auto
-  branch = auto
-  interactive = auto
-  pager = true
+    branch = auto
+    interactive = auto
+    pager = true
 
 [color "branch"]
   current = yellow reverse
@@ -80,9 +83,32 @@
   changed = green
   untracked = cyan
 
-[merge]
-  stat = true
-  conflictstyle = diff3
-
 [apply]
-  whitespace = fix
+    whitespace = fix
+
+[rebase]
+    autosquash = true
+    autostash = true
+
+[init]
+    defaultBranch = main
+
+[rerere]
+    enabled = true
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+
+[merge]
+    conflictstyle = zdiff3
+
+[diff]
+    colorMoved = default
+
+
