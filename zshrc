@@ -182,5 +182,8 @@ alias gp='git pull'
 alias gph='git push origin HEAD'
 alias gphf='git push -f origin HEAD'
 alias grb='git pull --rebase origin'
+alias gcllm='git diff --minimal --cached | \
+    llm -t gitcommit > $(git rev-parse --git-dir)/COMMIT_EDITMSG && \
+    git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG'
 
 alias python='python3'
