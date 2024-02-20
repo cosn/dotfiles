@@ -1,4 +1,5 @@
 /opt/homebrew/lib
+/opt/homebrew/lib/node_modules/eslint
 /opt/homebrew/lib/node_modules/duckdb
 /opt/homebrew/lib/node_modules/graphql
 /opt/homebrew/lib/node_modules/jscpd
