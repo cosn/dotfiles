@@ -19,12 +19,11 @@
       "src/typings"
     ]
   },
-  {
   "ts-node": {
-    "esm": true,
+    "esm": true
   },
   "include": [
-    "src/**/*.ts"
+    "src"
   ],
   "exclude": [
     "node_modules"
