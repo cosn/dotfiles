@@ -9,10 +9,10 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-
-    "outDir": "lib",
     "sourceMap": true,
     "declaration": true,
+
+    "outDir": "dist",
 
     "typeRoots": [
       "node_modules/@types",
@@ -20,7 +20,6 @@
     ]
   },
   "ts-node": {
-    "esm": true
   },
   "include": [
     "src"
