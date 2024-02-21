@@ -16,6 +16,7 @@ colima
 coreutils
 csvkit
 curl
+curlie
 datamash
 deno
 docker
