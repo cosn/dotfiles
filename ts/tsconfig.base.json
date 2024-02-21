@@ -2,11 +2,11 @@
   "compilerOptions": {
     "target": "esnext",
     "lib": "esnext",
-    
+
     "module": "nodenext",
     "moduleResolution": "bundler",
     "emitDeclarationOnly": true,
-    
+
     "esModuleInterop": true,
     "allowImportingTsExtensions": true,
     "allowArbitraryExtensions": true,
