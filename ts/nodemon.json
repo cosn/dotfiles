@@ -2,5 +2,5 @@
     "watch": ["src"],
     "ext": ".ts,.js",
     "ignore": [],
-    "exec": "pnpx ts-node ./src/index.ts"
+    "exec": "pnpx tsx ./src/index.ts"
   }
