@@ -1,20 +1,22 @@
 {
   "compilerOptions": {
     "target": "esnext",
+    "lib": "esnext",
+    
     "module": "nodenext",
-
     "moduleResolution": "bundler",
-    "esModuleInterop": true,
     "emitDeclarationOnly": true,
+    
+    "esModuleInterop": true,
     "allowImportingTsExtensions": true,
     "allowArbitraryExtensions": true,
-    "verbatimModuleSyntax": true,
 
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
     "sourceMap": true,
     "declaration": true,
 
