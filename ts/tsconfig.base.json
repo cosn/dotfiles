@@ -2,8 +2,13 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "nodenext",
-    "moduleResolution": "nodenext",
+
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
+    "emitDeclarationOnly": true,
+    "allowImportingTsExtensions": true,
+    "allowArbitraryExtensions": true,
+    "verbatimModuleSyntax": true,
 
     "strict": true,
     "noUncheckedIndexedAccess": true,
@@ -19,8 +24,6 @@
       "node_modules/@types",
       "src/typings"
     ]
-  },
-  "ts-node": {
   },
   "include": [
     "src"
