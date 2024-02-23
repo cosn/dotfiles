@@ -175,7 +175,9 @@ path=("$BUN_INSTALL/bin" $path)
 # golang
 path=('/usr/local/go/bin' $path)
 
-export PATH
+# pnpm
+export PNPM_HOME="/Users/cos/Library/pnpm"
+path=("$PNPM_HOME" $path)
 
 # aliases
 alias gp='git pull'
@@ -188,3 +190,4 @@ alias gcllm='git diff --minimal --cached | \
 
 alias python='python3'
 alias cat='bat'
+
