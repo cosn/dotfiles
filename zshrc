@@ -82,7 +82,6 @@ plugins=(
     compleat
     copyfile
     cp
-    dirhistory
     docker
     dotenv
     encode64
