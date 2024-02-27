@@ -100,7 +100,6 @@ plugins=(
     safe-paste
     themes
     urltools
-    vi-mode
     yarn
 )
 
@@ -157,6 +156,7 @@ elif [[ $OSTYPE == darwin* ]]; then
     export EDITOR='code'
     [ -s $HOME/.config/op/plugins.sh ] && source $HOME/.config/op/plugins.sh
     path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
+    eval "$(zoxide init --cmd cd zsh)"
 fi
 
 # bindkey
@@ -189,4 +189,3 @@ alias gcllm='git diff --minimal --cached | \
 
 alias python='python3'
 alias cat='bat'
-
