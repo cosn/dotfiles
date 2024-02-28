@@ -160,7 +160,6 @@ elif [[ $OSTYPE == darwin* ]]; then
 fi
 
 # bindkey
-
 bindkey "^K" forward-char
 bindkey "^J" backward-char
 bindkey "^B" backward-word

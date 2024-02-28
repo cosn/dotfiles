@@ -125,6 +125,7 @@ snappy
 sqlite
 sqlite-utils
 stern
+stow
 tcl-tk
 tfenv
 the_silver_searcher
