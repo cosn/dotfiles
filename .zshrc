@@ -154,10 +154,13 @@ if [[ $OSTYPE == linux* ]]; then
 elif [[ $OSTYPE == darwin* ]]; then
     VSCODE=code
     export EDITOR='code'
-    [ -s $HOME/.config/op/plugins.sh ] && source $HOME/.config/op/plugins.sh
     path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
     eval "$(zoxide init --cmd cd zsh)"
 fi
+
+# sources
+[ -s $HOME/.config/op/plugins.sh ] && source $HOME/.config/op/plugins.sh
+[ -s $HOME/.keys ] && source $HOME/.keys
 
 # bindkey
 bindkey "^K" forward-char
@@ -176,6 +179,9 @@ path=('/usr/local/go/bin' $path)
 # pnpm
 export PNPM_HOME="/Users/cos/Library/pnpm"
 path=("$PNPM_HOME" $path)
+
+# home assistant
+[ -s /opt/homebrew/bin/hass-cli ] && source <(_HASS_CLI_COMPLETE=zsh_source hass-cli)
 
 # aliases
 alias gp='git pull'
