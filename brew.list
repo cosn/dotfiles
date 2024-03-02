@@ -18,10 +18,7 @@ curl
 curlie
 datamash
 deno
-docker
-docker-buildx
 docker-completion
-docker-compose
 docutils
 dtc
 duckdb
