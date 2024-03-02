@@ -82,6 +82,7 @@ ncurses
 nethogs
 nettle
 ngrep
+nmap
 node
 npth
 ollama
@@ -124,6 +125,7 @@ sqlite-utils
 stern
 stow
 tcl-tk
+telnet
 tfenv
 the_silver_searcher
 typescript
