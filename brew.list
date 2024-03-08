@@ -143,4 +143,6 @@ zstd
 1password-cli
 iterm2
 yubico-yubikey-manager
+zsh-autosuggestions
+zsh-syntax-highlighting
 zoxide
