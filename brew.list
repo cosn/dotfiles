@@ -10,6 +10,7 @@ brotli
 c-ares
 ca-certificates
 capstone
+certifi
 cffi
 cog
 colima
@@ -57,6 +58,7 @@ libgit2@1.6
 libgpg-error
 libidn2
 libksba
+liblinear
 libnghttp2
 libpng
 libslirp
@@ -73,6 +75,7 @@ lima
 llm
 llvm
 llvm@16
+lua
 lz4
 lzo
 m4
@@ -138,11 +141,11 @@ xz
 yarn
 ykman
 z3
+zoxide
 zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
 zstd
 1password-cli
 iterm2
 yubico-yubikey-manager
-zsh-autosuggestions
-zsh-syntax-highlighting
-zoxide
