@@ -99,6 +99,7 @@ plugins=(
     rsync
     safe-paste
     themes
+    tmux
     urltools
     yarn
 )
