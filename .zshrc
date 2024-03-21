@@ -185,6 +185,9 @@ path=("$PNPM_HOME" $path)
 # home assistant
 [ -s /opt/homebrew/bin/hass-cli ] && source <(_HASS_CLI_COMPLETE=zsh_source hass-cli)
 
+# Fuzzy completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # aliases
 alias gp='git pull'
 alias gph='git push origin HEAD'
@@ -196,3 +199,4 @@ alias gcllm='git diff --minimal --cached | \
 
 alias python='python3'
 alias cat='bat'
+
