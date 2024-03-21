@@ -50,6 +50,7 @@ jq
 keyring
 krb5
 kubernetes-cli
+lazygit
 libassuan
 libevent
 libgcrypt
