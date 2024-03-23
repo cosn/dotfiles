@@ -171,12 +171,6 @@ fi
 [ -s $HOME/.config/op/plugins.sh ] && source $HOME/.config/op/plugins.sh
 [ -s $HOME/.keys ] && source $HOME/.keys
 
-# bindkey
-bindkey "^K" forward-char
-bindkey "^J" backward-char
-bindkey "^B" backward-word
-bindkey "^F" forward-word
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
