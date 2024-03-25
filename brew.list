@@ -25,6 +25,7 @@ docker-completion
 docutils
 dtc
 duckdb
+entr
 fzf
 gdbm
 gettext
