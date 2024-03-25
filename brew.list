@@ -154,5 +154,6 @@ zsh-autosuggestions
 zsh-syntax-highlighting
 zstd
 1password-cli
+hiddenbar
 iterm2
 yubico-yubikey-manager
