@@ -1,4 +1,3 @@
-1password-cli
 act
 asitop
 autoconf
@@ -16,6 +15,7 @@ cffi
 cog
 colima
 coreutils
+cryptography
 csvkit
 curl
 curlie
@@ -45,7 +45,6 @@ httpie
 hub
 icu4c
 iftop
-iterm2
 jansson
 jpeg-turbo
 jq
@@ -137,18 +136,22 @@ telnet
 tfenv
 the_silver_searcher
 tmux
+tree
 typescript
 unbound
 unixodbc
+utf8proc
 vde
 wget
 xz
 yarn
 ykman
-yubico-yubikey-manager
 z3
 zoxide
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
 zstd
+1password-cli
+iterm2
+yubico-yubikey-manager
