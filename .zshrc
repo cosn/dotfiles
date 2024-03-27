@@ -126,6 +126,7 @@ elif [[ $OSTYPE == darwin* ]]; then
         macos
         vscode
 )
+    export HOMEBREW_NO_ANALYTICS=1
 fi
 
 source $ZSH/oh-my-zsh.sh
