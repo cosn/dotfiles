@@ -111,10 +111,12 @@ python-certifi
 python-click
 python-cryptography
 python-dateutil
+python-packaging
 python-pluggy
 python-psutil
 python-pytz
 python-setuptools
+python-setuptools-scm
 python-tabulate
 python-typing-extensions
 python@3.11
