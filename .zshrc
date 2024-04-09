@@ -192,7 +192,7 @@ path=("$PNPM_HOME" $path)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Fuzzy completion
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"
 
 # aliases
 alias gp='git pull'
