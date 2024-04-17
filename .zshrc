@@ -160,7 +160,6 @@ source $ZSH/oh-my-zsh.sh
 if [[ $OSTYPE == linux* ]]; then
     export EDITOR='vim'
 elif [[ $OSTYPE == darwin* ]]; then
-    VSCODE=code
     export EDITOR='code'
     path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
     eval "$(zoxide init --cmd cd zsh)"
@@ -202,7 +201,6 @@ alias grb='git pull --rebase origin'
 alias gcllm='git diff --minimal --cached | \
     llm -t gitcommit > $(git rev-parse --git-dir)/COMMIT_EDITMSG && \
     git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG'
-
 alias python='python3'
 alias cat='bat'
 
