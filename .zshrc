@@ -129,7 +129,7 @@ elif [[ $OSTYPE == darwin* ]]; then
     export HOMEBREW_NO_ANALYTICS=1
 fi
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
@@ -158,22 +158,24 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [[ $OSTYPE == linux* ]]; then
-    export EDITOR='vim'
+	export EDITOR='vim'
 elif [[ $OSTYPE == darwin* ]]; then
-    export EDITOR='code'
-    path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
-    eval "$(zoxide init --cmd cd zsh)"
+	path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
+	export EDITOR='code'
+	export BAT_THEME='TwoDark'
+	eval "$(zoxide init --cmd cd zsh)"
+	eval "$(thefuck --alias ffs)"
 fi
 
 # sources
-[ -s $(brew --prefix)/share/zsh-syntax-highlighting ] && source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
-[ -s $(brew --prefix)/share/zsh-autosuggestions ] && source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -s $HOME/.config/op/plugins.sh ] && source $HOME/.config/op/plugins.sh
-[ -s $HOME/.keys ] && source $HOME/.keys
+[[ -s "$(brew --prefix)/share/zsh-syntax-highlighting" ]] && source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[[ -s "$(brew --prefix)/share/zsh-autosuggestions" ]] && source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[[ -s "$HOME/.config/op/plugins.sh" ]] && source "$HOME/.config/op/plugins.sh"
+[[ -s "$HOME/.keys" ]] && source "$HOME/.keys"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
-[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+[[ -s "$BUN_INSTALL/_bun" ]] && source "$BUN_INSTALL/_bun"
 path=("$BUN_INSTALL/bin" $path)
 
 # golang
@@ -184,14 +186,42 @@ export PNPM_HOME="/Users/cos/Library/pnpm"
 path=("$PNPM_HOME" $path)
 
 # home assistant
-[ -s $(brew --prefix)/bin/hass-cli ] && source <(_HASS_CLI_COMPLETE=zsh_source hass-cli)
+[[ -s "$(brew --prefix)/bin/hass-cli" ]] && source <(_HASS_CLI_COMPLETE=zsh_source hass-cli)
 
 # p10k
-[ -s $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme ] && source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -s "$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" ]] && source "$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme"
+[[ -s "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
 
-# Fuzzy completion
-eval "$(fzf --zsh)"
+# fuzzy
+if [[ -s "$HOME/.fzf-git/fzf-git.sh" ]]; then
+  eval "$(fzf --zsh)"
+  source $HOME/.fzf-git/fzf-git.sh
+
+  export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+  _fzf_compgen_path() {
+    fd --hidden --exclude .git . "$1"
+  }
+
+  # Use fd to generate the list for directory completion
+  _fzf_compgen_dir() {
+    fd --type=d --hidden --exclude .git . "$1"
+  }
+
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
+  esac
+}
+
+fi
 
 # aliases
 alias gp='git pull'
@@ -203,4 +233,3 @@ alias gcllm='git diff --minimal --cached | \
     git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG'
 alias python='python3'
 alias cat='bat'
-
