@@ -26,6 +26,7 @@ docutils
 dtc
 duckdb
 entr
+fd
 fzf
 gdbm
 gettext
@@ -138,6 +139,8 @@ tcl-tk
 telnet
 tfenv
 the_silver_searcher
+thefuck
+tlrc
 tmux
 tree
 typescript
