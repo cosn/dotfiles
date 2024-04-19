@@ -193,38 +193,35 @@ path=("$PNPM_HOME" $path)
 [[ -s "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
 
 # fuzzy
-if [[ -s "$HOME/.fzf-git/fzf-git.sh" ]]; then
-  eval "$(fzf --zsh)"
-  [[ -s "$HOME/.fzf-git/fzf-git.sh" ]] && source $HOME/.fzf-git/fzf-git.sh
+eval "$(fzf --zsh)"
+[[ -s "$HOME/.fzf-git/fzf-git.sh" ]] && source $HOME/.fzf-git/fzf-git.sh
 
-  export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
-  export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --style=numbers --line-range :500 {}'"
-  export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --style=numbers --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
-  _fzf_compgen_path() {
-    fd --hidden --exclude .git . "$1"
-  }
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
 
-  # Use fd to generate the list for directory completion
-  _fzf_compgen_dir() {
-    fd --type=d --hidden --exclude .git . "$1"
-  }
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
 
-  _fzf_comprun() {
-    local command=$1
-    shift
+_fzf_comprun() {
+  local command=$1
+  shift
 
-    case "$command" in
-      cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
-      export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
-      ssh)          fzf --preview 'dig {}'                   "$@" ;;
-      *)            fzf --preview "bat -n --color=always --style=numbers --line-range :500 {}" "$@" ;;
-    esac
-  }
-
-fi
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "bat -n --color=always --style=numbers --line-range :500 {}" "$@" ;;
+  esac
+}
 
 # aliases
 alias gp='git pull'
