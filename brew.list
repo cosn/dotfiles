@@ -26,6 +26,7 @@ docutils
 dtc
 duckdb
 entr
+eza
 fd
 fzf
 gdbm
