@@ -195,7 +195,7 @@ path=("$PNPM_HOME" $path)
 # fuzzy
 if [[ -s "$HOME/.fzf-git/fzf-git.sh" ]]; then
   eval "$(fzf --zsh)"
-  source $HOME/.fzf-git/fzf-git.sh
+  [[ -s "$HOME/.fzf-git/fzf-git.sh" ]] && source $HOME/.fzf-git/fzf-git.sh
 
   export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
