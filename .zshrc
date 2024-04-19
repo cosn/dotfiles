@@ -215,9 +215,10 @@ _fzf_comprun() {
   shift
 
   case "$command" in
+    cd)           fzf --preview 'eza --tree --color=auto {} | head -200' "$@" ;;
     export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
     ssh)          fzf --preview 'dig {}'                   "$@" ;;
-    *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
+    *)            fzf --preview "bat -n --color=always --style=numbers --line-range :500 {}" "$@" ;;
   esac
 }
 
