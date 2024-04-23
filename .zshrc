@@ -161,7 +161,7 @@ if [[ $OSTYPE == linux* ]]; then
 	export EDITOR='vim'
 elif [[ $OSTYPE == darwin* ]]; then
 	path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
-	export EDITOR='code'
+	export EDITOR='nvim'
 	export BAT_THEME='TwoDark'
 	eval "$(zoxide init --cmd cd zsh)"
 	eval "$(thefuck --alias ffs)"
