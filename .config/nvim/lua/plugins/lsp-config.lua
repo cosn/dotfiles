@@ -6,6 +6,14 @@ return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     { 'j-hui/fidget.nvim', opts = {} },
     { 'folke/neodev.nvim', opts = {} },
+    {
+      "SmiteshP/nvim-navbuddy",
+      dependencies = {
+          "SmiteshP/nvim-navic",
+          "MunifTanjim/nui.nvim"
+      },
+      opts = { lsp = { auto_attach = true } }
+    },
   },
   config = function()
     -- Brief aside: **What is LSP?**
