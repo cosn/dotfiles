@@ -28,7 +28,7 @@ return {
         go = { "goimports", "gofmt" },
         lua = { "stylua" },
         javascript = { "prettierd", "prettier" },
-        ["_"] = { "trim_whitespace"  },
+        ["*"] = { "trim_whitespace"  },
       },
     },
   },
