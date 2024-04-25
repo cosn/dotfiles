@@ -10,7 +10,6 @@ return {
           return "make install_jsregexp"
         end)(),
         dependencies = {
-          --    https://github.com/rafamadriz/friendly-snippets
           {
             "rafamadriz/friendly-snippets",
             config = function()
