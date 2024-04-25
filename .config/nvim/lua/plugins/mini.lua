@@ -6,7 +6,7 @@ return {
     -- Examples: - va)  - [V]isually select [A]round [)]paren
     --  - yinq - [Y]ank [I]nside [N]ext [']quote
     --  - ci'  - [C]hange [I]nside [']quote
-    require("mini.ai").setup({ n_lines = 500 })
+    require("mini.ai").setup { n_lines = 500 }
 
     require('mini.basics').setup()
 
@@ -16,7 +16,7 @@ return {
     require('mini.bufremove').setup()
 
     local miniclue = require('mini.clue')
-    miniclue.setup({
+    miniclue.setup {
       triggers = {
         -- Leader triggers
         { mode = 'n', keys = '<Leader>' },
@@ -57,7 +57,7 @@ return {
         miniclue.gen_clues.windows(),
         miniclue.gen_clues.z(),
       },
-    })
+    }
 
     require('mini.fuzzy').setup()
 

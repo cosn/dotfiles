@@ -1,6 +1,7 @@
 return {
   {
     'mfussenegger/nvim-dap',
+    event = 'VeryLazy',
     dependencies = {
       'rcarriga/nvim-dap-ui',
       'nvim-neotest/nvim-nio',
@@ -61,9 +62,9 @@ return {
       dap.listeners.before.event_terminated['dapui_config'] = dapui.close
       dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
-      require("dap-vscode-js").setup({
+      require("dap-vscode-js").setup {
         adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' },
-      })
+      }
 
       for _, language in ipairs({ "typescript", "javascript" }) do
         dap.configurations[language] = {
@@ -90,7 +91,7 @@ return {
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("trouble").setup({})
+      require("trouble").setup {}
       vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
       vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
       vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)

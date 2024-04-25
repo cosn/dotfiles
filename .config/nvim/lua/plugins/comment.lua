@@ -1,6 +1,7 @@
 return {
   {
     "numToStr/Comment.nvim",
+    event = "VeryLazy",
     opts = {
       toggler = {
         line = '<Backspace>',
@@ -12,7 +13,7 @@ return {
   },
   {
     "folke/todo-comments.nvim",
-    event = "VimEnter",
+    event = "VeryLazy",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = { signs = false },
   },

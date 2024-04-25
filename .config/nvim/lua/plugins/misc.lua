@@ -1,8 +1,8 @@
 return {
   {
     'folke/which-key.nvim',
-    event = 'VimEnter', -- Sets the loading event to 'VimEnter'
-    config = function() -- This is the function that runs, AFTER loading
+    event = 'VimEnter',
+    config = function()
       require('which-key').setup()
 
       -- Document existing key chains
@@ -32,11 +32,18 @@ return {
     config = function()
       vim.opt.termguicolors = true
       local bufferline = require('bufferline')
-      bufferline.setup({})
+      bufferline.setup {
+        options = {
+          separator_style = "slant",
+          show_buffer_close_icons = false,
+          show_close_icon = false
+        }
+      }
     end,
   },
   {
     "iamcco/markdown-preview.nvim",
+    event = "VeryLazy",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,

@@ -1,7 +1,6 @@
 return {
   {
     "stevearc/conform.nvim",
-    lazy = false,
     keys = {
       {
         "<leader>f",
@@ -47,7 +46,7 @@ return {
     event = "InsertEnter",
     dependencies = { "hrsh7th/nvim-cmp" },
     config = function()
-      require("nvim-autopairs").setup({})
+      require("nvim-autopairs").setup {}
       -- If you want to automatically add `(` after selecting a function or method
       local cmp_autopairs = require("nvim-autopairs.completion.cmp")
       local cmp = require("cmp")
@@ -56,12 +55,13 @@ return {
   },
   {
     "kylechui/nvim-surround",
-    event = "VeryLazy",
+    event = "InsertEnter",
     config = function()
       require("nvim-surround").setup()
     end,
   },
   {
     'tpope/vim-sleuth',
+    event = "VeryLazy",
   },
 }

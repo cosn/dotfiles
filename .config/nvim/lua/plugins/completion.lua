@@ -3,7 +3,6 @@ return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
       {
         "l3mon4d3/luasnip",
         build = (function()
@@ -26,9 +25,9 @@ return {
       -- See `:help cmp`
       local cmp = require("cmp")
       local luasnip = require("luasnip")
-      luasnip.config.setup({})
+      luasnip.config.setup {}
 
-      cmp.setup({
+      cmp.setup{
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
@@ -38,7 +37,7 @@ return {
 
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
-        mapping = cmp.mapping.preset.insert({
+        mapping = cmp.mapping.preset.insert {
           ["<C-n>"] = cmp.mapping.select_next_item(),
           --['<Tab>'] = cmp.mapping.select_next_item(),
           ["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -70,16 +69,17 @@ return {
 
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
-        }),
+        },
         sources = {
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "path" },
         },
-      })
+      }
     end,
   },
   {
     "github/copilot.vim",
+    event = "InsertEnter",
   },
 }

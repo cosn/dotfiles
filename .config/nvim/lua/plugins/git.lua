@@ -1,6 +1,7 @@
 return {
   {
     "tpope/vim-fugitive",
+    event = "VeryLazy",
   },
   {
     'lewis6991/gitsigns.nvim',
@@ -63,6 +64,7 @@ return {
   },
   {
     "kdheepak/lazygit.nvim",
+    event = "VeryLazy",
     cmd = {
       "LazyGit",
       "LazyGitConfig",
