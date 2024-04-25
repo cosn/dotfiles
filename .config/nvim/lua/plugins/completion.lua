@@ -1,7 +1,7 @@
 return {
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    event = "VeryLazy",
     dependencies = {
       {
         "l3mon4d3/luasnip",
@@ -80,6 +80,6 @@ return {
   },
   {
     "github/copilot.vim",
-    event = "InsertEnter",
+    event = "VeryLazy",
   },
 }

@@ -1,7 +1,6 @@
 return {
   {
     'mfussenegger/nvim-dap',
-    event = 'VeryLazy',
     dependencies = {
       'rcarriga/nvim-dap-ui',
       'nvim-neotest/nvim-nio',
@@ -97,6 +96,17 @@ return {
       vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
       vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
       vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
+    end,
+  },
+  {
+    'vim-test/vim-test',
+    event = "VeryLazy",
+    config = function()
+      vim.keymap.set("n", "<leader>t", ":TestNearest<CR>")
+      vim.keymap.set("n", "<leader>T", ":TestFile<CR>")
+      vim.keymap.set("n", "<leader>a", ":TestSuite<CR>")
+      vim.keymap.set("n", "<leader>l", ":TestLast<CR>")
+      vim.keymap.set("n", "<leader>g", ":TestVisit<CR>")
     end,
   },
 }

@@ -1,6 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
+    lazy = false,
     keys = {
       {
         "<leader>f",
@@ -43,7 +44,7 @@ return {
   },
   {
     "windwp/nvim-autopairs",
-    event = "InsertEnter",
+    event = "VeryLazy",
     dependencies = { "hrsh7th/nvim-cmp" },
     config = function()
       require("nvim-autopairs").setup {}
@@ -55,7 +56,7 @@ return {
   },
   {
     "kylechui/nvim-surround",
-    event = "InsertEnter",
+    event = "VeryLazy",
     config = function()
       require("nvim-surround").setup()
     end,
