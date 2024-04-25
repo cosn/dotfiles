@@ -34,3 +34,5 @@ require("lazy").setup("plugins", {
     },
   },
 })
+
+vim.notify = require("notify")
