@@ -1,7 +1,14 @@
 return {
   {
     "numToStr/Comment.nvim",
-    opts = {},
+    opts = {
+      toggler = {
+        line = '<Backspace>',
+      },
+       opleader = {
+        line = '<Backspace>',
+      },
+    },
   },
   {
     "folke/todo-comments.nvim",
