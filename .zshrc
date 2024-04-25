@@ -234,3 +234,4 @@ alias gcllm='git diff --minimal --cached | \
 alias python='python3'
 alias cat='bat'
 alias ls='eza --icons=auto'
+alias lg='lazygit'
