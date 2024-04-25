@@ -61,4 +61,7 @@ return {
       require("nvim-surround").setup()
     end,
   },
+  {
+    'tpope/vim-sleuth',
+  },
 }
