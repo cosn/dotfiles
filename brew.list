@@ -84,6 +84,7 @@ llvm
 llvm@16
 lua
 luajit
+luarocks
 luv
 lz4
 lzo
