@@ -30,7 +30,6 @@ return {
       { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
     },
     config = function()
-      vim.opt.termguicolors = true
       local bufferline = require('bufferline')
       bufferline.setup {
         options = {
