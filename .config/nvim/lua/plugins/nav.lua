@@ -41,4 +41,12 @@ return {
       { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    keys = {
+      { "-", mode = "n", "<cmd>Oil<cr>", desc = "Open parent directory (oil)" },
+    }
+  }
 }
