@@ -43,7 +43,9 @@ return {
   },
   {
     'stevearc/oil.nvim',
-    opts = {},
+    opts = {
+      skip_confirm_for_simple_edits = true,
+    },
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
       { "-", mode = "n", "<cmd>Oil<cr>", desc = "Open parent directory (oil)" },
