@@ -231,7 +231,9 @@ alias grb='git pull --rebase origin'
 alias gcllm='git diff --minimal --cached | \
     llm -t gitcommit > $(git rev-parse --git-dir)/COMMIT_EDITMSG && \
     git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG'
-alias python='python3'
+
 alias cat='bat'
-alias ls='eza --icons=auto'
+alias cls = 'clear'
 alias lg='lazygit'
+alias ls='eza --icons=auto'
+alias python='python3'
