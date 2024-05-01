@@ -28,16 +28,17 @@ return {
         go = { "goimports", "gofmt" },
         graphql = { "prettierd", "prettier" },
         html = { "prettierd", "prettier" },
-        javascript = { "prettierd", "prettier" },
+        -- javascript = { "prettierd", "prettier" },
+        javascript = { "prettier" },
         json = { "prettierd", "prettier" },
         lua = { "stylua" },
         markdown = { "prettierd", "prettier" },
         md = { "prettierd", "prettier" },
         scss = { "prettierd", "prettier" },
         txt = { "prettierd", "prettier" },
-        typescript = { "prettierd", "prettier"  },
+        typescript = { "prettierd", "prettier" },
         yaml = { "prettierd", "prettier" },
-        ["*"] = { "trim_whitespace"  },
+        ["*"] = { "trim_whitespace" },
       },
     },
   },
@@ -46,7 +47,7 @@ return {
     event = "VeryLazy",
     dependencies = { "hrsh7th/nvim-cmp" },
     config = function()
-      require("nvim-autopairs").setup {}
+      require("nvim-autopairs").setup({})
       -- If you want to automatically add `(` after selecting a function or method
       local cmp_autopairs = require("nvim-autopairs.completion.cmp")
       local cmp = require("cmp")
@@ -61,7 +62,7 @@ return {
     end,
   },
   {
-    'tpope/vim-sleuth',
+    "tpope/vim-sleuth",
     event = "VeryLazy",
   },
 }

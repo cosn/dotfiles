@@ -233,7 +233,7 @@ alias gcllm='git diff --minimal --cached | \
     git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG'
 
 alias cat='bat'
-alias cls = 'clear'
+alias cls='clear'
 alias lg='lazygit'
 alias ls='eza --icons=auto'
 alias python='python3'
