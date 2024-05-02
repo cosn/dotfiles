@@ -223,6 +223,8 @@ _fzf_comprun() {
   esac
 }
 
+bindkey '^I' autosuggest-accept
+
 # aliases
 alias gp='git pull'
 alias gph='git push origin HEAD'
