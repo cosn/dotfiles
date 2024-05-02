@@ -223,7 +223,8 @@ _fzf_comprun() {
   esac
 }
 
-bindkey '^I' autosuggest-accept
+bindkey '^Y' autosuggest-accept
+bindkey '^[Y' yank 
 
 # aliases
 alias gp='git pull'
