@@ -19,3 +19,4 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 vim.keymap.set('n', '<leader>n', '<cmd>enew<CR>', { desc = 'New file' })
+vim.keymap.set('n', '<leader>w', '<cmd>set linebreak wrap<CR>', { desc = 'Toggle [W]rap' })
