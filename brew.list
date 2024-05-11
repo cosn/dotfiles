@@ -26,6 +26,7 @@ docutils
 dtc
 duckdb
 entr
+eslint
 eza
 fd
 fzf
@@ -89,6 +90,7 @@ luv
 lz4
 lzo
 m4
+markdownlint-cli
 mpdecimal
 msgpack
 mtr
