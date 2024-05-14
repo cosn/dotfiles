@@ -135,6 +135,7 @@ python@3.12
 pyyaml
 qemu
 readline
+redis
 ripgrep
 rtmpdump
 rust
