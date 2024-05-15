@@ -83,4 +83,13 @@ return {
       { "<C-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      tsserver_plugins = {
+        "@styled/typescript-styled-plugin",
+      },
+    },
+  },
 }
