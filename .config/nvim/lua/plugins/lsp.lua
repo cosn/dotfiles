@@ -187,9 +187,9 @@ return {
   },
   {
     "rmagatti/goto-preview",
-    enabled = false,
     opts = {
       default_mappings = true,
+      stack_floating_preview_windows = false,
     },
   },
 }
