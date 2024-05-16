@@ -2,14 +2,7 @@ return {
   {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
-    opts = {
-      toggler = {
-        line = '<Backspace>',
-      },
-       opleader = {
-        line = '<Backspace>',
-      },
-    },
+    opts = {},
   },
   {
     "folke/todo-comments.nvim",

@@ -6,7 +6,13 @@ return {
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       { "j-hui/fidget.nvim", opts = {} },
-      { "folke/neodev.nvim", opts = {} },
+      {
+        "folke/neodev.nvim",
+        dependencies = {
+          "rcarriga/nvim-dap-ui",
+        },
+        opts = { library = { plugins = { "nvim-dap-ui" }, types = true } },
+      },
       {
         "SmiteshP/nvim-navbuddy",
         dependencies = {
@@ -161,7 +167,6 @@ return {
         "stylua",
         "shfmt",
         "tailwindcss-language-server",
-        'typescript-language-server',
         "css-lsp",
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
@@ -179,5 +184,12 @@ return {
         },
       })
     end,
+  },
+  {
+    "rmagatti/goto-preview",
+    enabled = false,
+    opts = {
+      default_mappings = true,
+    },
   },
 }
