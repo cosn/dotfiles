@@ -80,53 +80,54 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    ag
-    aliases
-    asdf
-    bazel
-    colored-man-pages
-    command-not-found
-    compleat
-    copyfile
-    cp
-    docker
-    dotenv
-    encode64
-    extract
-    fastfile
-    genpass
-    git
-    github
-    golang
-    history
-    jsontools
-    node
-    per-directory-history
-    python
-    rsync
-    safe-paste
-    themes
-    urltools
-    yarn
+  ag
+  aliases
+  asdf
+  bazel
+  colored-man-pages
+  command-not-found
+  compleat
+  copyfile
+  cp
+  docker
+  dotenv
+  encode64
+  extract
+  fastfile
+  genpass
+  git
+  github
+  golang
+  history
+  jsontools
+  node
+  per-directory-history
+  python
+  rsync
+  safe-paste
+  themes
+  urltools
+  yarn
 )
 
 if [[ $OSTYPE == linux* ]]; then
-    plugins+=(
-        aws
-        mosh
-        postgres
-        screen
-        ubuntu
+  plugins+=(
+    aws
+    mosh
+    postgres
+    screen
+    ubuntu
 )
 elif [[ $OSTYPE == darwin* ]]; then
-    plugins+=(
-        1password
-        brew
-        iterm2
-        macos
-        vscode
+  plugins+=(
+    1password
+    brew
+    iterm2
+    macos
+    vscode
 )
-    export HOMEBREW_NO_ANALYTICS=1
+  export HOMEBREW_NO_ANALYTICS=1
+  export HOMEBREW_NO_AUTO_UPDATE=1
 fi
 
 source "$ZSH/oh-my-zsh.sh"
@@ -224,7 +225,7 @@ _fzf_comprun() {
 }
 
 bindkey '^Y' autosuggest-accept
-bindkey '^[Y' yank 
+bindkey '^[Y' yank
 
 # aliases
 alias gp='git pull'
