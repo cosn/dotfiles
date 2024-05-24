@@ -164,10 +164,12 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        "stylua",
-        "shfmt",
-        "tailwindcss-language-server",
         "css-lsp",
+        "js-debug-adapter",
+        "prettier",
+        "shfmt",
+        "stylua",
+        "tailwindcss-language-server",
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
