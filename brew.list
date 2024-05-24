@@ -55,6 +55,7 @@ jq
 keyring
 krb5
 kubernetes-cli
+lazydocker
 lazygit
 libassuan
 libevent
@@ -71,7 +72,6 @@ libslirp
 libssh
 libssh2
 libtasn1
-libtermkey
 libtiff
 libtool
 libunistring
@@ -83,6 +83,7 @@ lima
 llm
 llvm
 llvm@16
+lpeg
 lua
 luajit
 luarocks
@@ -122,12 +123,10 @@ python-certifi
 python-click
 python-cryptography
 python-dateutil
-python-packaging
 python-pluggy
 python-psutil
 python-pytz
 python-setuptools
-python-setuptools-scm
 python-tabulate
 python-typing-extensions
 python@3.11
