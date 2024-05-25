@@ -9,8 +9,8 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', ':m .+1<CR>==')
-vim.keymap.set('n', '<down>', ':m .-2<CR>==')
+vim.keymap.set('n', '<up>', ':m .-2<CR>==')
+vim.keymap.set('n', '<down>', ':m .+1<CR>==')
 
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
