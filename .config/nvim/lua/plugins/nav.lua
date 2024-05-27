@@ -1,23 +1,23 @@
 return {
   {
-    'nvim-neo-tree/neo-tree.nvim',
-    event = 'VeryLazy',
-    version = '*',
+    "nvim-neo-tree/neo-tree.nvim",
+    event = "VeryLazy",
+    version = "*",
     dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons',
-      'MunifTanjim/nui.nvim',
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
       "3rd/image.nvim",
     },
-    cmd = 'Neotree',
+    cmd = "Neotree",
     keys = {
-      { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
+      { "\\", ":Neotree reveal<CR>", { desc = "NeoTree reveal" } },
     },
     opts = {
       filesystem = {
         window = {
           mappings = {
-            ['\\'] = 'close_window',
+            ["\\"] = "close_window",
           },
         },
       },
@@ -42,7 +42,7 @@ return {
     },
   },
   {
-    'stevearc/oil.nvim',
+    "stevearc/oil.nvim",
     opts = {
       skip_confirm_for_simple_edits = true,
       view_options = {
@@ -55,23 +55,28 @@ return {
     },
   },
   {
-    'akinsho/bufferline.nvim',
+    "akinsho/bufferline.nvim",
     event = "VeryLazy",
-    dependencies = 'nvim-tree/nvim-web-devicons',
+    dependencies = "nvim-tree/nvim-web-devicons",
     keys = {
       { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
       { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
     },
     config = function()
-      local bufferline = require('bufferline')
-      bufferline.setup {
+      local bufferline = require("bufferline")
+      bufferline.setup({
         options = {
           mode = "tabs",
           separator_style = "slant",
           show_buffer_close_icons = false,
-          show_close_icon = false
-        }
-      }
+          show_close_icon = false,
+        },
+      })
     end,
+  },
+  {
+    "chentoast/marks.nvim",
+    event = "VeryLazy",
+    opts = {},
   },
 }
