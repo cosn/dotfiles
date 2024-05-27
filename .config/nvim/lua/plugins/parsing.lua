@@ -45,7 +45,6 @@ return {
         "yaml",
       },
       auto_install = true,
-      autotag = { enable = true },
       highlight = {
         enable = true,
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
