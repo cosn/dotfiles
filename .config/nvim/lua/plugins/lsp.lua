@@ -154,7 +154,6 @@ return {
         rust_analyzer = {},
         sqlls = {},
         tailwindcss = {},
-        tsserver = {},
       }
 
       --  You can press `g?` for help in this menu.
