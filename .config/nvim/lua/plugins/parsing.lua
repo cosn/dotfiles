@@ -127,10 +127,19 @@ return {
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {
-      tsserver_plugins = {
-        "@styled/typescript-styled-plugin",
-      },
-    },
+    config = function()
+      require("typescript-tools").setup({
+        settings = {
+          tsserver_plugins = {
+            "@styled/typescript-styled-plugin",
+          },
+        },
+      })
+
+      vim.keymap.set("n", "<leader>oi", ":TSToolsOrganizeImports<CR>", { desc = "Typescript Organize Imports" })
+      vim.keymap.set("n", "<leader>mi", ":TSToolsAddMissingImport<CR>", { desc = "Typescript Add Missing Imports" })
+      vim.keymap.set("n", "<leader>ui", ":TSToolsRemoveUnusedImport<CR>", { desc = "Typescript Remove Unused Imports" })
+      vim.keymap.set("n", "<leader>fa", ":TSToolsFixAl<CR>", { desc = "Typescript Fix All" })
+    end,
   },
 }
