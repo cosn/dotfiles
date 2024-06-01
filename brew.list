@@ -32,6 +32,7 @@ fd
 fzf
 gdbm
 gettext
+gh
 git
 git-delta
 git-lfs
