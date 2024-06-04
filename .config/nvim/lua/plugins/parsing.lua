@@ -136,9 +136,14 @@ return {
         },
       })
 
-      vim.keymap.set("n", "<leader>oi", ":TSToolsAddMissingImport<CR> :TSToolsOrganizeImports<CR>", { desc = "Typescript Add and Organize Imports" })
+      vim.keymap.set(
+        "n",
+        "<leader>oi",
+        ":TSToolsAddMissingImport<CR> :TSToolsOrganizeImports<CR>",
+        { desc = "Typescript Add and Organize Imports" }
+      )
       vim.keymap.set("n", "<leader>ui", ":TSToolsRemoveUnusedImport<CR>", { desc = "Typescript Remove Unused Imports" })
-      vim.keymap.set("n", "<leader>fa", ":TSToolsFixAl<CR>", { desc = "Typescript Fix All" })
+      vim.keymap.set("n", "<leader>tfa", ":TSToolsFixAl<CR>", { desc = "Typescript Fix All" })
     end,
   },
 }
