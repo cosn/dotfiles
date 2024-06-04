@@ -117,6 +117,7 @@ pixman
 pkg-config
 plow
 pnpm
+poetry
 powerlevel10k
 pycparser
 pygments
