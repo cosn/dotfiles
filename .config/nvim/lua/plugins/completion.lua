@@ -109,11 +109,9 @@ return {
     "supermaven-inc/supermaven-nvim",
     enabled = true,
     event = "VeryLazy",
-    config = function()
-      require("supermaven-nvim").setup({
-        disable_inline_completion = true,
-        disable_keymaps = true,
-      })
-    end,
+    opts = {
+      disable_inline_completion = true,
+      disable_keymaps = true,
+    },
   },
 }
