@@ -115,6 +115,7 @@ pcre2
 pinentry
 pixman
 pkg-config
+plow
 pnpm
 powerlevel10k
 pycparser
