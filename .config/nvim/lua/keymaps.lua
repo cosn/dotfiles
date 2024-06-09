@@ -16,7 +16,7 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
-vim.keymap.set("n", "<leader>n", "<cmd>enew<cr>", { desc = "New file" })
+vim.keymap.set("n", "<C-n>", "<cmd>enew<cr>", { desc = "New file" })
 vim.keymap.set("n", "<C-t>", "<cmd>tabnew<cr>", { desc = "New tab" })
-vim.keymap.set("n", "<leader>w", "<cmd>set linebreak wrap<cr>", { desc = "Toggle [W]rap" })
+vim.keymap.set("n", "<leader>wr", "<cmd>set linebreak wrap<cr>", { desc = "Toggle [W]rap" })
 
