@@ -11,7 +11,7 @@ return {
     },
     cmd = "Neotree",
     keys = {
-      { "\\", ":Neotree reveal<CR>", { desc = "NeoTree reveal" } },
+      { "\\", ":Neotree reveal<cr>", { desc = "NeoTree reveal" } },
     },
     opts = {
       filesystem = {
@@ -59,8 +59,8 @@ return {
     event = "VeryLazy",
     dependencies = "nvim-tree/nvim-web-devicons",
     keys = {
-      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
-      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
+      { "<Tab>", "<Cmd>BufferLineCycleNext<cr>", desc = "Next tab" },
+      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<cr>", desc = "Prev tab" },
     },
     opts = {
         options = {

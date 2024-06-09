@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>")
 
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
@@ -7,8 +7,8 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
-vim.keymap.set({ "n", "v" }, "<up>", ":m .-2<CR>==")
-vim.keymap.set({ "n", "v" }, "<down>", ":m .+1<CR>==")
+vim.keymap.set({ "n", "v" }, "<up>", ":m .-2<cr>==")
+vim.keymap.set({ "n", "v" }, "<down>", ":m .+1<cr>==")
 
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
@@ -16,7 +16,7 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
-vim.keymap.set("n", "<leader>n", "<cmd>enew<CR>", { desc = "New file" })
-vim.keymap.set("n", "<C-t>", "<cmd>tabnew<CR>", { desc = "New tab" })
-vim.keymap.set("n", "<leader>w", "<cmd>set linebreak wrap<CR>", { desc = "Toggle [W]rap" })
+vim.keymap.set("n", "<leader>n", "<cmd>enew<cr>", { desc = "New file" })
+vim.keymap.set("n", "<C-t>", "<cmd>tabnew<cr>", { desc = "New tab" })
+vim.keymap.set("n", "<leader>w", "<cmd>set linebreak wrap<cr>", { desc = "Toggle [W]rap" })
 

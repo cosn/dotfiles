@@ -133,11 +133,11 @@ return {
       "preservim/vimux",
     },
     config = function()
-      vim.keymap.set("n", "<leader>tt", ":TestNearest<CR>")
-      vim.keymap.set("n", "<leader>tf", ":TestFile<CR>")
-      vim.keymap.set("n", "<leader>ts", ":TestSuite<CR>")
-      vim.keymap.set("n", "<leader>tl", ":TestLast<CR>")
-      vim.keymap.set("n", "<leader>tv", ":TestVisit<CR>")
+      vim.keymap.set("n", "<leader>tt", ":TestNearest<cr>")
+      vim.keymap.set("n", "<leader>tf", ":TestFile<cr>")
+      vim.keymap.set("n", "<leader>ts", ":TestSuite<cr>")
+      vim.keymap.set("n", "<leader>tl", ":TestLast<cr>")
+      vim.keymap.set("n", "<leader>tv", ":TestVisit<cr>")
       vim.cmd("let test#strategy = 'vimux'")
       vim.cmd("let test#javascript#runner = 'vitest'")
     end,
