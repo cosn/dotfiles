@@ -33,12 +33,6 @@ return {
 
     -- See `:help telescope` and `:help telescope.setup()`
     require('telescope').setup {
-      defaults = {
-        mappings = {
-          i = { ["<C-t>"] = require('trouble.sources.telescope').open },
-          n = { ["<C-t>"] = require('trouble.sources.telescope').open },
-        },
-      },
       -- pickers = {}
       extensions = {
         ['ui-select'] = {
