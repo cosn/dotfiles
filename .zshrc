@@ -160,14 +160,17 @@ source "$ZSH/oh-my-zsh.sh"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [[ $OSTYPE == linux* ]]; then
-	export EDITOR='vim'
+  export EDITOR='vim'
 elif [[ $OSTYPE == darwin* ]]; then
-	path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
+  export EDITOR='nvim'
+  export BAT_THEME='TwoDark'
+
+  eval "$(zoxide init --cmd cd zsh)"
+  eval "$(thefuck --alias ffs)"
+
+  path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
   path=('/opt/homebrew/opt/make/libexec/gnubin' $path)
-	export EDITOR='nvim'
-	export BAT_THEME='TwoDark'
-	eval "$(zoxide init --cmd cd zsh)"
-	eval "$(thefuck --alias ffs)"
+  path=("$HOME/.local/bin" $path)
 fi
 
 # sources
