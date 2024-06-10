@@ -115,6 +115,7 @@ p11-kit
 pcre
 pcre2
 pinentry
+pipx
 pixman
 pkg-config
 plow
