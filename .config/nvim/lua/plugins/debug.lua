@@ -142,4 +142,5 @@ return {
       vim.cmd("let test#javascript#runner = 'vitest'")
     end,
   },
+  { 'dmmulroy/ts-error-translator.nvim' }
 }

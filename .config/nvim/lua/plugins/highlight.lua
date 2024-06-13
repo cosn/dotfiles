@@ -10,4 +10,7 @@ return {
     "folke/twilight.nvim",
     opts = {},
   },
+  {
+    "prisma/vim-prisma",
+  },
 }

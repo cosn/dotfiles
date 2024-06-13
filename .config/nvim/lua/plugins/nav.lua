@@ -76,4 +76,5 @@ return {
     event = "VeryLazy",
     opts = {},
   },
+  { 'mg979/vim-visual-multi' },
 }
