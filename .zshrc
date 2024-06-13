@@ -232,7 +232,6 @@ _fzf_comprun() {
 bindkey '^Y' autosuggest-accept
 bindkey '^[Y' yank
 
-# aliases
 alias gp='git pull'
 alias gph='git push origin HEAD'
 alias gphf='git push -f origin HEAD'
@@ -241,9 +240,16 @@ alias gcllm='git diff --minimal --cached | \
     llm -t gitcommit > $(git rev-parse --git-dir)/COMMIT_EDITMSG && \
     git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG'
 
+alias pn=pnpm
+alias pnx="pnpm dlx"
+alias pnd="pnpm run dev"
+alias cnap="pnpm create next-app"
+
 alias cat='bat'
 alias cls='clear'
 alias lg='lazygit'
 alias ls='eza --icons=auto'
-alias python='python3'
 alias n='nvim'
+alias pg="psql -U postgres"
+alias python='python3'
+alias tls="tmux list-sessions"
