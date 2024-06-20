@@ -32,7 +32,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ":omz:update" mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -160,16 +160,16 @@ source "$ZSH/oh-my-zsh.sh"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [[ $OSTYPE == linux* ]]; then
-  export EDITOR='vim'
+  export EDITOR="vim"
 elif [[ $OSTYPE == darwin* ]]; then
-  export EDITOR='nvim'
-  export BAT_THEME='TwoDark'
+  export EDITOR="nvim"
+  export BAT_THEME="TwoDark"
 
   eval "$(zoxide init --cmd cd zsh)"
   eval "$(thefuck --alias ffs)"
 
-  path=('/opt/homebrew/opt/gnu-which/libexec/gnubin' $path)
-  path=('/opt/homebrew/opt/make/libexec/gnubin' $path)
+  path=("/opt/homebrew/opt/gnu-which/libexec/gnubin" $path)
+  path=("/opt/homebrew/opt/make/libexec/gnubin" $path)
   path=("$HOME/.local/bin" $path)
 fi
 
@@ -185,7 +185,7 @@ export BUN_INSTALL="$HOME/.bun"
 path=("$BUN_INSTALL/bin" $path)
 
 # golang
-path=('/usr/local/go/bin' $path)
+path=("/usr/local/go/bin" $path)
 
 # pnpm
 export PNPM_HOME="/Users/cos/Library/pnpm"
@@ -222,9 +222,9 @@ _fzf_comprun() {
   shift
 
   case "$command" in
-    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    cd)           fzf --preview "eza --tree --color=always {} | head -200" "$@" ;;
     export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
-    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    ssh)          fzf --preview "dig {}"                   "$@" ;;
     *)            fzf --preview "bat -n --color=always --style=numbers --line-range :500 {}" "$@" ;;
   esac
 }
@@ -232,24 +232,25 @@ _fzf_comprun() {
 bindkey '^Y' autosuggest-accept
 bindkey '^[Y' yank
 
-alias gp='git pull'
-alias gph='git push origin HEAD'
-alias gphf='git push -f origin HEAD'
-alias grb='git pull --rebase origin'
-alias gcllm='git diff --minimal --cached | \
+alias gp="git pull"
+alias gph="git push origin HEAD"
+alias gphf="git push -f origin HEAD"
+alias grb="git pull --rebase origin"
+alias gcllm="git diff --minimal --cached | \
     llm -t gitcommit > $(git rev-parse --git-dir)/COMMIT_EDITMSG && \
-    git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG'
+    git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG"
 
 alias pn=pnpm
 alias pnx="pnpm dlx"
 alias pnd="pnpm run dev"
 alias cnap="pnpm create next-app"
 
-alias cat='bat'
-alias cls='clear'
-alias lg='lazygit'
-alias ls='eza --icons=auto'
-alias n='nvim'
+alias cat="bat"
+alias cls="clear"
+alias lg="lazygit"
+alias ls="eza --icons=auto"
+alias n="nvim"
 alias pg="psql -U postgres"
-alias python='python3'
+alias python="python3"
+alias t="turbo"
 alias tls="tmux list-sessions"
