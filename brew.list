@@ -196,6 +196,7 @@ wget
 x265
 xz
 yarn
+yazi
 ykman
 z3
 zoxide
@@ -206,6 +207,7 @@ zstd
 1password-cli
 font-hack-nerd-font
 hiddenbar
+imhex
 iterm2
 monitorcontrol
 yubico-yubikey-manager
