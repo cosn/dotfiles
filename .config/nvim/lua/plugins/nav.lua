@@ -7,7 +7,8 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
-      "3rd/image.nvim",
+      -- TODO: fix later
+      -- "3rd/image.nvim",
     },
     cmd = "Neotree",
     keys = {
@@ -64,18 +65,18 @@ return {
       { "<S-Tab>", "<Cmd>BufferLineCyclePrev<cr>", desc = "Prev tab" },
     },
     opts = {
-        options = {
-          mode = "tabs",
-          separator_style = "slant",
-          show_buffer_close_icons = false,
-          show_close_icon = false,
-        },
-      }
+      options = {
+        mode = "tabs",
+        separator_style = "slant",
+        show_buffer_close_icons = false,
+        show_close_icon = false,
+      },
+    },
   },
   {
     "chentoast/marks.nvim",
     event = "VeryLazy",
     opts = {},
   },
-  { 'mg979/vim-visual-multi' },
+  { "mg979/vim-visual-multi" },
 }
