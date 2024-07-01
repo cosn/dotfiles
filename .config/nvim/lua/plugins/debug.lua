@@ -15,7 +15,7 @@ return {
       require("nvim-dap-virtual-text").setup({})
 
       require("mason-nvim-dap").setup({
-        automatic_setup = true,
+        automatic_installation = true,
 
         -- You can provide additional configuration to the handlers,
         -- see mason-nvim-dap README for more information
