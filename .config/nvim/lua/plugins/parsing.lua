@@ -12,6 +12,7 @@ return {
       ensure_installed = {
         "bash",
         "css",
+        "diff",
         "dockerfile",
         "elixir",
         "git_config",
