@@ -78,4 +78,13 @@ return {
     opts = {},
   },
   { "mg979/vim-visual-multi" },
+  {
+    "hedyhli/outline.nvim",
+    event = "VeryLazy",
+    config = function()
+      vim.keymap.set("n", "<leader>ou", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+
+      require("outline").setup({})
+    end,
+  },
 }
