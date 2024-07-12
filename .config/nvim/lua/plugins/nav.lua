@@ -79,12 +79,20 @@ return {
   },
   { "mg979/vim-visual-multi" },
   {
-    "hedyhli/outline.nvim",
+    "stevearc/aerial.nvim",
     event = "VeryLazy",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
     config = function()
-      vim.keymap.set("n", "<leader>ou", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
-
-      require("outline").setup({})
+      require("aerial").setup({
+        on_attach = function(bufnr)
+          vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr, desc = "Aerial jump backwards" })
+          vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr, desc = "Aerial Jump forwards" })
+        end,
+      })
+      vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Toggle [A]erial" })
     end,
   },
 }
