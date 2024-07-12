@@ -2,6 +2,7 @@ return {
   {
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     "catppuccin/nvim",
+    lazy = false,
     priority = 1000,
     init = function()
       vim.cmd.colorscheme 'catppuccin-frappe'
@@ -11,10 +12,8 @@ return {
   {
     'folke/tokyonight.nvim',
     enabled = false,
-    init = function()
-      vim.cmd.colorscheme 'catppuccin-frappe'
-      vim.cmd.hi 'Comment gui=none'
-    end,
-  }
+    lazy = false,
+    priority = 1000,
+  },
 }
 
