@@ -241,9 +241,8 @@ alias gcllm="git diff --minimal --cached | \
     git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG"
 
 alias pn=pnpm
-alias pnx="pnpm dlx"
-alias pnd="pnpm run dev"
-alias cnap="pnpm create next-app"
+alias pnx="pnpm nx"
+alias pncn="pnpm create next-app"
 
 alias cat="bat"
 alias cls="clear"
