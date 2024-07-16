@@ -186,6 +186,8 @@ pnpm
 poetry
 poppler
 powerlevel10k
+prettier
+prettierd
 pycparser
 pyenv
 pygments
