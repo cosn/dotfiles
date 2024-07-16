@@ -109,7 +109,7 @@ return {
   },
   {
     "supermaven-inc/supermaven-nvim",
-    enabled = true,
+    commit = 'df3ecf7',
     event = "VeryLazy",
     opts = {
       disable_inline_completion = true,
