@@ -20,6 +20,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
       "onsails/lspkind.nvim",
       "supermaven-inc/supermaven-nvim",
     },
@@ -79,6 +80,7 @@ return {
           { name = "luasnip" },
           { name = "path" },
           { name = "supermaven" },
+          { name = "buffer" },
         },
         formatting = {
           format = lspkind.cmp_format({
