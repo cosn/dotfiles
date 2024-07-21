@@ -163,7 +163,7 @@ if [[ $OSTYPE == linux* ]]; then
   export EDITOR="vim"
 elif [[ $OSTYPE == darwin* ]]; then
   export EDITOR="nvim"
-  export BAT_THEME="TwoDark"
+  export BAT_THEME="ansi"
 
   eval "$(zoxide init --cmd cd zsh)"
   eval "$(thefuck --alias ffs)"
