@@ -1,73 +1,75 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    event = "VeryLazy",
+    event = {"VeryLazy", "BufReadPre", "BufNewFile"},
     dependencies = {
       "windwp/nvim-ts-autotag",
       "nvim-treesitter/nvim-treesitter-context",
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
     build = ":TSUpdate",
-    opts = {
-      ensure_installed = {
-        "bash",
-        "css",
-        "diff",
-        "dockerfile",
-        "elixir",
-        "git_config",
-        "gitcommit",
-        "gitignore",
-        "go",
-        "graphql",
-        "html",
-        "javascript",
-        "json",
-        "kotlin",
-        "lua",
-        "luadoc",
-        "markdown",
-        "markdown_inline",
-        "proto",
-        "puppet",
-        "python",
-        "regex",
-        "ruby",
-        "rust",
-        "scss",
-        "sql",
-        "terraform",
-        "tmux",
-        "tsx",
-        "typescript",
-        "vim",
-        "vimdoc",
-        "xml",
-        "yaml",
-      },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
-        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { "ruby" },
-      },
-      indent = { enable = true, disable = { "ruby" } },
-      textobjects = {
-        select = {
-          enable = true,
+    config = function()
+      local opts = {
+        ensure_installed = {
+          "bash",
+          "comment",
+          "css",
+          "diff",
+          "dockerfile",
+          "elixir",
+          "git_config",
+          "gitcommit",
+          "gitignore",
+          "go",
+          "graphql",
+          "html",
+          "javascript",
+          "json",
+          "kotlin",
+          "lua",
+          "luadoc",
+          "markdown",
+          "markdown_inline",
+          "proto",
+          "puppet",
+          "python",
+          "regex",
+          "ruby",
+          "rust",
+          "scss",
+          "sql",
+          "terraform",
+          "tmux",
+          "tsx",
+          "typescript",
+          "vim",
+          "vimdoc",
+          "xml",
+          "yaml",
         },
-        move = {
+        auto_install = true,
+        highlight = {
           enable = true,
+          -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
+          --  If you are experiencing weird indenting issues, add the language to
+          --  the list of additional_vim_regex_highlighting and disabled languages for indent.
+          additional_vim_regex_highlighting = { "ruby" },
         },
-      },
-    },
-    config = function(_, opts)
-      -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+        indent = { enable = true, disable = { "ruby" } },
+        incremental_selection = { enable = true },
+        textobjects = {
+          select = {
+            enable = true,
+          },
+          move = {
+            enable = true,
+          },
+        },
+      }
 
       -- Prefer git instead of curl in order to improve connectivity in some environments
       require("nvim-treesitter.install").prefer_git = true
+      -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
       require("nvim-treesitter.configs").setup(opts)
       require("treesitter-context").setup(opts)
       require("nvim-ts-autotag").setup(opts)
