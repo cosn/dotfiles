@@ -80,7 +80,6 @@ zstyle ":omz:update" mode auto      # update automatically without asking
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  ag
   aliases
   asdf
   bazel
@@ -172,6 +171,8 @@ elif [[ $OSTYPE == darwin* ]]; then
   path=("/opt/homebrew/opt/make/libexec/gnubin" $path)
   path=("$HOME/.local/bin" $path)
 fi
+
+fpath=($fpath ~/.zsh/completion)
 
 # sources
 [[ -s "$(brew --prefix)/share/zsh-syntax-highlighting" ]] && source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
