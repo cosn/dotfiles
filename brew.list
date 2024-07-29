@@ -30,6 +30,7 @@ docker-completion
 docutils
 dtc
 duckdb
+eksctl
 entr
 eslint
 eza
