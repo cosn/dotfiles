@@ -18,6 +18,7 @@ cffi
 cjson
 cog
 colima
+copilot-cli
 coreutils
 cryptography
 csvkit
