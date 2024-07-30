@@ -89,7 +89,7 @@ return {
       builtin.find_files({ cwd = vim.fn.stdpath("config") })
     end, { desc = "[S]earch [N]eovim files" })
 
-    vim.keymap.set("n", "<leader>/z", function()
+    vim.keymap.set("n", "z=", function()
       builtin.spell_suggest(require("telescope.themes").get_cursor({}))
     end, { desc = "[S]pell current word" })
   end,
