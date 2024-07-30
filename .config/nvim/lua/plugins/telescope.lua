@@ -58,7 +58,7 @@ return {
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<leader>/.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     vim.keymap.set("n", "<leader>//", builtin.resume, { desc = "[S]earch [R]esume" })
-    vim.keymap.set("n", "<leader>/c", builtin.git_bcommits, { desc = "[S]earch [C]ommits" })
+    vim.keymap.set("n", "<leader>/c", builtin.commands, { desc = "[S]earch [C]ommands" })
     vim.keymap.set("n", "<leader>/d", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
     vim.keymap.set("n", "<leader>/f", builtin.find_files, { desc = "[S]earch [F]iles" })
     vim.keymap.set("n", "<leader>/g", builtin.live_grep, { desc = "[S]earch by [G]rep" })
