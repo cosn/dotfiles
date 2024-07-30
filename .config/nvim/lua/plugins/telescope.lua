@@ -64,6 +64,8 @@ return {
     vim.keymap.set("n", "<leader>/g", builtin.live_grep, { desc = "[S]earch by [G]rep" })
     vim.keymap.set("n", "<leader>/h", builtin.help_tags, { desc = "[S]earch [H]elp" })
     vim.keymap.set("n", "<leader>/k", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
+    vim.keymap.set("n", "<leader>/m", builtin.marks, { desc = "[S]earch [M]arks" })
+    vim.keymap.set("n", "<leader>/o", builtin.vim_options, { desc = "[S]earch Vim [O]ptions" })
     vim.keymap.set("n", "<leader>/t", builtin.builtin, { desc = "[S]earch [T]elescope" })
     vim.keymap.set("n", "<leader>/w", builtin.grep_string, { desc = "[S]earch current [W]ord" })
     vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
