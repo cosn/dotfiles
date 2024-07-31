@@ -40,6 +40,7 @@ ffmpeg
 ffmpegthumbnailer
 flac
 fontconfig
+fontforge
 freetype
 frei0r
 fribidi
@@ -115,12 +116,14 @@ libslirp
 libsndfile
 libsodium
 libsoxr
+libspiro
 libssh
 libssh2
 libtasn1
 libtiff
 libtool
 libunibreak
+libuninameslist
 libunistring
 libusb
 libuv
@@ -251,6 +254,7 @@ utf8proc
 vde
 webp
 wget
+woff2
 x264
 x265
 xorgproto
@@ -268,7 +272,9 @@ zsh-autosuggestions
 zsh-syntax-highlighting
 zstd
 1password-cli
-font-hack-nerd-font
+font-meslo-lg-nerd-font
+font-roboto-mono-nerd-font
+font-sauce-code-pro-nerd-font
 font-symbols-only-nerd-font
 hiddenbar
 imhex
