@@ -180,6 +180,7 @@ openldap
 openssl@3
 opus
 p11-kit
+pam-reattach
 pango
 pcre
 pcre2
