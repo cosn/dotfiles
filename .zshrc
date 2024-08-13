@@ -250,6 +250,12 @@ alias cat="bat"
 alias cls="clear"
 alias lg="lazygit"
 alias ls="eza --icons=auto"
+alias ls-commandport='sudo lsof -iTCP -sTCP:LISTEN -n -P | \
+  awk '\''NR>1 {print $9, $1, $2}'\'' | \
+  sed '\''s/.*://'\'' | \
+  while read port process pid; do \
+      echo "Port $port: $(ps -p $pid -o command= | sed '\''s/^-//'\'' ) (PID: $pid)"; \
+    done | sort -n'
 alias lt="yazi"
 alias n="nvim"
 alias pg="psql -U postgres"
