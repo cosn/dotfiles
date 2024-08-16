@@ -93,6 +93,7 @@ plugins=(
   encode64
   extract
   fastfile
+  fzf
   genpass
   git
   github
@@ -200,7 +201,6 @@ path=("$PNPM_HOME" $path)
 [[ -s "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
 
 # fuzzy
-eval "$(fzf --zsh)"
 [[ -s "$HOME/.fzf-git/fzf-git.sh" ]] && source $HOME/.fzf-git/fzf-git.sh
 
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
