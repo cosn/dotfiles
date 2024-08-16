@@ -88,6 +88,7 @@ plugins=(
   compleat
   copyfile
   cp
+  direnv
   docker
   dotenv
   encode64

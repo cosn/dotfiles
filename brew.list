@@ -8,6 +8,7 @@ autoconf
 automake
 aws-iam-authenticator
 awscli
+bash
 bat
 bazelisk
 brotli
@@ -29,6 +30,7 @@ curlie
 datamash
 dav1d
 deno
+direnv
 docker-completion
 docutils
 dtc
