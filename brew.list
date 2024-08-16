@@ -33,6 +33,7 @@ deno
 direnv
 docker-completion
 docutils
+dotenvx
 dtc
 duckdb
 eksctl
