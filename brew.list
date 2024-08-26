@@ -50,6 +50,7 @@ freetype
 frei0r
 fribidi
 fzf
+gcc
 gdbm
 gettext
 gh
@@ -78,6 +79,7 @@ icu4c
 iftop
 imagemagick
 imath
+isl
 jansson
 jasper
 jbig2dec
@@ -110,6 +112,7 @@ libksba
 liblinear
 liblqr
 libmicrohttpd
+libmpc
 libnghttp2
 libogg
 libomp
@@ -162,6 +165,7 @@ make
 markdownlint-cli
 mbedtls
 mpdecimal
+mpfr
 mpg123
 msgpack
 mtr
@@ -176,8 +180,10 @@ node
 npth
 nspr
 nss
+numpy
 ollama
 oniguruma
+openblas
 opencore-amr
 openexr
 openjpeg
@@ -229,6 +235,7 @@ s4cmd
 sd
 sdl2
 shared-mime-info
+sherlock
 shyaml
 six
 snappy
