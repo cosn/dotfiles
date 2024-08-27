@@ -123,6 +123,12 @@ return {
         submit = {
           insert = "<C-y>",
         },
+        diff = {
+          ours = "<leader>co",
+          theirs = "<leader>ct",
+          none = "<leader>c0",
+          both = "<leader>cb",
+        }
       },
     },
     dependencies = {
