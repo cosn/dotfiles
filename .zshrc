@@ -99,7 +99,6 @@ plugins=(
   git
   github
   golang
-  history
   jsontools
   node
   per-directory-history
@@ -162,8 +161,10 @@ source "$ZSH/oh-my-zsh.sh"
 
 if [[ $OSTYPE == linux* ]]; then
   export EDITOR="vim"
+  export VISUAL="vim"
 elif [[ $OSTYPE == darwin* ]]; then
   export EDITOR="nvim"
+  export VISUAL="nvim"
   export BAT_THEME="ansi"
 
   eval "$(zoxide init --cmd cd zsh)"
@@ -174,6 +175,7 @@ elif [[ $OSTYPE == darwin* ]]; then
   path=("$HOME/.local/bin" $path)
 fi
 
+path=("$HOME/bin" $path)
 fpath=($fpath ~/.zsh/completion)
 
 # sources
@@ -231,16 +233,27 @@ _fzf_comprun() {
   esac
 }
 
+#
+# opts
+#
+typeset -U path
+path=($^path(N-/))
+export PATH
+
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS
+setopt SHARE_HISTORY
+
 bindkey '^Y' autosuggest-accept
 bindkey '^[Y' yank
 
+#
+# aliases
+#
 alias gp="git pull"
 alias gph="git push origin HEAD"
 alias gphf="git push -f origin HEAD"
 alias grb="git pull --rebase origin"
-alias gcllm="git diff --minimal --cached | \
-    llm -t gitcommit > $(git rev-parse --git-dir)/COMMIT_EDITMSG && \
-    git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG"
 
 alias pn=pnpm
 alias pncn="pnpm create next-app"
@@ -251,12 +264,6 @@ alias cat="bat"
 alias cls="clear"
 alias lg="lazygit"
 alias ls="eza --icons=auto"
-alias ls-commandport='sudo lsof -iTCP -sTCP:LISTEN -n -P | \
-  awk '\''NR>1 {print $9, $1, $2}'\'' | \
-  sed '\''s/.*://'\'' | \
-  while read port process pid; do \
-      echo "Port $port: $(ps -p $pid -o command= | sed '\''s/^-//'\'' ) (PID: $pid)"; \
-    done | sort -n'
 alias lt="yazi"
 alias n="nvim"
 alias pg="psql -U postgres"
