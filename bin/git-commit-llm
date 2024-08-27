@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+git diff --minimal --cached | \
+    llm -t gitcommit > $(git rev-parse --git-dir)/COMMIT_EDITMSG && \
+    git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG
