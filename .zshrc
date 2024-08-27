@@ -85,7 +85,6 @@ plugins=(
   bazel
   colored-man-pages
   command-not-found
-  compleat
   copyfile
   cp
   direnv
@@ -93,7 +92,6 @@ plugins=(
   dotenv
   encode64
   extract
-  fastfile
   fzf
   genpass
   git
