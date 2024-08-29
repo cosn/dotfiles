@@ -128,7 +128,7 @@ return {
           theirs = "<leader>ct",
           none = "<leader>c0",
           both = "<leader>cb",
-        }
+        },
       },
     },
     dependencies = {
@@ -143,6 +143,12 @@ return {
           file_types = { "markdown", "Avante" },
         },
         ft = { "markdown", "Avante" },
+      },
+      {
+        "HakonHarnes/img-clip.nvim",
+        keys = {
+          { "<leader>pi", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+        },
       },
     },
   },
