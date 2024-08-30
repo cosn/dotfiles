@@ -92,7 +92,7 @@ return {
           vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr, desc = "Aerial Jump forwards" })
         end,
       })
-      vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Toggle [A]erial" })
+      vim.keymap.set("n", "<leader>at", "<cmd>AerialToggle!<CR>", { desc = "Toggle [A]erial" })
     end,
   },
 }
