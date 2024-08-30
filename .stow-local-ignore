@@ -8,5 +8,6 @@
 ^/\.DS_Store
 ^/bash_profile
 ^/editors
+^/link
 
 .+\.(json|list|itermcolors|zsh-theme)
