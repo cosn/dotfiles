@@ -7,9 +7,6 @@ TERM = "xterm-256color"
 normal = { family = "SauceCodePro Nerd Font" }
 size = 13.0
 
-[scrolling]
-history = 100000
-
 [window]
 decorations = "none"
 option_as_alt = "both"
