@@ -11,4 +11,6 @@ size = 13.0
 history = 100000
 
 [window]
-option_as_alt = "Both"
+decorations = "none"
+option_as_alt = "both"
+
