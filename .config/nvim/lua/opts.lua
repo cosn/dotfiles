@@ -28,3 +28,9 @@ opt.termguicolors = true
 opt.timeoutlen = 200
 opt.undofile = true
 opt.updatetime = 250
+
+vim.filetype.add({
+  extension = {
+    mdx = "markdown",
+  },
+})
