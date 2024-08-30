@@ -1,0 +1,14 @@
+import = ["~/.config/alacritty/catppuccin-frappe.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+normal = { family = "SauceCodePro Nerd Font" }
+size = 13.0
+
+[scrolling]
+history = 100000
+
+[window]
+option_as_alt = "Both"
