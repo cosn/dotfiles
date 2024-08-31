@@ -120,7 +120,6 @@ elif [[ $OSTYPE == darwin* ]]; then
   plugins+=(
     1password
     brew
-    iterm2
     macos
     vscode
 )
