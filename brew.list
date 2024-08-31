@@ -193,6 +193,7 @@ openssl@3
 opus
 p11-kit
 pam-reattach
+pandoc
 pango
 pcre
 pcre2
@@ -284,6 +285,7 @@ zsh-autosuggestions
 zsh-syntax-highlighting
 zstd
 1password-cli
+alacritty
 font-meslo-lg-nerd-font
 font-roboto-mono-nerd-font
 font-sauce-code-pro-nerd-font
@@ -291,7 +293,6 @@ font-symbols-only-nerd-font
 hiddenbar
 iina
 imhex
-iterm2
 jan
 kitty
 monitorcontrol
