@@ -241,8 +241,9 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_DUPS
 setopt SHARE_HISTORY
 
-bindkey '^Y' autosuggest-accept
-bindkey '^[Y' yank
+bindkey '^y' autosuggest-accept
+bindkey '^[y' yank
+bindkey '^[k' kill-line
 
 #
 # aliases
