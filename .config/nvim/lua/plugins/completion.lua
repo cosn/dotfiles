@@ -152,4 +152,14 @@ return {
       },
     },
   },
+  {
+    "joshuavial/aider.nvim",
+    event = "VeryLazy",
+    opts = {
+      default_bindings = false,
+    },
+    keys = {
+      { "<leader>ai", "<cmd>lua AiderOpen()<cr>", desc = "Aider Open" },
+    }
+  }
 }
