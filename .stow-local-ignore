@@ -9,5 +9,6 @@
 ^/bash_profile
 ^/editors
 ^/link
+^/aider.+
 
 .+\.(json|list|itermcolors|zsh-theme)

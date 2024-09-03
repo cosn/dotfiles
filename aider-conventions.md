@@ -1,0 +1,1 @@
+- For git commits, use the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) format.
