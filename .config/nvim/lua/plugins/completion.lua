@@ -10,9 +10,12 @@ return {
         end)(),
         dependencies = {
           {
-            "rafamadriz/friendly-snippets",
+            -- "rafamadriz/friendly-snippets",
+            "cosn/friendly-snippets",
+            branch = "cos-remix",
             config = function()
               require("luasnip.loaders.from_vscode").lazy_load()
+              require("luasnip").filetype_extend("typescriptreact", { "remix" })
             end,
           },
         },
