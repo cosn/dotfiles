@@ -254,7 +254,7 @@ alias gphf="git push -f origin HEAD"
 alias grb="git pull --rebase origin"
 
 alias pn=pnpm
-alias pncn="pnpm create next-app"
+alias pnu="pnpm update --recursive"
 alias pnx="pnpm nx"
 alias t="turbo"
 
