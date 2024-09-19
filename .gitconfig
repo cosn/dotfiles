@@ -38,6 +38,7 @@
     ln = log --oneline --name-only
     lns = log --name-status
     lnss = diff --name-status --staged
+    lp = log -p
     noticechanges = update-index --no-assume-unchanged
     orphank = !gitk --all `git reflog | cut -c1-7`&
     orphanl = !git log --pretty=oneline --abbrev-commit --graph --decorate `git reflog | cut -c1-7`
