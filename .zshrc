@@ -258,6 +258,7 @@ alias pni="pnpm install --recursive"
 alias pnu="pnpm update --recursive"
 alias pnx="pnpm nx"
 alias t="turbo"
+alias tb="turbo build"
 
 alias cat="bat"
 alias cls="clear"
