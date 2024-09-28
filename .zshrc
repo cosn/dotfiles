@@ -253,7 +253,7 @@ alias gph="git push origin HEAD"
 alias gphf="git push -f origin HEAD"
 alias grb="git pull --rebase origin"
 
-alias pn=pnpm
+alias pn="pnpm"
 alias pni="pnpm install --recursive"
 alias pnu="pnpm update --recursive"
 alias pnx="pnpm nx"
