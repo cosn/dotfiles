@@ -192,6 +192,7 @@ path=("/usr/local/go/bin" $path)
 # pnpm
 export PNPM_HOME="/Users/cos/Library/pnpm"
 path=("$PNPM_HOME" $path)
+[[ -s "$HOME/.pnpm.zsh" ]] && source "$HOME/.pnpm.zsh"
 
 # home assistant
 [[ -s "$(brew --prefix)/bin/hass-cli" ]] && source <(_HASS_CLI_COMPLETE=zsh_source hass-cli)
@@ -259,6 +260,12 @@ alias pnu="pnpm update --recursive"
 alias pnx="pnpm nx"
 alias t="turbo"
 alias tb="turbo build"
+
+alias ae="cd ~/src/accrual/epsilon"
+alias aea="cd ~/src/accrual/epsilon/apps"
+alias aep="cd ~/src/accrual/epsilon/packages"
+alias aeaf="cd ~/src/accrual/epsilon/apps/babylon"
+alias aeab="cd ~/src/accrual/epsilon/apps/firm"
 
 alias cat="bat"
 alias cls="clear"
