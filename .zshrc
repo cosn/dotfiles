@@ -192,7 +192,7 @@ path=("/usr/local/go/bin" $path)
 # pnpm
 export PNPM_HOME="/Users/cos/Library/pnpm"
 path=("$PNPM_HOME" $path)
-[[ -s "$HOME/.pnpm.zsh" ]] && source "$HOME/.pnpm.zsh"
+source <(pnpm completion zsh)
 
 # home assistant
 [[ -s "$(brew --prefix)/bin/hass-cli" ]] && source <(_HASS_CLI_COMPLETE=zsh_source hass-cli)
@@ -200,6 +200,9 @@ path=("$PNPM_HOME" $path)
 # p10k
 [[ -s "$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" ]] && source "$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme"
 [[ -s "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
+
+# git town
+source <(git-town completions zsh)
 
 # fuzzy
 [[ -s "$HOME/.fzf-git/fzf-git.sh" ]] && source $HOME/.fzf-git/fzf-git.sh
