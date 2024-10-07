@@ -272,6 +272,7 @@ alias aeaf="cd ~/src/accrual/epsilon/apps/firm"
 
 alias cat="bat"
 alias cls="clear"
+alias gt="git-town"
 alias lg="lazygit"
 alias ls="eza --icons=auto"
 alias lt="yazi"
