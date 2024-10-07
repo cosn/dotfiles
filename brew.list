@@ -60,6 +60,7 @@ giflib
 git
 git-delta
 git-lfs
+git-town
 glib
 gmp
 gnu-which
