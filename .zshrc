@@ -263,6 +263,7 @@ alias pnu="pnpm update --recursive"
 alias pnx="pnpm nx"
 alias t="turbo"
 alias tb="turbo build"
+alias td="turbo dev"
 
 alias ae="cd ~/src/accrual/epsilon"
 alias aea="cd ~/src/accrual/epsilon/apps"
