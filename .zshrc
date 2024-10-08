@@ -265,6 +265,7 @@ alias t="turbo"
 alias tb="turbo build"
 alias td="turbo dev"
 
+alias s="cd ~/src"
 alias ae="cd ~/src/accrual/epsilon"
 alias aea="cd ~/src/accrual/epsilon/apps"
 alias aep="cd ~/src/accrual/epsilon/packages"
