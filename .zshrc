@@ -275,6 +275,7 @@ alias aea="cd ~/src/accrual/epsilon/apps"
 alias aep="cd ~/src/accrual/epsilon/packages"
 alias aeab="cd ~/src/accrual/epsilon/apps/babylon"
 alias aeaf="cd ~/src/accrual/epsilon/apps/firm"
+alias rfd="cd ~/src/accrual/decisions"
 
 alias cat="bat"
 alias cls="clear"
