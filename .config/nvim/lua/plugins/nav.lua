@@ -95,4 +95,9 @@ return {
       vim.keymap.set("n", "<leader>at", "<cmd>AerialToggle!<CR>", { desc = "Toggle [A]erial" })
     end,
   },
+  {
+    "kevinhwang91/nvim-ufo",
+    event = "VeryLazy",
+    dependencies = { "kevinhwang91/promise-async" },
+  },
 }
