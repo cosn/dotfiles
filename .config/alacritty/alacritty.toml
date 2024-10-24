@@ -11,3 +11,5 @@ size = 13.5
 decorations = "none"
 option_as_alt = "both"
 
+[scrolling]
+multiplier = 2
