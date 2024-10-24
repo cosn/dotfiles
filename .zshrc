@@ -234,6 +234,10 @@ _fzf_comprun() {
   esac
 }
 
+# AWS
+
+export AWS_PROFILE=accrual-admin
+
 #
 # opts
 #
