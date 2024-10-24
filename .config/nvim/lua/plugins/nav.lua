@@ -99,51 +99,36 @@ return {
     "kevinhwang91/nvim-ufo",
     event = "UiEnter",
     dependencies = { "kevinhwang91/promise-async" },
-    keys = {
-      { "z?", vim.cmd.UfoInspect, desc = "󱃄 :UfoInspect" },
-      {
-        "zm",
-        function()
-          require("ufo").closeAllFolds()
-        end,
-        desc = "󱃄 Close All Folds",
-      },
-      {
-        "zr",
-        function()
-          require("ufo").openFoldsExceptKinds({ "comment", "imports" })
-        end,
-        desc = "󱃄 Open Regular Folds",
-      },
-      {
-        "z1",
-        function()
-          require("ufo").closeFoldsWith(1)
-        end,
-        desc = "󱃄 Close L1 Folds",
-      },
-      {
-        "z2",
-        function()
-          require("ufo").closeFoldsWith(2)
-        end,
-        desc = "󱃄 Close L2 Folds",
-      },
-      {
-        "z3",
-        function()
-          require("ufo").closeFoldsWith(3)
-        end,
-        desc = "󱃄 Close L3 Folds",
-      },
-      {
-        "z4",
-        function()
-          require("ufo").closeFoldsWith(4)
-        end,
-        desc = "󱃄 Close L4 Folds",
-      },
-    },
+    keys = function()
+      local ufo_keys = {
+        { "z?", vim.cmd.UfoInspect, desc = "󱃄 :UfoInspect" },
+        {
+          "zm",
+          function()
+            require("ufo").closeAllFolds()
+          end,
+          desc = "󱃄 Close All Folds",
+        },
+        {
+          "zr",
+          function()
+            require("ufo").openFoldsExceptKinds({ "comment", "imports" })
+          end,
+          desc = "󱃄 Open Regular Folds",
+        },
+      }
+      for i = 1, 9 do
+        table.insert(ufo_keys, {
+          "z" .. i,
+          function()
+            require("ufo").closeFoldsWith(i)
+          end,
+          desc = "󱃄 Close L" .. i .. " Folds",
+        })
+      end
+
+      return ufo_keys
+    end,
     init = function()
       vim.opt.foldlevel = 99
       vim.opt.foldlevelstart = 99
