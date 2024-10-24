@@ -136,6 +136,13 @@ return {
         end,
         desc = "󱃄 Close L3 Folds",
       },
+      {
+        "z4",
+        function()
+          require("ufo").closeFoldsWith(4)
+        end,
+        desc = "󱃄 Close L4 Folds",
+      },
     },
     init = function()
       vim.opt.foldlevel = 99
@@ -146,15 +153,12 @@ return {
         default = { "imports", "comment" },
         json = { "array" },
       },
-      provider_selector = function(_, ft, buftype)
-        -- ufo accepts only two kinds as priority, see https://github.com/kevinhwang91/nvim-ufo/issues/256
-        if ft == "log" then
-          return ""
+      provider_selector = function(_, ft, _)
+        local lspWithOutFolding = { "css", "html", "git", "json", "log", "markdown", "python", "zsh" }
+        if vim.tbl_contains(lspWithOutFolding, ft) then
+          return { "treesitter", "indent" }
         end
-        if buftype ~= "" or vim.startswith(ft, "git") then
-          return "indent"
-        end
-        return { "lsp", "treesitter" }
+        return { "lsp", "indent" }
       end,
       fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)
         local hlgroup = "NonText"
