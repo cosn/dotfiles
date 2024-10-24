@@ -135,8 +135,7 @@ return {
     end,
     opts = {
       close_fold_kinds_for_ft = {
-        default = { "imports", "comment" },
-        json = { "array" },
+        default = { "comment" },
       },
       provider_selector = function(_, ft, _)
         local lspWithOutFolding = { "css", "html", "git", "json", "log", "markdown", "python", "zsh" }
