@@ -3,6 +3,10 @@
 	email = cos@cosn.dev
 	signingkey = 705EB3B642869F41
 
+[includeIf "gitdir:~/src/accrual/*"]
+  [user]
+    email = cos@accrual.com
+
 [github]
 	user = cosn
 
