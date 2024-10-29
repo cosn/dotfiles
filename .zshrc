@@ -169,6 +169,8 @@ elif [[ $OSTYPE == darwin* ]]; then
 
   path=("/opt/homebrew/opt/gnu-which/libexec/gnubin" $path)
   path=("/opt/homebrew/opt/make/libexec/gnubin" $path)
+  # TODO: remove once prettier issues go away for node 23
+  path=("/opt/homebrew/opt/node@22/bin" $path)
   path=("$HOME/.local/bin" $path)
 fi
 
