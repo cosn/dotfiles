@@ -1,4 +1,3 @@
-import = ["~/.config/alacritty/catppuccin-frappe.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -13,3 +12,6 @@ option_as_alt = "both"
 
 [scrolling]
 multiplier = 2
+
+[general]
+import = ["~/.config/alacritty/catppuccin-frappe.toml"]
