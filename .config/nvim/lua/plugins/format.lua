@@ -36,6 +36,7 @@ return {
         scss = { "prettierd", "prettier" },
         txt = { "prettierd", "prettier" },
         typescript = { "prettierd", "prettier" },
+        typescriptreact = { "prettierd", "prettier" },
         yaml = { "prettierd", "prettier" },
         ["*"] = { "trim_whitespace" },
       },
