@@ -22,7 +22,6 @@ cjson
 cog
 colima
 copilot-cli
-corepack
 coreutils
 cryptography
 csvkit
@@ -156,7 +155,6 @@ llama.cpp
 llm
 llvm
 llvm@16
-llvm@18
 lpeg
 lua
 luajit
@@ -201,6 +199,7 @@ pandoc
 pango
 pcre
 pcre2
+pgvector
 pinentry
 pipx
 pixman
