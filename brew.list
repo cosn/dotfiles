@@ -75,8 +75,8 @@ highway
 homeassistant-cli
 httpie
 hub
-icu4c
 icu4c@75
+icu4c@76
 iftop
 imagemagick
 imath
@@ -131,6 +131,7 @@ libssh
 libssh2
 libtasn1
 libtiff
+libtommath
 libtool
 libunibreak
 libuninameslist
@@ -203,7 +204,7 @@ pgvector
 pinentry
 pipx
 pixman
-pkg-config
+pkgconf
 plow
 pnpm
 poetry
@@ -255,6 +256,7 @@ stern
 stow
 svt-av1
 tcl-tk
+tcl-tk@8
 telnet
 temporal
 terraform
