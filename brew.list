@@ -257,6 +257,8 @@ stow
 svt-av1
 tcl-tk
 tcl-tk@8
+tcld
+tctl
 telnet
 temporal
 terraform
