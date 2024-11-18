@@ -283,6 +283,7 @@ alias aeab="cd ~/src/accrual/epsilon/apps/babylon"
 alias aeaf="cd ~/src/accrual/epsilon/apps/firm"
 alias aei="cd ~/src/accrual/epsilon/infrastructure"
 alias aeit="cd ~/src/accrual/epsilon/infrastructure/terraform"
+alias asc="cd ~/src/accrual/stellarcom"
 alias rfd="cd ~/src/accrual/decisions"
 
 alias cat="bat"
