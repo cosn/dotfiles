@@ -92,7 +92,6 @@ plugins=(
   dotenv
   encode64
   extract
-  fzf
   genpass
   git
   github
@@ -207,6 +206,7 @@ source <(pnpm completion zsh)
 source <(git-town completions zsh)
 
 # fuzzy
+source <(fzf --zsh)
 [[ -s "$HOME/.fzf-git/fzf-git.sh" ]] && source $HOME/.fzf-git/fzf-git.sh
 
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
