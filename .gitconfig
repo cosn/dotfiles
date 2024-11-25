@@ -83,6 +83,9 @@
     set-parent = town set-parent
     ship = town ship
 
+[fetch]
+  prune = true
+
 [push]
     default = current
     autoSetupRemote = true
