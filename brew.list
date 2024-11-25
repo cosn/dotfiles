@@ -298,6 +298,7 @@ zimg
 zoxide
 zsh
 zsh-autosuggestions
+zsh-completions
 zsh-syntax-highlighting
 zstd
 1password-cli
