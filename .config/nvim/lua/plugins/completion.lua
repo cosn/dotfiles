@@ -120,6 +120,7 @@ return {
   },
   {
     "yetone/avante.nvim",
+    enabled = false,
     event = "VeryLazy",
     build = "make",
     opts = {
@@ -159,6 +160,7 @@ return {
   },
   {
     "joshuavial/aider.nvim",
+    enabled = false,
     event = "VeryLazy",
     opts = {
       default_bindings = false,
