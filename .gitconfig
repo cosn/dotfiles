@@ -129,4 +129,7 @@
     sort = -committerdate
 
 [tag]
-    sort = taggerdate
+  sort = taggerdate
+
+[commit]
+  gpgsign = true
