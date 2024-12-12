@@ -130,6 +130,3 @@
 
 [tag]
   sort = taggerdate
-
-[commit]
-  gpgsign = true
