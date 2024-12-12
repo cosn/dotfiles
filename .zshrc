@@ -199,7 +199,7 @@ path=("$BUN_INSTALL/bin" $path)
 path=("/usr/local/go/bin" $path)
 
 # pnpm
-export PNPM_HOME="/Users/cos/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 path=("$PNPM_HOME" $path)
 source <(pnpm completion zsh)
 
