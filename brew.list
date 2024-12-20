@@ -52,8 +52,6 @@ fribidi
 fzf
 gcc
 gdbm
-geoip
-geoip2-nginx-module
 gettext
 gh
 ghostscript
@@ -115,7 +113,6 @@ libidn2
 libksba
 liblinear
 liblqr
-libmaxminddb
 libmicrohttpd
 libmpc
 libnghttp2
@@ -161,7 +158,6 @@ llvm
 llvm@16
 lpeg
 lua
-lua-nginx-module
 luajit
 luarocks
 luv
@@ -182,7 +178,6 @@ neovim
 nethogs
 nettle
 ngrep
-ngx-devel-kit
 nmap
 node
 node@22
@@ -197,8 +192,6 @@ opencore-amr
 openexr
 openjpeg
 openldap
-openresty
-openresty-openssl3
 openssl@3
 opus
 p11-kit
