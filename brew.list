@@ -34,6 +34,7 @@ direnv
 docker-completion
 docutils
 dotenvx
+dotnet@8
 dtc
 duckdb
 eksctl
@@ -88,6 +89,7 @@ jpeg-turbo
 jpeg-xl
 jq
 keyring
+kiota
 krb5
 kubernetes-cli
 lame
