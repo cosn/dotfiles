@@ -88,6 +88,7 @@ jbig2dec
 jpeg-turbo
 jpeg-xl
 jq
+k6
 keyring
 kiota
 krb5
@@ -318,4 +319,5 @@ kitty
 monitorcontrol
 orbstack
 rapidapi
+session-manager-plugin
 yubico-yubikey-manager
