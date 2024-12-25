@@ -168,9 +168,9 @@ elif [[ $OSTYPE == darwin* ]]; then
 
   path=("/opt/homebrew/opt/gnu-which/libexec/gnubin" $path)
   path=("/opt/homebrew/opt/make/libexec/gnubin" $path)
+  path=("$HOME/bin" $path)
   path=("$HOME/.local/bin" $path)
 fi
-path=("$HOME/bin" $path)
 
 # sources
 [[ -s "$(brew --prefix)/share/zsh-syntax-highlighting" ]] && source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -245,9 +245,12 @@ _fzf_comprun() {
   esac
 }
 
-# AWS
+# Accrual
 
-export AWS_PROFILE=accrual-admin
+if [[ -d "$HOME/src/accrual" ]]; then
+  export AWS_PROFILE=accrual-admin
+  path=("$HOME/src/accrual/epsilon/infrastructure/scripts" $path)
+fi
 
 #
 # opts
