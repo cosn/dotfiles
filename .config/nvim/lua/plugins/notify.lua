@@ -1,7 +1,7 @@
 return {
   {
     "rcarriga/nvim-notify",
-    opts = { render = "wrapped-compact", top_down = false },
+    opts = { render = "compact", top_down = false },
   },
   {
     "nvim-lualine/lualine.nvim",
