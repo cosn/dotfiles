@@ -6,6 +6,7 @@ keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
+keymap.set("n", "<leader>lrt", "<cmd>LspRestart typescript-tools<cr>", { desc = "LSP: Restart" })
 
 keymap.set({ "n", "v" }, "<up>", ":m .-2<cr>==")
 keymap.set({ "n", "v" }, "<down>", ":m .+1<cr>==")
