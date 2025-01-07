@@ -87,7 +87,6 @@ plugins=(
   command-not-found
   copyfile
   cp
-  direnv
   docker
   dotenv
   encode64
