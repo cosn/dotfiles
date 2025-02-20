@@ -98,8 +98,13 @@ return {
       builtin.spell_suggest(require("telescope.themes").get_cursor({}))
     end, { desc = "[S]pell current word" })
 
-    vim.keymap.set({"n", "x"}, "<leader>y", function()
+    vim.keymap.set({ "n", "x" }, "<leader>y", function()
       telescope.extensions.yank_history.yank_history({})
     end, { desc = "Open [Y]ank History" })
+
+    vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
+    vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
+    vim.keymap.set({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
+    vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
   end,
 }
