@@ -15,6 +15,9 @@ return {
     { "ahmedkhalf/project.nvim" },
     { "folke/trouble.nvim" },
     { "folke/noice.nvim" },
+    { "gbprod/yanky.nvim", opts = {
+      highlight = { timer = 150 },
+    } },
   },
   config = function()
     -- The easiest way to use Telescope, is to start by doing something like:
@@ -33,7 +36,8 @@ return {
     -- do as well as how to actually do it!
 
     -- See `:help telescope` and `:help telescope.setup()`
-    require("telescope").setup({
+    local telescope = require("telescope")
+    telescope.setup({
       -- pickers = {}
       extensions = {
         ["ui-select"] = {
@@ -48,11 +52,12 @@ return {
       },
     })
 
-    pcall(require("telescope").load_extension, "fzf")
-    pcall(require("telescope").load_extension, "projects")
-    pcall(require("telescope").load_extension, "ui-select")
-    pcall(require("telescope").load_extension, "notify")
-    pcall(require("telescope").load_extension, "noice")
+    pcall(telescope.load_extension, "fzf")
+    pcall(telescope.load_extension, "projects")
+    pcall(telescope.load_extension, "ui-select")
+    pcall(telescope.load_extension, "notify")
+    pcall(telescope.load_extension, "noice")
+    pcall(telescope.load_extension, "yank_history")
 
     -- See `:help telescope.builtin`
     local builtin = require("telescope.builtin")
@@ -92,5 +97,9 @@ return {
     vim.keymap.set("n", "z=", function()
       builtin.spell_suggest(require("telescope.themes").get_cursor({}))
     end, { desc = "[S]pell current word" })
+
+    vim.keymap.set({"n", "x"}, "<leader>y", function()
+      telescope.extensions.yank_history.yank_history({})
+    end, { desc = "Open [Y]ank History" })
   end,
 }
