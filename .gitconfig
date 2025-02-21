@@ -63,6 +63,7 @@
     slog = log --graph --simplify-by-decoration --all --abbrev-commit --pretty=oneline
     st = stash --include-untracked
     standup = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --since yesterday --author cosn
+    sw = switch
     sync = town sync
     tig = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue(%cr) %C(green)<%an>%Creset' --abbrev-commit --date=relative
     undo = reset --soft HEAD^
