@@ -124,6 +124,8 @@ elif [[ $OSTYPE == darwin* ]]; then
   export HOMEBREW_NO_ANALYTICS=1
   export HOMEBREW_NO_AUTO_UPDATE=1
   export ZSH_DOTENV_FILE=.env.local
+
+  ulimit -n 32768
 fi
 
 source "$ZSH/oh-my-zsh.sh"
