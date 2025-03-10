@@ -35,7 +35,6 @@ docker-completion
 docutils
 dotenvx
 dotnet
-dotnet@8
 dtc
 duckdb
 eksctl
@@ -54,6 +53,7 @@ fribidi
 fzf
 gcc
 gdbm
+gdk-pixbuf
 gettext
 gh
 ghostscript
@@ -86,6 +86,7 @@ isl
 jansson
 jasper
 jbig2dec
+jpeg
 jpeg-turbo
 jpeg-xl
 jq
@@ -126,6 +127,7 @@ libomp
 libpng
 libraw
 librist
+librsvg
 libsamplerate
 libslirp
 libsndfile
