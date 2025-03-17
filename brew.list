@@ -77,8 +77,10 @@ highway
 homeassistant-cli
 httpie
 hub
+icann-rdap
 icu4c@75
 icu4c@76
+icu4c@77
 iftop
 imagemagick
 imath
