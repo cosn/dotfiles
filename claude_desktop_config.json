@@ -1,18 +1,11 @@
 {
   "globalShortcut": "Shift+Alt+Space",
   "mcpServers": {
-    "fleur": {
-      "command": "/Users/cos/.local/bin/uvx",
-      "args": [
-        "--from",
-        "git+https://github.com/fleuristes/fleur-mcp",
-        "fleur-mcp"
-      ]
-    },
     "fetch": {
       "command": "/Users/cos/.local/bin/uvx",
-      "args": ["mcp-server-fetch"]
+      "args": [
+        "mcp-server-fetch"
+      ]
     }
   }
 }
-
