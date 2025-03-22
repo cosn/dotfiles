@@ -166,6 +166,7 @@ elif [[ $OSTYPE == darwin* ]]; then
 
   eval "$(zoxide init --cmd cd zsh)"
   eval "$(thefuck --alias ffs)"
+  eval "$(fnm env --use-on-cd --shell zsh)"
 
   path=("/opt/homebrew/opt/gnu-which/libexec/gnubin" $path)
   path=("/opt/homebrew/opt/make/libexec/gnubin" $path)
@@ -311,7 +312,3 @@ alias n="nvim"
 alias pg="psql -U postgres"
 alias python="python3"
 alias tls="tmux list-sessions"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
