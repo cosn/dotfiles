@@ -21,7 +21,6 @@ cffi
 cjson
 cog
 colima
-copilot-cli
 coreutils
 cryptography
 csvkit
@@ -46,7 +45,6 @@ ffmpeg
 ffmpegthumbnailer
 flac
 fontconfig
-fontforge
 freetype
 frei0r
 fribidi
@@ -227,21 +225,6 @@ pycparser
 pyenv
 pygments
 pypy
-python-certifi
-python-click
-python-cryptography
-python-dateutil
-python-packaging
-python-pluggy
-python-psutil
-python-pytz
-python-setuptools
-python-tabulate
-python-typing-extensions
-python@3.11
-python@3.12
-python@3.13
-pyyaml
 qemu
 rav1e
 readline
@@ -327,4 +310,3 @@ monitorcontrol
 orbstack
 rapidapi
 session-manager-plugin
-yubico-yubikey-manager
