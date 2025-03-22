@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
+
 stow -v -t ~/ .
+
 if [ ! -h "$HOME/Library/Application Support/Claude/claude_desktop_config.json" ]; then
   ln -s "$PWD/claude_desktop_config.json" "$HOME/Library/Application Support/Claude/claude_desktop_config.json"
 fi
+
+defaults write -g InitialKeyRepeat -int 15
+defaults write -g KeyRepeat -int 1
+defaults write http://com.apple.finder AppleShowAllFiles YES
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
