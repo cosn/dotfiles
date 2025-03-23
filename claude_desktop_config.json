@@ -2,7 +2,7 @@
   "globalShortcut": "Shift+Alt+Space",
   "mcpServers": {
     "fetch": {
-      "command": "/Users/cos/.local/bin/uvx",
+      "command": "uvx",
       "args": [
         "mcp-server-fetch"
       ]
