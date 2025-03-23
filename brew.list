@@ -44,6 +44,7 @@ fd
 ffmpeg
 ffmpegthumbnailer
 flac
+fnm
 fontconfig
 freetype
 frei0r
@@ -225,6 +226,11 @@ pycparser
 pyenv
 pygments
 pypy
+python-packaging
+python-setuptools
+python-tabulate
+python@3.12
+python@3.13
 qemu
 rav1e
 readline
@@ -256,7 +262,6 @@ telnet
 temporal
 terraform
 tesseract
-tfenv
 tflint
 the_silver_searcher
 thefuck
@@ -272,6 +277,7 @@ unibilium
 universal-ctags
 unixodbc
 utf8proc
+uv
 vde
 webp
 wget
@@ -304,6 +310,8 @@ font-symbols-only-nerd-font
 hiddenbar
 iina
 imhex
+jan
+kitty
 monitorcontrol
 orbstack
 rapidapi
