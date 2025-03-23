@@ -226,11 +226,6 @@ pycparser
 pyenv
 pygments
 pypy
-python-packaging
-python-setuptools
-python-tabulate
-python@3.12
-python@3.13
 qemu
 rav1e
 readline
@@ -310,8 +305,6 @@ font-symbols-only-nerd-font
 hiddenbar
 iina
 imhex
-jan
-kitty
 monitorcontrol
 orbstack
 rapidapi
