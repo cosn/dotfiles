@@ -189,17 +189,12 @@ if type brew &>/dev/null; then
     compinit
   fi
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-[[ -s "$BUN_INSTALL/_bun" ]] && source "$BUN_INSTALL/_bun"
-path=("$BUN_INSTALL/bin" $path)
-
 # golang
 path=("/usr/local/go/bin" $path)
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
-path=("$PNPM_HOME" $path)
+path+="$PNPM_HOME"
 source <(pnpm completion zsh)
 
 # home assistant
@@ -251,7 +246,7 @@ _fzf_comprun() {
 
 if [[ -d "$HOME/src/accrual" ]]; then
   export AWS_PROFILE=accrual-admin
-  path=("$HOME/src/accrual/epsilon/infrastructure/scripts" $path)
+  path+="$HOME/src/accrual/epsilon/infrastructure/scripts"
 fi
 
 #
