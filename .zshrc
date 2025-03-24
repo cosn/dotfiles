@@ -5,10 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -30,7 +26,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 zstyle ":omz:update" mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
@@ -74,7 +69,6 @@ zstyle ":omz:update" mode auto      # update automatically without asking
 
 # VI_MODE_SET_CURSOR=true
 
-# Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -84,6 +78,7 @@ plugins=(
   asdf
   bazel
   colored-man-pages
+  colorize
   command-not-found
   copyfile
   cp
@@ -146,15 +141,6 @@ source "$ZSH/oh-my-zsh.sh"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [[ $OSTYPE == linux* ]]; then
   export EDITOR="vim"
@@ -243,7 +229,6 @@ _fzf_comprun() {
 }
 
 # Accrual
-
 if [[ -d "$HOME/src/accrual" ]]; then
   export AWS_PROFILE=accrual-admin
   path+="$HOME/src/accrual/epsilon/infrastructure/scripts"
