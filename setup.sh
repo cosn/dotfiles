@@ -4,6 +4,8 @@ defaults write -g InitialKeyRepeat -int 15
 defaults write -g KeyRepeat -int 1
 defaults write com.apple.finder AppleShowAllFiles YES
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+defaults write com.apple.dock springboard-columns -int 10
+defaults write com.apple.dock springboard-rows -int 8
 
 if [ ! -x "/opt/homebrew/bin/brew" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
