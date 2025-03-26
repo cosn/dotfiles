@@ -39,6 +39,7 @@ duckdb
 eksctl
 entr
 eslint
+eslint_d
 eza
 fd
 ffmpeg
