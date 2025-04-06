@@ -76,6 +76,7 @@ helm
 highway
 homeassistant-cli
 httpie
+httpstat
 hub
 icann-rdap
 icu4c@75
