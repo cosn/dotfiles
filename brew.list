@@ -221,7 +221,6 @@ plow
 pnpm
 poetry
 poppler
-postgresql@14
 postgresql@15
 powerlevel10k
 prettier
