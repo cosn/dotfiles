@@ -76,7 +76,7 @@
   "vim-prisma": { "branch": "main", "commit": "95c5b25066efb34c75bce78698baa371fe0ee7c2" },
   "vim-sleuth": { "branch": "master", "commit": "be69bff86754b1aa5adcbb527d7fcd1635a84080" },
   "vim-test": { "branch": "master", "commit": "b0c3e13249699a522c8b472ff79eff40d2935476" },
-  "vim-tmux-navigator": { "branch": "master", "commit": "33afa80db65113561dc53fa732b7f5e53d5ecfd0" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "64803fdd19a36211eba5e39f86c4cbceae8e1d06" },
   "vim-visual-multi": { "branch": "master", "commit": "a6975e7c1ee157615bbc80fc25e4392f71c344d4" },
   "vimux": { "branch": "master", "commit": "7db6b2f79d432ee3820668b1d4625311dbe1d0ad" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
