@@ -1,11 +1,13 @@
 return {
   {
     "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
     keys = {
       {
         "<leader>f",
         function()
-          require("conform").format({ async = true, lsp_fallback = true })
+          require("conform").format({ async = true, lsp_format = "fallback" })
         end,
         mode = "",
         desc = "[F]ormat buffer",
@@ -18,10 +20,14 @@ return {
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = true, cpp = true }
-        return {
-          timeout_ms = 500,
-          lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-        }
+        if disable_filetypes[vim.bo[bufnr].filetype] then
+          return nil
+        else
+          return {
+            timeout_ms = 500,
+            lsp_format = "fallback",
+          }
+        end
       end,
       formatters_by_ft = {
         css = { "prettierd", "prettier" },
@@ -44,15 +50,7 @@ return {
   },
   {
     "windwp/nvim-autopairs",
-    event = "VeryLazy",
-    dependencies = { "hrsh7th/nvim-cmp" },
-    config = function()
-      require("nvim-autopairs").setup({})
-      -- If you want to automatically add `(` after selecting a function or method
-      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-      local cmp = require("cmp")
-      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-    end,
+    event = "InsertEnter",
   },
   {
     "kylechui/nvim-surround",
@@ -60,7 +58,7 @@ return {
     opts = {},
   },
   {
-    "tpope/vim-sleuth",
+    "NMAC427/guess-indent.nvim",
     event = "VeryLazy",
   },
 }

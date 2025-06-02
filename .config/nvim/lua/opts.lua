@@ -1,6 +1,7 @@
-local opt = vim.opt
+local opt = vim.o
 
 opt.breakindent = true
+opt.confirm = true
 opt.cursorline = true
 opt.expandtab = true
 opt.hidden = true
@@ -10,7 +11,7 @@ opt.inccommand = "split"
 opt.incsearch = true
 opt.jumpoptions = "stack"
 opt.list = true
-opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 opt.mouse = "a"
 opt.relativenumber = true
 opt.scrolloff = 10

@@ -9,7 +9,7 @@ return {
       "MunifTanjim/nui.nvim",
       "3rd/image.nvim",
     },
-    cmd = "Neotree",
+    lazy = false,
     keys = {
       { "\\", ":Neotree reveal<cr>", { desc = "NeoTree reveal" } },
     },
@@ -130,8 +130,8 @@ return {
       return ufo_keys
     end,
     init = function()
-      vim.opt.foldlevel = 99
-      vim.opt.foldlevelstart = 99
+      vim.o.foldlevel = 99
+      vim.o.foldlevelstart = 99
     end,
     opts = {
       close_fold_kinds_for_ft = {

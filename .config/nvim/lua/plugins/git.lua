@@ -29,7 +29,6 @@ return {
       vim.keymap.set("n", "<leader>ghs", gitsigns.stage_hunk, { desc = "[g]it [s]tage hunk" })
       vim.keymap.set("n", "<leader>ghr", gitsigns.reset_hunk, { desc = "[g]it [r]eset hunk" })
       vim.keymap.set("n", "<leader>ghS", gitsigns.stage_buffer, { desc = "[g]it [S]tage buffer" })
-      vim.keymap.set("n", "<leader>ghu", gitsigns.undo_stage_hunk, { desc = "[g]it [u]ndo stage hunk" })
       vim.keymap.set("n", "<leader>ghR", gitsigns.reset_buffer, { desc = "[g]it [R]eset buffer" })
       vim.keymap.set("n", "<leader>ghp", gitsigns.preview_hunk, { desc = "[g]it [p]review hunk" })
       vim.keymap.set("n", "<leader>ghb", gitsigns.blame_line, { desc = "[g]it [b]lame line" })
@@ -44,7 +43,7 @@ return {
         gitsigns.toggle_current_line_blame,
         { desc = "[git] [t]oggle git show [b]lame line" }
       )
-      vim.keymap.set("n", "<leader>gtD", gitsigns.toggle_deleted, { desc = "[g]it [t]oggle git show [d]eleted" })
+      vim.keymap.set("n", "<leader>gtD", gitsigns.preview_hunk_inline, { desc = "[g]it [t]oggle git show [d]eleted" })
     end,
   },
   {
