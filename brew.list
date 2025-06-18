@@ -11,6 +11,7 @@ awscli
 bash
 bat
 bazelisk
+boost
 brotli
 c-ares
 ca-certificates
@@ -34,18 +35,25 @@ docker-completion
 docutils
 dotenvx
 dotnet
+double-conversion
 dtc
 duckdb
+edencommon
 eksctl
 entr
 eslint
 eslint_d
 eza
+fb303
+fbthrift
 fd
 ffmpeg
 ffmpegthumbnailer
+fizz
 flac
+fmt
 fnm
+folly
 fontconfig
 freetype
 frei0r
@@ -55,6 +63,7 @@ gcc
 gdbm
 gdk-pixbuf
 gettext
+gflags
 gh
 ghostscript
 giflib
@@ -63,6 +72,7 @@ git-delta
 git-lfs
 git-town
 glib
+glog
 gmp
 gnu-which
 gnupg
@@ -75,6 +85,7 @@ harfbuzz
 helm
 highway
 homeassistant-cli
+htop
 httpie
 httpstat
 hub
@@ -276,6 +287,8 @@ unixodbc
 utf8proc
 uv
 vde
+wangle
+watchman
 webp
 wget
 woff2
@@ -284,6 +297,7 @@ x264
 x265
 xorgproto
 xvid
+xxhash
 xz
 yazi
 ykman
