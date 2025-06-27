@@ -69,7 +69,7 @@ return {
       sources = {
         default = { "lsp", "path", "snippets", "lazydev", "supermaven" },
         providers = {
-          lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
+          lazydev = { module = "lazydev.integrations.blink", score_offset = 5 },
           supermaven = { name = "supermaven", module = "blink-cmp-supermaven", async = true },
         },
       },
