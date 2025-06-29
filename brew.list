@@ -74,6 +74,7 @@ git-town
 glib
 glog
 gmp
+gnu-sed
 gnu-which
 gnupg
 gnutls
@@ -313,6 +314,7 @@ zsh-syntax-highlighting
 zstd
 1password-cli
 alacritty
+alt-tab
 devutils
 font-meslo-lg-nerd-font
 font-roboto-mono-nerd-font
