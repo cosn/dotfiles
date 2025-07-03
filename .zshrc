@@ -83,7 +83,7 @@ plugins=(
   copyfile
   cp
   docker
-  dotenv
+  direnv
   encode64
   extract
   genpass
