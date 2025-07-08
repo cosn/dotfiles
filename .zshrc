@@ -289,7 +289,6 @@ alias rfd="cd ~/src/accrual/decisions"
 
 alias cat="bat"
 alias cls="clear"
-alias gt="git-town"
 alias lg="lazygit"
 alias ls="eza --icons=auto"
 alias lt="yazi"
