@@ -1,0 +1,30 @@
+
+# Edit this file to configure aliases for Graphite commands.
+# If you delete this file, it will be recreated with the default aliases.
+# The first word of each line is the alias, and the rest is the command.
+# Lines starting with # are ignored.
+
+# The aliases for ss, ls, and ll are defined by default and must be overridden to be disabled.
+# They are shown below to demonstrate the formatting.
+
+c create
+co checkout
+rm delete
+m modify
+mc modify --commit
+
+tt top
+uu up
+dd down
+bb bottom
+
+s submit
+ss submit --stack
+ssu submit --stack --update-only
+rs restack --only
+drs restack --downstack
+urs restack --upstack
+ars restack
+
+ll log long
+ls log short

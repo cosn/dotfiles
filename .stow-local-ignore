@@ -9,5 +9,6 @@
 ^/bash_profile
 ^/editors
 ^/link
+^/setup.sh
 
-.+\.(json|list|itermcolors|zsh-theme)
+.+\.(json|list|itermcolors|zsh-theme|aider)
