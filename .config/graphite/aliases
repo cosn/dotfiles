@@ -8,6 +8,7 @@
 # They are shown below to demonstrate the formatting.
 
 c create
+ca create --all
 co checkout
 rm delete
 m modify
