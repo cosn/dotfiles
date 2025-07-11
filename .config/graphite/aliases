@@ -9,6 +9,7 @@
 
 c create
 ca create --all
+cam create --all --message
 co checkout
 rm delete
 m modify
@@ -22,10 +23,10 @@ bb bottom
 s submit
 ss submit --stack
 ssu submit --stack --update-only
-rs restack --only
+rs restack
+ors restack --only
 drs restack --downstack
 urs restack --upstack
-ars restack
 
 ll log long
 ls log short
