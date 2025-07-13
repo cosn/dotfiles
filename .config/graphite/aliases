@@ -7,13 +7,12 @@
 # The aliases for ss, ls, and ll are defined by default and must be overridden to be disabled.
 # They are shown below to demonstrate the formatting.
 
-c create
-ca create --all
-cam create --all --message
-co checkout
+c create --message
+ca create --all --message
+ma modify --all --message
+mac modify --all --commit --message
 rm delete
-m modify
-mc modify --commit
+co checkout
 
 tt top
 uu up
@@ -28,5 +27,6 @@ ors restack --only
 drs restack --downstack
 urs restack --upstack
 
+i info
 ll log long
 ls log short
