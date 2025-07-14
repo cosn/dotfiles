@@ -14,10 +14,10 @@ mac modify --all --commit --message
 rm delete
 co checkout
 
-tt top
-uu up
-dd down
-bb bottom
+t top
+u up
+d down
+b bottom
 
 s submit
 ss submit --stack
