@@ -138,6 +138,8 @@ liblqr
 libmicrohttpd
 libmpc
 libnghttp2
+libnghttp3
+libngtcp2
 libogg
 libomp
 libpng
@@ -255,6 +257,8 @@ sdl2
 shared-mime-info
 sherlock
 shyaml
+simdjson
+simdutf
 six
 snappy
 speex
