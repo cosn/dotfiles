@@ -91,7 +91,6 @@ plugins=(
   encode64
   extract
   genpass
-  git
   github
   golang
   jsontools
