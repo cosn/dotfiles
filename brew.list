@@ -22,6 +22,7 @@ capstone
 certifi
 cffi
 cjson
+codex
 cog
 colima
 coreutils
