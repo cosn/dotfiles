@@ -30,6 +30,7 @@ cryptography
 csvkit
 curl
 curlie
+cyrus-sasl
 datamash
 dav1d
 deno
@@ -51,6 +52,7 @@ fb303
 fbthrift
 fd
 ffmpeg
+ffmpeg@7
 ffmpegthumbnailer
 fizz
 flac
@@ -162,6 +164,7 @@ libtasn1
 libtiff
 libtommath
 libtool
+libudfread
 libunibreak
 libuninameslist
 libunistring
@@ -296,6 +299,7 @@ universal-ctags
 unixodbc
 utf8proc
 uv
+uvwasi
 vde
 wangle
 watchman
