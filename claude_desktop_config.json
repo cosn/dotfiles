@@ -1,4 +1,7 @@
 {
   "globalShortcut": "Shift+Alt+Space",
-  "mcpServers": {}
+  "mcpServers": {},
+  "preferences": {
+    "menuBarEnabled": false
+  }
 }
