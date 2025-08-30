@@ -270,7 +270,7 @@ bindkey '^[k' kill-line
 #
 alias gp="git pull"
 alias gs="git status"
-alias gtmas="gt ma && gt s"
+alias gtmas="gt ma && gt s --stack --update-only"
 alias gts="gt sync -f"
 alias gph="git push origin HEAD"
 alias gphf="git push -f origin HEAD"
