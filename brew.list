@@ -188,6 +188,7 @@ llama.cpp
 llm
 llvm
 llvm@16
+llvm@20
 lpeg
 lua
 luajit
