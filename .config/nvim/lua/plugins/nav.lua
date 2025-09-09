@@ -1,6 +1,7 @@
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
+    enabled = false,
     event = "VeryLazy",
     version = "*",
     dependencies = {
