@@ -298,7 +298,7 @@ alias aeab="cd ~/src/accrual/epsilon/apps/babylon"
 alias aeaf="cd ~/src/accrual/epsilon/apps/firm"
 alias aea5="cd ~/src/accrual/epsilon/apps/five"
 alias aei="cd ~/src/accrual/epsilon/infrastructure"
-alias aeit="cd ~/src/accrual/epsilon/infrastructure/terraform"
+alias aeit="cd ~/src/accrual/epsilon/infrastructure/terraform/production"
 alias asc="cd ~/src/accrual/stellarcom"
 alias rfd="cd ~/src/accrual/decisions"
 
