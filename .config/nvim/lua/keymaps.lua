@@ -22,3 +22,4 @@ keymap.set("n", "<C-t>", "<cmd>tabnew<cr>", { desc = "New tab" })
 keymap.set("n", "<leader>wr", "<cmd>set linebreak wrap<cr>", { desc = "Toggle [W]rap" })
 
 keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
+keymap.set({ "n", "v" }, "dD", '"_dd', { desc = "Delete line to black hole register" })
