@@ -155,7 +155,10 @@ elif [[ $OSTYPE == darwin* ]]; then
 
   eval "$(zoxide init --cmd cd zsh)"
   eval "$(thefuck --alias ffs)"
-  eval "$(fnm env --use-on-cd --shell zsh)"
+
+ if [ -d "/opt/homebrew/opt/fnm/bin"]; then
+   eval "$(fnm env --use-on-cd --shell zsh)"
+ fi
 
   path=("/opt/homebrew/opt/postgresql@15/bin" $path)
   path=("/opt/homebrew/opt/gnu-which/libexec/gnubin" $path)
