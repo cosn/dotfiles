@@ -250,7 +250,7 @@ compdef _gt_yargs_completions gt
 # Accrual
 if [[ -d "$HOME/src/accrual" ]]; then
   export AWS_PROFILE=accrual-admin
-  path+="$HOME/src/accrual/epsilon/infrastructure/scripts"
+  path+="$HOME/src/accrual/epsilon/infrastructure/scripts/bin"
   export ACCRUAL_ENGINEER=cos
 fi
 
