@@ -156,7 +156,7 @@ elif [[ $OSTYPE == darwin* ]]; then
   eval "$(zoxide init --cmd cd zsh)"
   eval "$(thefuck --alias ffs)"
 
- if [ -d "/opt/homebrew/opt/fnm/bin"]; then
+ if [ -d "/opt/homebrew/opt/fnm/bin" ]; then
    eval "$(fnm env --use-on-cd --shell zsh)"
  fi
 
