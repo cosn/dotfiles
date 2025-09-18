@@ -1,17 +1,23 @@
 return {
-  { "brenoprata10/nvim-highlight-colors", event = "VeryLazy", opts = {
-    enable_tailwind = true,
-  } },
+  {
+    "brenoprata10/nvim-highlight-colors",
+    event = "BufReadPre",
+    opts = {
+      enable_tailwind = true,
+    }
+  },
   {
     "norcalli/nvim-colorizer.lua",
-    event = "VeryLazy",
+    event = "BufReadPre",
   },
   {
     "folke/twilight.nvim",
+    cmd = { "Twilight", "TwilightEnable", "TwilightDisable" },
     opts = {},
   },
   {
     "prisma/vim-prisma",
+    ft = "prisma",
   },
   {
     "lukas-reineke/indent-blankline.nvim",

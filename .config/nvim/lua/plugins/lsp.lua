@@ -241,19 +241,21 @@ return {
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-      for server, config in pairs(vim.tbl_extend("keep", servers.mason, servers.others)) do
-        if not vim.tbl_isempty(config) then
-          vim.lsp.config(server, config)
-        end
-      end
-
       require("mason-lspconfig").setup({
-        ensure_installed = {},
-        automatic_enable = true,
+        ensure_installed = vim.tbl_keys(servers.mason or {}),
+        handlers = {
+          function(server_name)
+            local config = servers.mason[server_name] or {}
+            config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
+            require("lspconfig")[server_name].setup(config)
+          end,
+        },
       })
 
-      if not vim.tbl_isempty(servers.others) then
-        vim.lsp.enable(vim.tbl_keys(servers.others))
+      -- Setup non-Mason servers
+      for server_name, config in pairs(servers.others or {}) do
+        config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
+        require("lspconfig")[server_name].setup(config)
       end
     end,
   },

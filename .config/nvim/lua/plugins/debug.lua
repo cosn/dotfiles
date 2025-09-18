@@ -8,6 +8,7 @@ return {
       "jay-babu/mason-nvim-dap.nvim",
       "mxsdev/nvim-dap-vscode-js",
       "theHamsta/nvim-dap-virtual-text",
+      "leoluz/nvim-dap-go",
     },
     keys = {
       {

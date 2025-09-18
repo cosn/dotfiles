@@ -64,7 +64,10 @@ return {
       { "<leader>lg", ":LazyGit<cr>", desc = "LazyGit" },
     },
     config = function()
-      require("telescope").load_extension("lazygit")
+      local ok, err = pcall(require("telescope").load_extension, "lazygit")
+      if not ok then
+        vim.notify("Failed to load lazygit telescope extension: " .. err, vim.log.levels.WARN)
+      end
     end,
   },
   {

@@ -51,12 +51,14 @@ return {
       },
     })
 
-    pcall(telescope.load_extension, "fzf")
-    pcall(telescope.load_extension, "projects")
-    pcall(telescope.load_extension, "ui-select")
-    pcall(telescope.load_extension, "notify")
-    pcall(telescope.load_extension, "noice")
-    pcall(telescope.load_extension, "yank_history")
+    -- Load extensions with error handling
+    local extensions = { "fzf", "projects", "ui-select", "notify", "noice", "yank_history" }
+    for _, ext in ipairs(extensions) do
+      local ok, err = pcall(telescope.load_extension, ext)
+      if not ok then
+        vim.notify(string.format("Failed to load telescope extension '%s': %s", ext, err), vim.log.levels.WARN)
+      end
+    end
 
     -- See `:help telescope.builtin`
     local builtin = require("telescope.builtin")

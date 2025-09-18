@@ -69,10 +69,26 @@ return {
 
       -- Prefer git instead of curl in order to improve connectivity in some environments
       require("nvim-treesitter.install").prefer_git = true
-      -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-      require("nvim-treesitter.configs").setup(opts)
-      require("treesitter-context").setup(opts)
-      require("nvim-ts-autotag").setup(opts)
+
+      -- Configure Treesitter with error handling
+      local ok, ts_configs = pcall(require, "nvim-treesitter.configs")
+      if ok then
+        ts_configs.setup(opts)
+      else
+        vim.notify("Failed to load nvim-treesitter.configs", vim.log.levels.ERROR)
+      end
+
+      -- Setup treesitter-context
+      local context_ok, ts_context = pcall(require, "treesitter-context")
+      if context_ok then
+        ts_context.setup(opts)
+      end
+
+      -- Setup autotag
+      local autotag_ok, autotag = pcall(require, "nvim-ts-autotag")
+      if autotag_ok then
+        autotag.setup(opts)
+      end
 
       -- There are additional nvim-treesitter modules that you can use to interact
       -- with nvim-treesitter. You should go explore a few and see what interests you:
@@ -130,8 +146,15 @@ return {
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
     config = function()
-      require("typescript-tools").setup({
+      local ok, ts_tools = pcall(require, "typescript-tools")
+      if not ok then
+        vim.notify("Failed to load typescript-tools", vim.log.levels.ERROR)
+        return
+      end
+
+      ts_tools.setup({
         settings = {
           tsserver_plugins = {
             "@styled/typescript-styled-plugin",
@@ -139,9 +162,10 @@ return {
         },
       })
 
+      -- Only set keymaps if typescript-tools loaded successfully
       vim.keymap.set("n", "<leader>mi", ":TSToolsAddMissingImport<cr>", { desc = "Typescript Add Missing Imports" })
       vim.keymap.set("n", "<leader>ui", ":TSToolsRemoveUnusedImport<cr>", { desc = "Typescript Remove Unused Imports" })
-      vim.keymap.set("n", "<leader>tfa", ":TSToolsFixAl<cr>", { desc = "Typescript Fix All" })
+      vim.keymap.set("n", "<leader>tfa", ":TSToolsFixAll<cr>", { desc = "Typescript Fix All" })
     end,
   },
 }

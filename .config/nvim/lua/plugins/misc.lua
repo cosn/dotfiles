@@ -11,7 +11,6 @@ return {
   },
   {
     "iamcco/markdown-preview.nvim",
-    event = "VeryLazy",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function()
@@ -20,6 +19,10 @@ return {
   },
   {
     "folke/zen-mode.nvim",
+    cmd = { "ZenMode" },
+    keys = {
+      { "<leader>z", "<cmd>ZenMode<cr>", desc = "Toggle [Z]en Mode" },
+    },
     opts = {},
   },
   {

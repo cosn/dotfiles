@@ -58,11 +58,11 @@ return {
   },
   {
     "akinsho/bufferline.nvim",
-    event = "VeryLazy",
+    event = "UIEnter",
     dependencies = "nvim-tree/nvim-web-devicons",
     keys = {
-      { "<Tab>", "<Cmd>BufferLineCycleNext<cr>", desc = "Next tab" },
-      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<cr>", desc = "Prev tab" },
+      { "<Tab>", "<Cmd>BufferLineCycleNext<cr>", desc = "[B]uffer [N]ext" },
+      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<cr>", desc = "[B]uffer [P]revious" },
     },
     opts = {
       options = {
@@ -75,13 +75,19 @@ return {
   },
   {
     "chentoast/marks.nvim",
-    event = "VeryLazy",
+    event = "BufReadPost",
     opts = {},
   },
-  { "mg979/vim-visual-multi" },
+  {
+    "mg979/vim-visual-multi",
+    event = "BufReadPost",
+  },
   {
     "stevearc/aerial.nvim",
-    event = "VeryLazy",
+    cmd = { "AerialToggle", "AerialOpen", "AerialClose" },
+    keys = {
+      { "<leader>at", desc = "Toggle [A]erial" },
+    },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
