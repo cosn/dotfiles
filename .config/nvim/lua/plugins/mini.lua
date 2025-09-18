@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.nvim",
+  "nvim-mini/mini.nvim",
   config = function()
     -- Better Around/Inside textobjects
     --
@@ -10,7 +10,7 @@ return {
 
     require("mini.basics").setup()
 
-    -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-bracketed.md
+    -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-bracketed.md
     require("mini.bracketed").setup()
 
     require("mini.bufremove").setup()
