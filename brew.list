@@ -197,6 +197,7 @@ luv
 lz4
 lzo
 m4
+mac-brightnessctl
 make
 markdownlint-cli
 mbedtls
