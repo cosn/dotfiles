@@ -63,6 +63,7 @@ fontconfig
 freetype
 frei0r
 fribidi
+fswatch
 fzf
 gcc
 gdbm
