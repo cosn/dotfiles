@@ -22,6 +22,7 @@ return {
       {
         "huijiro/blink-cmp-supermaven",
       },
+      "olimorris/codecompanion.nvim",
     },
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config
@@ -72,6 +73,9 @@ return {
           lazydev = { module = "lazydev.integrations.blink", score_offset = 5 },
           supermaven = { name = "supermaven", module = "blink-cmp-supermaven", async = true },
         },
+        per_filetype = {
+          codecompanion = { "codecompanion" },
+        },
       },
 
       snippets = { preset = "luasnip" },
@@ -87,6 +91,64 @@ return {
 
       -- Shows a signature help window while you type arguments for a function
       signature = { enabled = true },
+    },
+  },
+  {
+    "olimorris/codecompanion.nvim",
+    opts = {
+      strategies = {
+        chat = {
+          adapter = "anthropic",
+          model = "claude-sonnet-4-5-20250929",
+        },
+        inline = {
+          adapter = "anthropic",
+          model = "claude-sonnet-4-5-20250929",
+        },
+        cmd = {
+          adapter = "anthropic",
+          model = "claude-sonnet-4-5-20250929",
+        },
+      },
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      {
+        "MeanderingProgrammer/render-markdown.nvim",
+        ft = { "markdown", "codecompanion" },
+      },
+      {
+        "OXY2DEV/markview.nvim",
+        lazy = false,
+        opts = {
+          preview = {
+            filetypes = { "markdown", "codecompanion" },
+            ignore_buftypes = {},
+          },
+        },
+      },
+      {
+        "echasnovski/mini.diff",
+        config = function()
+          local diff = require("mini.diff")
+          diff.setup({
+            -- Disabled by default
+            source = diff.gen_source.none(),
+          })
+        end,
+      },
+      {
+        "HakonHarnes/img-clip.nvim",
+        opts = {
+          filetypes = {
+            codecompanion = {
+              prompt_for_file_name = false,
+              template = "[Image]($FILE_PATH)",
+              use_absolute_path = true,
+            },
+          },
+        },
+      },
     },
   },
   {
