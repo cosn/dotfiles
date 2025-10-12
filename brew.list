@@ -183,6 +183,7 @@ libxdmcp
 libxext
 libxrender
 libyaml
+libzip
 lima
 little-cms2
 llama.cpp
