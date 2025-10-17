@@ -12,16 +12,6 @@ return {
         end)(),
       },
       "folke/lazydev.nvim",
-      {
-        "supermaven-inc/supermaven-nvim",
-        opts = {
-          disable_inline_completion = true,
-          disable_keymaps = true,
-        },
-      },
-      {
-        "huijiro/blink-cmp-supermaven",
-      },
       "olimorris/codecompanion.nvim",
       "giuxtaposition/blink-cmp-copilot",
     },
@@ -70,17 +60,12 @@ return {
       },
 
       sources = {
-        default = { "lsp", "path", "snippets", "lazydev", "copilot", "supermaven" },
+        default = { "lsp", "path", "snippets", "lazydev", "copilot" },
         providers = {
           lazydev = { module = "lazydev.integrations.blink", score_offset = 5 },
           copilot = {
             name = "copilot",
             module = "blink-cmp-copilot",
-            async = true,
-          },
-          supermaven = {
-            name = "supermaven",
-            module = "blink-cmp-supermaven",
             async = true,
           },
         },
@@ -173,6 +158,9 @@ return {
   {
     "supermaven-inc/supermaven-nvim",
     event = "VeryLazy",
+    opts = {
+      disable_inline_completion = false, -- Enable multi-line ghost text
+    },
   },
   {
     "yetone/avante.nvim",
