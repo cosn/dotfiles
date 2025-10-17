@@ -23,6 +23,7 @@ return {
         "huijiro/blink-cmp-supermaven",
       },
       "olimorris/codecompanion.nvim",
+      "giuxtaposition/blink-cmp-copilot",
     },
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config
@@ -72,10 +73,16 @@ return {
         default = { "lsp", "path", "snippets", "lazydev", "supermaven" },
         providers = {
           lazydev = { module = "lazydev.integrations.blink", score_offset = 5 },
-          supermaven = { name = "supermaven", module = "blink-cmp-supermaven", async = true },
-        },
-        per_filetype = {
-          codecompanion = { "codecompanion" },
+          copilot = {
+            name = "copilot",
+            module = "blink-cmp-copilot",
+            async = true,
+          },
+          supermaven = {
+            name = "supermaven",
+            module = "blink-cmp-supermaven",
+            async = true,
+          },
         },
       },
 
@@ -88,7 +95,7 @@ return {
       -- the rust implementation via `'prefer_rust_with_warning'`
       --
       -- See :h blink-cmp-config-fuzzy for more information
-      fuzzy = { implementation = "lua" },
+      fuzzy = { implementation = "prefer_rust" },
 
       -- Shows a signature help window while you type arguments for a function
       signature = { enabled = true },
@@ -96,6 +103,7 @@ return {
   },
   {
     "olimorris/codecompanion.nvim",
+    enabled = false,
     opts = {
       strategies = {
         chat = {
@@ -153,9 +161,13 @@ return {
     },
   },
   {
-    "github/copilot.vim",
-    enabled = false,
-    event = "VeryLazy",
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    },
   },
   {
     "supermaven-inc/supermaven-nvim",
