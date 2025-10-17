@@ -70,7 +70,7 @@ return {
       },
 
       sources = {
-        default = { "lsp", "path", "snippets", "lazydev", "supermaven" },
+        default = { "lsp", "path", "snippets", "lazydev", "copilot", "supermaven" },
         providers = {
           lazydev = { module = "lazydev.integrations.blink", score_offset = 5 },
           copilot = {
@@ -167,6 +167,7 @@ return {
     opts = {
       suggestion = { enabled = false },
       panel = { enabled = false },
+      copilot_model = "GPT-5-Codex",
     },
   },
   {
