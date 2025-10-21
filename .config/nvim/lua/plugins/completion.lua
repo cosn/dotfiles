@@ -160,9 +160,6 @@ return {
     event = "VeryLazy",
     opts = {
       disable_inline_completion = false, -- Enable multi-line ghost text
-      keymaps = {
-        accept_suggestion = "<M-y>",
-      },
     },
   },
   {
