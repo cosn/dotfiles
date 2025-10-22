@@ -22,7 +22,6 @@ capstone
 certifi
 cffi
 cjson
-codex
 cog
 colima
 coreutils
@@ -232,6 +231,7 @@ openldap
 openssl@3
 opus
 p11-kit
+packer
 pam-reattach
 pandoc
 pango
@@ -334,6 +334,7 @@ zstd
 1password-cli
 alacritty
 alt-tab
+codex
 devutils
 font-meslo-lg-nerd-font
 font-roboto-mono-nerd-font
