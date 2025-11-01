@@ -148,6 +148,7 @@ libnghttp3
 libngtcp2
 libogg
 libomp
+libpcap
 libpng
 libraw
 librist
