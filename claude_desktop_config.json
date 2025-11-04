@@ -2,6 +2,7 @@
   "globalShortcut": "Shift+Alt+Space",
   "mcpServers": {},
   "preferences": {
-    "menuBarEnabled": false
+    "menuBarEnabled": false,
+    "quickEntryShortcut": "off"
   }
 }
