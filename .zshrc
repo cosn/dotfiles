@@ -299,14 +299,20 @@ alias nd="nx dev"
 alias nt="nx test"
 
 alias s="cd ~/src"
-alias ae="cd ~/src/accrual/epsilon"
-alias aea="cd ~/src/accrual/epsilon/apps"
-alias aep="cd ~/src/accrual/epsilon/packages"
-alias aeab="cd ~/src/accrual/epsilon/apps/babylon"
-alias aeaf="cd ~/src/accrual/epsilon/apps/firm"
-alias aea5="cd ~/src/accrual/epsilon/apps/five"
-alias aei="cd ~/src/accrual/epsilon/infrastructure"
-alias aeit="cd ~/src/accrual/epsilon/infrastructure/terraform/production"
+ae() {
+  local n="${1:-0}"
+  cd "$HOME/src/accrual/epsilon/$n"
+}
+
+aei() {
+  local n="${1:-0}"
+  cd "$HOME/src/accrual/epsilon/$n/infrastructure"
+}
+
+aeit() {
+  local n="${1:-0}"
+  cd "$HOME/src/accrual/epsilon/$n/infrastructure/terraform/production"
+}
 alias asc="cd ~/src/accrual/stellarcom"
 alias rfd="cd ~/src/accrual/decisions"
 
