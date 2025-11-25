@@ -77,6 +77,9 @@ zstyle ":omz:update" mode auto      # update automatically without asking
 
 path=("/opt/homebrew/bin" $path)
 
+# Cache brew prefix for performance (avoid repeated slow calls)
+HOMEBREW_PREFIX="${HOMEBREW_PREFIX:-$(brew --prefix)}"
+
 plugins=(
   aliases
   asdf
@@ -154,7 +157,12 @@ elif [[ $OSTYPE == darwin* ]]; then
   export BAT_THEME="ansi"
 
   eval "$(zoxide init --cmd cd zsh)"
-  eval "$(thefuck --alias ffs)"
+  # Lazy load thefuck (slow to initialize)
+  ffs() {
+    unfunction ffs
+    eval "$(thefuck --alias ffs)"
+    ffs "$@"
+  }
 
  if [ -d "/opt/homebrew/opt/fnm/bin" ]; then
    eval "$(fnm env --use-on-cd --shell zsh)"
@@ -168,15 +176,20 @@ elif [[ $OSTYPE == darwin* ]]; then
 fi
 
 # sources
-[[ -s "$(brew --prefix)/share/zsh-syntax-highlighting" ]] && source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-[[ -s "$(brew --prefix)/share/zsh-autosuggestions" ]] && source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[[ -s "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ]] && source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[[ -s "$HOMEBREW_PREFIX/share/zsh-autosuggestions" ]] && source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 [[ -s "$HOME/.config/op/plugins.sh" ]] && source "$HOME/.config/op/plugins.sh"
 [[ -s "$HOME/.keys" ]] && source "$HOME/.keys"
 
 # completion
 if type brew &>/dev/null; then
     fpath=($fpath ~/.zsh/completion)
-    fpath=($(brew --prefix)/share/zsh-completions $fpath)
+    fpath=($HOMEBREW_PREFIX/share/zsh-completions $fpath)
+
+    # Enable completion caching for better performance
+    [[ -d "$HOME/.zsh/cache" ]] || mkdir -p "$HOME/.zsh/cache"
+    zstyle ':completion:*' use-cache on
+    zstyle ':completion:*' cache-path "$HOME/.zsh/cache"
 
     autoload -Uz compinit
     compinit
@@ -188,20 +201,20 @@ path=("/usr/local/go/bin" $path)
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 path+="$PNPM_HOME"
-source <(pnpm completion zsh)
+(( $+commands[pnpm] )) && source <(pnpm completion zsh)
 
 # home assistant
-[[ -s "$(brew --prefix)/bin/hass-cli" ]] && source <(_HASS_CLI_COMPLETE=zsh_source hass-cli)
+[[ -s "$HOMEBREW_PREFIX/bin/hass-cli" ]] && source <(_HASS_CLI_COMPLETE=zsh_source hass-cli)
 
 # p10k
-[[ -s "$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" ]] && source "$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme"
+[[ -s "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme" ]] && source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
 [[ -s "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
 
 # git town
-source <(git-town completions zsh)
+(( $+commands[git-town] )) && source <(git-town completions zsh)
 
 # fuzzy
-source <(fzf --zsh)
+(( $+commands[fzf] )) && source <(fzf --zsh)
 [[ -s "$HOME/.fzf-git/fzf-git.sh" ]] && source $HOME/.fzf-git/fzf-git.sh
 
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
@@ -261,9 +274,25 @@ typeset -U path
 path=($^path(N-/))
 export PATH
 
-setopt HIST_IGNORE_SPACE
-setopt HIST_IGNORE_DUPS
-setopt SHARE_HISTORY
+# History configuration
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=50000
+setopt HIST_IGNORE_SPACE       # Ignore commands starting with space
+setopt HIST_IGNORE_DUPS        # Ignore consecutive duplicates
+setopt HIST_IGNORE_ALL_DUPS    # Remove older duplicate entries
+setopt HIST_REDUCE_BLANKS      # Remove superfluous blanks
+setopt HIST_VERIFY             # Don't execute immediately on history expansion
+setopt INC_APPEND_HISTORY      # Add commands as they are typed
+setopt EXTENDED_HISTORY        # Save timestamp and duration
+setopt SHARE_HISTORY           # Share history between sessions
+
+# Useful shell options
+setopt AUTO_CD                 # cd by typing directory name
+setopt AUTO_PUSHD              # Push dir to stack on cd
+setopt PUSHD_IGNORE_DUPS       # Don't push duplicates
+setopt INTERACTIVE_COMMENTS    # Allow comments in interactive shell
+setopt NO_BEEP                 # Disable beep on error
 
 bindkey '^y' autosuggest-accept
 bindkey '^[y' yank
@@ -326,8 +355,3 @@ alias pg="psql -U postgres"
 alias python="python3"
 alias tls="tmux list-sessions"
 
-# fnm
-FNM_PATH="/opt/homebrew/opt/fnm/bin"
-if [ -d "$FNM_PATH" ]; then
-  eval "`fnm env`"
-fi
