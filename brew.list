@@ -51,7 +51,6 @@ fb303
 fbthrift
 fd
 ffmpeg
-ffmpeg@7
 ffmpegthumbnailer
 fizz
 flac
@@ -67,6 +66,7 @@ fzf
 gcc
 gdbm
 gdk-pixbuf
+gemini-cli
 gettext
 gflags
 gh
@@ -167,6 +167,7 @@ libtiff
 libtommath
 libtool
 libudfread
+libultrahdr
 libunibreak
 libuninameslist
 libunistring
@@ -200,9 +201,11 @@ lz4
 lzo
 m4
 mac-brightnessctl
+mackup
 make
 markdownlint-cli
 mbedtls
+mbedtls@3
 mpdecimal
 mpfr
 mpg123
