@@ -342,6 +342,42 @@ aeit() {
   local n="${1:-0}"
   cd "$HOME/src/accrual/epsilon/$n/infrastructure/terraform/production"
 }
+
+auth() {
+  local n="${1:-0}"
+  cd "$HOME/src/accrual/epsilon/$n/apps/babylon/auth-srv"
+}
+
+babylon() {
+  local n="${1:-0}"
+  cd "$HOME/src/accrual/epsilon/$n/apps/babylon/babylon-db"
+}
+
+site() {
+  local n="${1:-0}"
+  cd "$HOME/src/accrual/epsilon/$n/apps/babylon/site-srv"
+}
+
+api() {
+  local n="${1:-0}"
+  cd "$HOME/src/accrual/epsilon/$n/apps/firm/api-srv"
+}
+
+app() {
+  local n="${1:-0}"
+  cd "$HOME/src/accrual/epsilon/$n/apps/firm/app-srv"
+}
+
+firm() {
+  local n="${1:-0}"
+  cd "$HOME/src/accrual/epsilon/$n/apps/firm/firm-db"
+}
+
+packages() {
+  local n="${1:-0}"
+  cd "$HOME/src/accrual/epsilon/$n/packages"
+}
+
 alias asc="cd ~/src/accrual/stellarcom"
 alias rfd="cd ~/src/accrual/decisions"
 
