@@ -373,7 +373,7 @@ firm() {
   cd "$HOME/src/accrual/epsilon/$n/apps/firm/firm-db"
 }
 
-packages() {
+pkg() {
   local n="${1:-0}"
   cd "$HOME/src/accrual/epsilon/$n/packages"
 }
