@@ -328,53 +328,64 @@ alias nd="nx dev"
 alias nt="nx test"
 
 alias s="cd ~/src"
+
+_epsilon_n() {
+  if [[ -n "$1" ]]; then
+    echo "$1"
+  elif [[ "$PWD" =~ /accrual/epsilon/([0-2])(/|$) ]]; then
+    echo "${match[1]}"
+  else
+    echo "0"
+  fi
+}
+
 ae() {
-  local n="${1:-0}"
+  local n="$(_epsilon_n "$1")"
   cd "$HOME/src/accrual/epsilon/$n"
 }
 
 aei() {
-  local n="${1:-0}"
+  local n="$(_epsilon_n "$1")"
   cd "$HOME/src/accrual/epsilon/$n/infrastructure"
 }
 
 aeit() {
-  local n="${1:-0}"
+  local n="$(_epsilon_n "$1")"
   cd "$HOME/src/accrual/epsilon/$n/infrastructure/terraform/production"
 }
 
 auth() {
-  local n="${1:-0}"
+  local n="$(_epsilon_n "$1")"
   cd "$HOME/src/accrual/epsilon/$n/apps/babylon/auth-srv"
 }
 
 babylon() {
-  local n="${1:-0}"
+  local n="$(_epsilon_n "$1")"
   cd "$HOME/src/accrual/epsilon/$n/apps/babylon/babylon-db"
 }
 
 site() {
-  local n="${1:-0}"
+  local n="$(_epsilon_n "$1")"
   cd "$HOME/src/accrual/epsilon/$n/apps/babylon/site-srv"
 }
 
 api() {
-  local n="${1:-0}"
+  local n="$(_epsilon_n "$1")"
   cd "$HOME/src/accrual/epsilon/$n/apps/firm/api-srv"
 }
 
 app() {
-  local n="${1:-0}"
+  local n="$(_epsilon_n "$1")"
   cd "$HOME/src/accrual/epsilon/$n/apps/firm/app-srv"
 }
 
 firm() {
-  local n="${1:-0}"
+  local n="$(_epsilon_n "$1")"
   cd "$HOME/src/accrual/epsilon/$n/apps/firm/firm-db"
 }
 
 pkg() {
-  local n="${1:-0}"
+  local n="$(_epsilon_n "$1")"
   cd "$HOME/src/accrual/epsilon/$n/packages"
 }
 
