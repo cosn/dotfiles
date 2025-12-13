@@ -5,6 +5,7 @@ aom
 aribb24
 asitop
 atac
+atuin
 autoconf
 automake
 aws-iam-authenticator
@@ -12,6 +13,7 @@ awscli
 bash
 bat
 bazelisk
+bd
 boost
 brotli
 bun
@@ -228,6 +230,7 @@ nvm
 ollama
 oniguruma
 openblas
+opencode
 opencore-amr
 openexr
 openjpeg
@@ -256,6 +259,7 @@ powerlevel10k
 prettier
 prettierd
 pycparser
+pydantic
 pyenv
 pygments
 pypy
@@ -302,6 +306,7 @@ tlrc
 tmux
 tree
 tree-sitter
+tree-sitter@0.25
 typescript
 unar
 unbound
