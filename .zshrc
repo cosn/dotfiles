@@ -392,6 +392,7 @@ pkg() {
 alias asc="cd ~/src/accrual/stellarcom"
 alias rfd="cd ~/src/accrual/decisions"
 
+alias cae="ae && cls"
 alias cat="bat"
 alias cls="clear"
 alias lg="lazygit"
