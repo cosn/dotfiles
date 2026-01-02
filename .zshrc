@@ -402,4 +402,3 @@ alias n="nvim"
 alias pg="psql -U postgres"
 alias python="python3"
 alias tls="tmux list-sessions"
-
