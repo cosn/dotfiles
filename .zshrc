@@ -394,6 +394,7 @@ alias rfd="cd ~/src/accrual/decisions"
 
 alias cae="ae && cls"
 alias cat="bat"
+alias claude-mem='bun "/Users/cos/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
 alias cls="clear"
 alias lg="lazygit"
 alias ls="eza --icons=auto"
