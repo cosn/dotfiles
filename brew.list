@@ -238,6 +238,8 @@ openjph
 openldap
 openssl@3
 opus
+oxfmt
+oxlint
 p11-kit
 packer
 pam-reattach
@@ -345,7 +347,6 @@ zstd
 1password-cli
 alacritty
 alt-tab
-claude-code
 codex
 devutils
 font-meslo-lg-nerd-font
