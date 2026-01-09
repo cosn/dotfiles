@@ -13,40 +13,71 @@ return {
         desc = "[F]ormat buffer",
       },
     },
-    opts = {
-      notify_on_error = false,
-      format_on_save = function(bufnr)
-        -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
-        if disable_filetypes[vim.bo[bufnr].filetype] then
-          return nil
-        else
-          return {
-            timeout_ms = 1000,
-            lsp_format = "fallback",
-          }
+    opts = function()
+      -- Helper to check if file exists in project root
+      local function has_file(patterns)
+        local root = vim.fn.getcwd()
+        for _, pattern in ipairs(patterns) do
+          if vim.fn.glob(root .. "/" .. pattern) ~= "" then
+            return true
+          end
         end
-      end,
-      formatters_by_ft = {
-        css = { "prettierd", "prettier" },
-        go = { "goimports", "gofmt" },
-        graphql = { "prettierd", "prettier" },
-        html = { "prettierd", "prettier" },
-        javascript = { "prettierd", "prettier" },
-        json = { "prettierd", "prettier" },
-        lua = { "stylua" },
-        markdown = { "prettierd", "prettier" },
-        md = { "prettierd", "prettier" },
-        scss = { "prettierd", "prettier" },
-        txt = { "prettierd", "prettier" },
-        typescript = { "prettierd", "prettier", "eslint_d" },
-        typescriptreact = { "prettierd", "prettier", "eslint_d" },
-        yaml = { "prettierd", "prettier" },
-        ["*"] = { "trim_whitespace" },
-      },
-    },
+        return false
+      end
+
+      -- Detect which JS formatter to use based on project config
+      local function get_js_formatters()
+        local prettier_configs = {
+          ".prettierrc", ".prettierrc.js", ".prettierrc.json", ".prettierrc.yml",
+          ".prettierrc.yaml", "prettier.config.js", "prettier.config.mjs"
+        }
+        local oxlint_configs = { "oxlint.json", "oxlintrc.json", ".oxlintrc.json" }
+
+        if has_file(oxlint_configs) then
+          return { "oxfmt" }
+        elseif has_file(prettier_configs) then
+          return { "prettierd", "prettier", stop_after_first = true }
+        else
+          return { "oxfmt" }  -- Default to faster option
+        end
+      end
+
+      return {
+        notify_on_error = false,
+        format_on_save = function(bufnr)
+          -- Disable "format_on_save lsp_fallback" for languages that don't
+          -- have a well standardized coding style. You can add additional
+          -- languages here or re-enable it for the disabled ones.
+          local disable_filetypes = { c = true, cpp = true }
+          if disable_filetypes[vim.bo[bufnr].filetype] then
+            return nil
+          else
+            return {
+              timeout_ms = 1000,
+              lsp_format = "fallback",
+            }
+          end
+        end,
+        formatters_by_ft = {
+          css = { "prettierd", "prettier", stop_after_first = true },
+          go = { "goimports", "gofmt" },
+          graphql = { "prettierd", "prettier", stop_after_first = true },
+          html = { "prettierd", "prettier", stop_after_first = true },
+          javascript = get_js_formatters,
+          typescript = get_js_formatters,
+          javascriptreact = get_js_formatters,
+          typescriptreact = get_js_formatters,
+          json = { "prettierd", "prettier", stop_after_first = true },
+          lua = { "stylua" },
+          markdown = { "prettierd", "prettier", stop_after_first = true },
+          md = { "prettierd", "prettier", stop_after_first = true },
+          scss = { "prettierd", "prettier", stop_after_first = true },
+          txt = { "prettierd", "prettier", stop_after_first = true },
+          yaml = { "prettierd", "prettier", stop_after_first = true },
+          ["*"] = { "trim_whitespace" },
+        },
+      }
+    end,
   },
   {
     "windwp/nvim-autopairs",
