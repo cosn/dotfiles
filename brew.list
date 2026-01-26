@@ -66,6 +66,7 @@ frei0r
 fribidi
 fswatch
 fzf
+gastown
 gcc
 gdbm
 gdk-pixbuf
@@ -209,6 +210,8 @@ make
 markdownlint-cli
 mbedtls
 mbedtls@3
+mlx
+mlx-c
 mpdecimal
 mpfr
 mpg123
