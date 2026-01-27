@@ -156,7 +156,10 @@ elif [[ $OSTYPE == darwin* ]]; then
   export VISUAL="nvim"
   export BAT_THEME="ansi"
 
-  eval "$(zoxide init --cmd cd zsh)"
+  if [[ "$CLAUDECODE" != "1" ]]; then
+    eval "$(zoxide init --cmd cd zsh)"
+  fi
+
   # Lazy load thefuck (slow to initialize)
   ffs() {
     unfunction ffs
