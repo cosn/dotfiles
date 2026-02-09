@@ -152,7 +152,7 @@ return {
     opts = {
       suggestion = { enabled = false },
       panel = { enabled = false },
-      copilot_model = "GPT-5-Codex",
+      copilot_model = "GPT-5.3-Codex",
     },
   },
   {
