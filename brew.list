@@ -1,4 +1,5 @@
 act
+ada-url
 age
 aircrack-ng
 aom
@@ -78,6 +79,7 @@ ghostscript
 giflib
 git
 git-delta
+git-filter-repo
 git-lfs
 git-town
 glib
@@ -94,6 +96,7 @@ graphite
 graphite2
 grep
 harfbuzz
+hdrhistogram_c
 helm
 highway
 homeassistant-cli
@@ -131,6 +134,7 @@ libass
 libassuan
 libb2
 libbluray
+libdatrie
 libde265
 libdeflate
 libevent
@@ -141,6 +145,7 @@ libgit2@1.7
 libgit2@1.8
 libgpg-error
 libheif
+libiconv
 libidn
 libidn2
 libksba
@@ -167,6 +172,7 @@ libspiro
 libssh
 libssh2
 libtasn1
+libthai
 libtiff
 libtommath
 libtool
@@ -193,6 +199,7 @@ libzip
 lima
 little-cms2
 llama.cpp
+llhttp
 llm
 llvm
 llvm@16
