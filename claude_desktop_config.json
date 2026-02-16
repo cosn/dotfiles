@@ -3,6 +3,8 @@
   "mcpServers": {},
   "preferences": {
     "menuBarEnabled": false,
-    "quickEntryShortcut": "off"
+    "quickEntryShortcut": "off",
+    "sidebarMode": "chat",
+    "coworkScheduledTasksEnabled": false
   }
 }
