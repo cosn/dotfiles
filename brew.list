@@ -40,11 +40,13 @@ deno
 direnv
 docker-completion
 docutils
+dolt
 dotenvx
 dotnet
 double-conversion
 dtc
 duckdb
+e1s
 edencommon
 eksctl
 entr
@@ -203,6 +205,7 @@ llhttp
 llm
 llvm
 llvm@16
+llvm@21
 lpeg
 lua
 luajit
