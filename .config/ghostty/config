@@ -1,0 +1,10 @@
+theme = Catppuccin Frappe
+
+font-family = SauceCodePro Nerd Font
+font-size = 13.5
+
+window-decoration = false
+
+macos-option-as-alt = true
+
+mouse-scroll-multiplier = 2
