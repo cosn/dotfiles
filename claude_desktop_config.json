@@ -4,7 +4,12 @@
   "preferences": {
     "menuBarEnabled": false,
     "quickEntryShortcut": "off",
+    "localAgentModeTrustedFolders": [
+      "/Users/cos/src/accrual/epsilon/0"
+    ],
+    "coworkScheduledTasksEnabled": true,
+    "ccdScheduledTasksEnabled": false,
     "sidebarMode": "chat",
-    "coworkScheduledTasksEnabled": false
+    "coworkWebSearchEnabled": true
   }
 }

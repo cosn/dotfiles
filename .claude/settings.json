@@ -4,6 +4,7 @@
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-6[1m]",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6[1m]"
   },
+  "model": "opus[1m]",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
@@ -22,7 +23,6 @@
     "ralph-loop@claude-plugins-official": true,
     "linear@claude-plugins-official": true
   },
-  "model": "opus[1m]",
-  "teammateMode": "in-process",
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "teammateMode": "in-process"
 }
