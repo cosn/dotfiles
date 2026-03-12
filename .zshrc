@@ -393,6 +393,7 @@ pkg() {
 }
 
 alias asc="cd ~/src/accrual/stellarcom"
+alias crm="cd ~/src/accrual/crm"
 alias rfd="cd ~/src/accrual/decisions"
 
 alias cae="ae && cls"
