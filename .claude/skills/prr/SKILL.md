@@ -15,21 +15,18 @@ $ARGUMENTS
 ## Resolving the Target
 
 1. If `$ARGUMENTS` is a PR number or URL, fetch the diff and metadata:
-   ```bash
-   gh pr diff {pr}
-   gh pr view {pr} --json number,title,body,headRefName,baseRefName,headRefOid,headRepository,files
-   ```
+
+   !`gh pr diff {pr}`
+   !`gh pr view {pr} --json number,title,body,headRefName,baseRefName,headRefOid,headRepository,files`
+
    Extract `{owner}`, `{repo}`, `{pr}`, `{branch}`, `{base}`, and `{commitSha}`.
 
 2. If `$ARGUMENTS` is a branch name, diff against the base branch:
-   ```bash
-   git diff main...{branch}
-   ```
+
+   !`git diff main...{branch}`
 
 3. If `$ARGUMENTS` is empty, diff the current branch against `main`:
-   ```bash
-   git diff main...HEAD
-   ```
+   !`git diff main...HEAD`
 
 Get the list of changed files from the diff output. You will need it for all passes below.
 
@@ -37,11 +34,11 @@ Get the list of changed files from the diff output. You will need it for all pas
 
 How agents read changed files depends on which mode resolved above:
 
-| Mode | Head (changed code) | Base (existing code) |
-|---|---|---|
-| **PR number/URL** | `git show {headRefName}:{path}` | `git show {baseRefName}:{path}` |
-| **Branch name** | `git show {branch}:{path}` | `git show main:{path}` |
-| **Current branch** (no args) | Read directly from disk | `git show main:{path}` |
+| Mode                         | Head (changed code)              | Base (existing code)             |
+| ---------------------------- | -------------------------------- | -------------------------------- |
+| **PR number/URL**            | !`git show {headRefName}:{path}` | !`git show {baseRefName}:{path}` |
+| **Branch name**              | !`git show {branch}:{path}`      | !`git show main:{path}`          |
+| **Current branch** (no args) | Read directly from disk          | !`git show main:{path}`          |
 
 Pass the mode, refs, diff, and changed file list to every agent so they know how to read files. For grepping the broader codebase (e.g., finding existing patterns), always use the base ref as the reference point.
 
@@ -113,9 +110,8 @@ For each finding, explain the impact and suggest a concrete fix.
 **Only run this when reviewing a PR.** Skip for branch or current-branch reviews.
 
 Fetch unresolved review comments:
-```bash
-gh api repos/{owner}/{repo}/pulls/{pr}/comments
-```
+
+!`gh api repos/{owner}/{repo}/pulls/{pr}/comments`
 
 For each unresolved comment:
 
@@ -209,13 +205,12 @@ To post line-specific comments to a pending review (not submitted yet), use the 
 
 ### Step 1: Get the head commit SHA
 
-```bash
-gh pr view {pr} --json headRefOid -q .headRefOid
-```
+!`gh pr view {pr} --json headRefOid -q .headRefOid`
 
 ### Step 2: Create pending review with comments
 
 Use `gh api` with `--input -` and a heredoc. **Critical fields:**
+
 - `commit_id` (required): the head commit SHA from step 1
 - `body`: can be empty string for pending reviews
 - `comments`: array of comment objects
@@ -254,9 +249,7 @@ Event options: `APPROVE`, `REQUEST_CHANGES`, `COMMENT`
 **Only one pending review per PR.** To add more comments:
 
 1. Delete the existing pending review:
-   ```bash
-   gh api repos/{owner}/{repo}/pulls/{pr}/reviews/{review_id} --method DELETE
-   ```
+   !`gh api repos/{owner}/{repo}/pulls/{pr}/reviews/{review_id} --method DELETE`
 2. Create a new pending review with ALL comments (old + new) in one request.
 
 ### Common Mistakes
@@ -270,9 +263,7 @@ Event options: `APPROVE`, `REQUEST_CHANGES`, `COMMENT`
 
 When approving as-is:
 
-```bash
-gh pr review {pr} --approve
-```
+!`gh pr review {pr} --approve`
 
 No body text. Don't summarize what the patch does; the author already knows.
 

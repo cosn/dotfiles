@@ -15,20 +15,16 @@ $ARGUMENTS
 ## Process
 
 1. **Get PR info.** If no PR number/URL given, detect from current branch.
-   ```bash
-   gh pr view {pr} --json number,headRefName,url,headRepository
-   ```
+   !`gh pr view {pr} --json number,headRefName,url,headRepository`
    Extract `{owner}`, `{repo}`, `{branch}`, and `{pr}` from the result.
 
 2. **Fetch review comments.**
-   ```bash
-   gh api repos/{owner}/{repo}/pulls/{pr}/comments
-   ```
+
+   !`gh api repos/{owner}/{repo}/pulls/{pr}/comments`
 
 3. **Checkout the branch.**
-   ```bash
-   git fetch origin && git checkout -B {branch} origin/{branch}
-   ```
+
+   !`git fetch origin && git checkout -B {branch} origin/{branch}`
 
 4. **Triage each unresolved comment.** Skip comments where the PR author already replied. For each remaining comment, show:
    - `diff_hunk` (the code context)
@@ -38,11 +34,8 @@ $ARGUMENTS
    Use the AskUserQuestion tool to confirm or override each recommendation before acting.
 
 5. **Execute the chosen action for each comment.**
-
    - **address**: edit the file, commit, push, then reply:
-     ```bash
-     gh api repos/{owner}/{repo}/pulls/{pr}/comments -X POST -f body="message" -F in_reply_to={comment_id}
-     ```
+     !`gh api repos/{owner}/{repo}/pulls/{pr}/comments -X POST -f body="message" -F in_reply_to={comment_id}`
    - **respond**: post a reply using the same API above with the agreed message.
    - **ignore**: skip silently, no reply.
 
