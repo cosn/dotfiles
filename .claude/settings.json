@@ -4,6 +4,53 @@
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-6",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6"
   },
+  "permissions": {
+    "allow": [
+      "Edit(*)",
+      "Write(*)",
+      "Update(*)",
+      "Read",
+      "Bash(mv:*)",
+      "Bash(mkdir:*)",
+      "Bash(pnpm:*)",
+      "Bash(pnpx:*)",
+      "Bash(git:*)",
+      "Bash(gt:*)",
+      "Bash(gs:*)",
+      "Bash(gh:*)",
+      "Bash(bazel:*)",
+      "Bash(git:*)",
+      "Bash(bazel:*)",
+      "Bash(mkdir:*)",
+      "Bash(go:*)",
+      "Bash(ls:*)",
+      "Bash(echo:*)",
+      "Bash(sed:*)",
+      "Bash(source:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(pkill:*)",
+      "Bash(touch:*)",
+      "Bash(grep:*)",
+      "Bash(curl:*)",
+      "Bash(rg:*)",
+      "Bash(chmod:*)",
+      "Bash(lsof:*)",
+      "Bash(find:*)",
+      "Bash(docker:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)"
+    ],
+    "deny": ["Bash(rm -rf /)", "Read(.env)", "Read(.env.*)"],
+    "ask": [
+      "Bash(aws:*)",
+      "Bash(kubectl:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(rm:*)"
+    ],
+    "defaultMode": "acceptEdits"
+  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
@@ -20,15 +67,22 @@
     "ralph-loop@claude-plugins-official": true,
     "linear@claude-plugins-official": true,
     "nx@nx-claude-plugins": true,
-    "superpowers@claude-plugins-official": true,
-    "terraform@claude-plugins-official": true
+    "superpowers@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
       "source": {
         "source": "github",
         "repo": "nrwl/nx-ai-agents-config"
-      }
+      },
+      "autoUpdate": true
+    },
+    "accrual-dev": {
+      "source": {
+        "source": "github",
+        "repo": "accrual-dev/claude-marketplace"
+      },
+      "autoUpdate": true
     }
   },
   "alwaysThinkingEnabled": true,
