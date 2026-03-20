@@ -5,7 +5,10 @@
     "menuBarEnabled": false,
     "quickEntryShortcut": "off",
     "localAgentModeTrustedFolders": [
-      "/Users/cos/src/accrual/epsilon/0"
+      "/Users/cos/src/accrual/epsilon/0",
+      "/Users/cos/src/accrual/epsilon/1",
+      "/Users/cos/src/accrual/epsilon/2",
+      "/Users/cos/Downloads"
     ],
     "coworkScheduledTasksEnabled": true,
     "ccdScheduledTasksEnabled": true,
@@ -14,3 +17,4 @@
     "keepAwakeEnabled": false
   }
 }
+
