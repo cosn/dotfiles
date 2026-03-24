@@ -75,6 +75,7 @@ gdk-pixbuf
 gemini-cli
 gettext
 gflags
+ggml
 gh
 ghostscript
 giflib
