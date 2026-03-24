@@ -4,6 +4,10 @@
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-6",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6"
   },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "allow": [
       "Edit(*)",
@@ -41,7 +45,11 @@
       "Bash(python:*)",
       "Bash(python3:*)"
     ],
-    "deny": ["Bash(rm -rf /)", "Read(.env)", "Read(.env.*)"],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Read(.env)",
+      "Read(.env.*)"
+    ],
     "ask": [
       "Bash(aws:*)",
       "Bash(kubectl:*)",
@@ -49,10 +57,6 @@
       "Bash(wget:*)",
       "Bash(rm:*)"
     ]
-  },
-  "attribution": {
-    "commit": "",
-    "pr": ""
   },
   "statusLine": {
     "type": "command",
@@ -70,7 +74,15 @@
     "ralph-loop@claude-plugins-official": true,
     "linear@claude-plugins-official": true,
     "nx@nx-claude-plugins": true,
-    "superpowers@claude-plugins-official": true
+    "superpowers@claude-plugins-official": true,
+    "claude@accrual-dev": true,
+    "dev@accrual-dev": true,
+    "devbox@accrual-dev": true,
+    "metabase@accrual-dev": true,
+    "react@accrual-dev": true,
+    "tax@accrual-dev": true,
+    "team@accrual-dev": true,
+    "temporal@accrual-dev": true
   },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
