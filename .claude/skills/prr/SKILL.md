@@ -14,19 +14,17 @@ $ARGUMENTS
 
 ## Resolving the Target
 
-1. If `$ARGUMENTS` is a PR number or URL, fetch the diff and metadata:
+1. If `$ARGUMENTS` is a PR number or URL, fetch the diff and metadata. Run these commands:
+   - gh pr diff <pr_number>
+   - gh pr view <pr_number> --json number,title,body,headRefName,baseRefName,headRefOid,headRepository,files
 
-   !`gh pr diff {pr}`
-   !`gh pr view {pr} --json number,title,body,headRefName,baseRefName,headRefOid,headRepository,files`
+   Extract the owner, repo, pr number, branch, base, and commitSha from the result.
 
-   Extract `{owner}`, `{repo}`, `{pr}`, `{branch}`, `{base}`, and `{commitSha}`.
+2. If `$ARGUMENTS` is a branch name, diff against the base branch. Run:
+   - git diff main...<branch_name>
 
-2. If `$ARGUMENTS` is a branch name, diff against the base branch:
-
-   !`git diff main...{branch}`
-
-3. If `$ARGUMENTS` is empty, diff the current branch against `main`:
-   !`git diff main...HEAD`
+3. If `$ARGUMENTS` is empty, diff the current branch against main. Run:
+   - git diff main...HEAD
 
 Get the list of changed files from the diff output. You will need it for all passes below.
 
@@ -34,11 +32,9 @@ Get the list of changed files from the diff output. You will need it for all pas
 
 How agents read changed files depends on which mode resolved above:
 
-| Mode                         | Head (changed code)              | Base (existing code)             |
-| ---------------------------- | -------------------------------- | -------------------------------- |
-| **PR number/URL**            | !`git show {headRefName}:{path}` | !`git show {baseRefName}:{path}` |
-| **Branch name**              | !`git show {branch}:{path}`      | !`git show main:{path}`          |
-| **Current branch** (no args) | Read directly from disk          | !`git show main:{path}`          |
+- **PR number/URL**: Head = git show <headRefName>:<path>, Base = git show <baseRefName>:<path>
+- **Branch name**: Head = git show <branch_name>:<path>, Base = git show main:<path>
+- **Current branch** (no args): Head = read directly from disk, Base = git show main:<path>
 
 Pass the mode, refs, diff, and changed file list to every agent so they know how to read files. For grepping the broader codebase (e.g., finding existing patterns), always use the base ref as the reference point.
 
@@ -109,9 +105,8 @@ For each finding, explain the impact and suggest a concrete fix.
 
 **Only run this when reviewing a PR.** Skip for branch or current-branch reviews.
 
-Fetch unresolved review comments:
-
-!`gh api repos/{owner}/{repo}/pulls/{pr}/comments`
+Fetch unresolved review comments by running:
+- gh api repos/<owner>/<repo>/pulls/<pr_number>/comments
 
 For each unresolved comment:
 
@@ -205,7 +200,7 @@ To post line-specific comments to a pending review (not submitted yet), use the 
 
 ### Step 1: Get the head commit SHA
 
-!`gh pr view {pr} --json headRefOid -q .headRefOid`
+Run: gh pr view <pr_number> --json headRefOid -q .headRefOid
 
 ### Step 2: Create pending review with comments
 
@@ -216,31 +211,27 @@ Use `gh api` with `--input -` and a heredoc. **Critical fields:**
 - `comments`: array of comment objects
 - **Do NOT include `event` field**; omitting it creates a PENDING review
 
-```bash
-gh api repos/{owner}/{repo}/pulls/{pr}/reviews \
-  --method POST \
-  --input - << 'EOF'
-{
-  "commit_id": "abc123...",
-  "body": "",
-  "comments": [
+Example command:
+
+    gh api repos/<owner>/<repo>/pulls/<pr_number>/reviews \
+      --method POST \
+      --input - << 'EOF'
     {
-      "path": "path/to/file.ts",
-      "line": 81,
-      "body": "Your comment here with `markdown` support."
+      "commit_id": "abc123...",
+      "body": "",
+      "comments": [
+        {
+          "path": "path/to/file.ts",
+          "line": 81,
+          "body": "Your comment here with markdown support."
+        }
+      ]
     }
-  ]
-}
-EOF
-```
+    EOF
 
 ### Step 3: Submit the review (when ready)
 
-```bash
-gh api repos/{owner}/{repo}/pulls/{pr}/reviews/{review_id}/events \
-  --method POST \
-  -f event=COMMENT
-```
+Run: gh api repos/<owner>/<repo>/pulls/<pr_number>/reviews/<review_id>/events --method POST -f event=COMMENT
 
 Event options: `APPROVE`, `REQUEST_CHANGES`, `COMMENT`
 
@@ -249,7 +240,7 @@ Event options: `APPROVE`, `REQUEST_CHANGES`, `COMMENT`
 **Only one pending review per PR.** To add more comments:
 
 1. Delete the existing pending review:
-   !`gh api repos/{owner}/{repo}/pulls/{pr}/reviews/{review_id} --method DELETE`
+   Run: gh api repos/<owner>/<repo>/pulls/<pr_number>/reviews/<review_id> --method DELETE
 2. Create a new pending review with ALL comments (old + new) in one request.
 
 ### Common Mistakes
@@ -261,9 +252,7 @@ Event options: `APPROVE`, `REQUEST_CHANGES`, `COMMENT`
 
 ## Approving PRs
 
-When approving as-is:
-
-!`gh pr review {pr} --approve`
+When approving as-is, run: gh pr review <pr_number> --approve
 
 No body text. Don't summarize what the patch does; the author already knows.
 
