@@ -78,14 +78,48 @@ else
     git_info=""
 fi
 
+# Extract rate limit info (only present for Pro/Max after first API call)
+five_hour_pct=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
+seven_day_pct=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
+five_hour_resets=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
+
 # Add session cost if available
 cost_info=""
 if [ -n "$session_cost" ] && [ "$session_cost" != "null" ] && [ "$session_cost" != "empty" ]; then
     cost_info=" ${GRAY}[\$$session_cost]${NC}"
 fi
 
+# Build rate limit display
+rate_info=""
+if [ -n "$five_hour_pct" ]; then
+    five_h_int=$(printf "%.0f" "$five_hour_pct")
+
+    if [ "$five_h_int" -ge 90 ]; then
+        rl_color=$RED
+    elif [ "$five_h_int" -ge 70 ]; then
+        rl_color=$YELLOW
+    else
+        rl_color=$GREEN
+    fi
+
+    rate_info=" ${GRAY}[${NC}${rl_color}5h:${five_h_int}%${NC}"
+
+    if [ -n "$five_hour_resets" ] && [ "$five_h_int" -ge 70 ]; then
+        now=$(date +%s)
+        mins_left=$(( (five_hour_resets - now) / 60 ))
+        rate_info="${rate_info} ${GRAY}${mins_left}m left${NC}"
+    fi
+
+    if [ -n "$seven_day_pct" ]; then
+        seven_d_int=$(printf "%.0f" "$seven_day_pct")
+        rate_info="${rate_info} ${GRAY}7d:${seven_d_int}%${NC}"
+    fi
+
+    rate_info="${rate_info}${GRAY}]${NC}"
+fi
+
 # Build context bar display
 context_info="${GRAY}${bar}${NC} ${context_percent}%"
 
 # Output the status line
-echo -e "${BLUE}${dir_name}${NC} ${GRAY}|${NC} ${CYAN}${model_name}${NC} ${GRAY}|${NC} ${context_info}${git_info:+ ${GRAY}|${NC}}${git_info}${cost_info}"
+echo -e "${BLUE}${dir_name}${NC} ${GRAY}|${NC} ${CYAN}${model_name}${NC} ${GRAY}|${NC} ${context_info}${git_info:+ ${GRAY}|${NC}}${git_info}${cost_info}${rate_info}"
