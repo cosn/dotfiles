@@ -82,7 +82,8 @@
     "react@accrual-dev": true,
     "tax@accrual-dev": true,
     "team@accrual-dev": true,
-    "temporal@accrual-dev": true
+    "temporal@accrual-dev": true,
+    "claude-notifications-go@claude-notifications-go": true
   },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
@@ -98,6 +99,12 @@
         "repo": "accrual-dev/claude-marketplace"
       },
       "autoUpdate": true
+    },
+    "claude-notifications-go": {
+      "source": {
+        "source": "github",
+        "repo": "777genius/claude-notifications-go"
+      }
     }
   },
   "alwaysThinkingEnabled": true,

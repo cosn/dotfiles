@@ -1,0 +1,42 @@
+{
+  "notifications": {
+    "desktop": {
+      "enabled": true,
+      "sound": true,
+      "volume": 0.5,
+      "audioDevice": "",
+      "appIcon": "/Users/cos/.claude/plugins/cache/claude-notifications-go/claude-notifications-go/1.36.6/claude_icon.png"
+    },
+    "webhook": {
+      "enabled": false,
+      "preset": "custom",
+      "url": "",
+      "chat_id": "",
+      "format": "json",
+      "headers": {}
+    },
+    "suppressQuestionAfterTaskCompleteSeconds": 7
+  },
+  "statuses": {
+    "task_complete": {
+      "enabled": true,
+      "title": "✅ Task Completed",
+      "sound": "/System/Library/Sounds/Glass.aiff"
+    },
+    "review_complete": {
+      "enabled": true,
+      "title": "🔍 Review Completed",
+      "sound": "/System/Library/Sounds/Tink.aiff"
+    },
+    "question": {
+      "enabled": true,
+      "title": "❓ Claude Has Questions",
+      "sound": "/System/Library/Sounds/Ping.aiff"
+    },
+    "plan_ready": {
+      "enabled": true,
+      "title": "📋 Plan Ready for Review",
+      "sound": "/System/Library/Sounds/Submarine.aiff"
+    }
+  }
+}
