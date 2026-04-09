@@ -1,14 +1,10 @@
 return {
   {
     "brenoprata10/nvim-highlight-colors",
-    event = "BufReadPre",
+    event = "BufReadPost",
     opts = {
       enable_tailwind = true,
     }
-  },
-  {
-    "norcalli/nvim-colorizer.lua",
-    event = "BufReadPre",
   },
   {
     "folke/twilight.nvim",
@@ -20,7 +16,16 @@ return {
     ft = "prisma",
   },
   {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown" },
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    opts = {
+      anti_conceal = { enabled = true },
+    },
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
+    event = "BufReadPost",
     main = "ibl",
     opts = {
       indent = {

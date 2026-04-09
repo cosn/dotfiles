@@ -4,7 +4,6 @@ opt.breakindent = true
 opt.confirm = true
 opt.cursorline = true
 opt.expandtab = true
-opt.hidden = true
 opt.hlsearch = true
 opt.ignorecase = true
 opt.inccommand = "split"
@@ -13,6 +12,7 @@ opt.jumpoptions = "stack"
 opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 opt.mouse = "a"
+opt.number = true
 opt.relativenumber = true
 opt.scrolloff = 10
 opt.shiftwidth = 2

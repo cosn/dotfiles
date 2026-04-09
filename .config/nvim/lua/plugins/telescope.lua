@@ -1,111 +1,106 @@
 return {
-  "nvim-telescope/telescope.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      cond = function()
-        return vim.fn.executable("make") == 1
-      end,
-    },
-    { "nvim-telescope/telescope-ui-select.nvim" },
-    { "nvim-tree/nvim-web-devicons" },
-    { "ahmedkhalf/project.nvim" },
-    { "folke/trouble.nvim" },
-    { "folke/noice.nvim" },
-    { "gbprod/yanky.nvim", opts = {
-      highlight = { timer = 150 },
-    } },
-  },
-  config = function()
-    -- The easiest way to use Telescope, is to start by doing something like:
-    --  :Telescope help_tags
-    --
-    -- After running this command, a window will open up and you're able to
-    -- type in the prompt window. You'll see a list of `help_tags` options and
-    -- a corresponding preview of the help.
-    --
-    -- Two important keymaps to use while in Telescope are:
-    --  - Insert mode: <c-/>
-    --  - Normal mode: ?
-    --
-    -- This opens a window that shows you all of the keymaps for the current
-    -- Telescope picker. This is really useful to discover what Telescope can
-    -- do as well as how to actually do it!
-
-    -- See `:help telescope` and `:help telescope.setup()`
-    local telescope = require("telescope")
-    telescope.setup({
-      -- pickers = {}
-      extensions = {
-        ["ui-select"] = {
-          require("telescope.themes").get_dropdown(),
-        },
-        fzf = {
-          fuzzy = true, -- false will only do exact matching
-          override_generic_sorter = true, -- override the generic sorter
-          override_file_sorter = true, -- override the file sorter
-          case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-        },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+        cond = function()
+          return vim.fn.executable("make") == 1
+        end,
       },
-    })
-
-    -- Load extensions with error handling
-    local extensions = { "fzf", "projects", "ui-select", "notify", "noice", "yank_history" }
-    for _, ext in ipairs(extensions) do
-      local ok, err = pcall(telescope.load_extension, ext)
-      if not ok then
-        vim.notify(string.format("Failed to load telescope extension '%s': %s", ext, err), vim.log.levels.WARN)
-      end
-    end
-
-    -- See `:help telescope.builtin`
-    local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "<leader>/.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-    vim.keymap.set("n", "<leader>//", builtin.resume, { desc = "[S]earch [R]esume" })
-    vim.keymap.set("n", "<leader>/c", builtin.commands, { desc = "[S]earch [C]ommands" })
-    vim.keymap.set("n", "<leader>/d", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-    vim.keymap.set("n", "<leader>/f", builtin.find_files, { desc = "[S]earch [F]iles" })
-    vim.keymap.set("n", "<leader>/g", builtin.live_grep, { desc = "[S]earch by [G]rep" })
-    vim.keymap.set("n", "<leader>/h", builtin.help_tags, { desc = "[S]earch [H]elp" })
-    vim.keymap.set("n", "<leader>/k", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-    vim.keymap.set("n", "<leader>/m", builtin.marks, { desc = "[S]earch [M]arks" })
-    vim.keymap.set("n", "<leader>/o", builtin.vim_options, { desc = "[S]earch Vim [O]ptions" })
-    vim.keymap.set("n", "<leader>/t", builtin.git_bcommits, { desc = "[S]earch Gi[T] Commits" })
-    vim.keymap.set("n", "<leader>/w", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-    vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
-
-    vim.keymap.set("n", "<leader>/b", function()
-      builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-        winblend = 10,
-        previewer = false,
-      }))
-    end, { desc = "[/b] Fuzzily search in current buffer" })
-
-    --  See `:help telescope.builtin.live_grep()` for information about particular keys
-    vim.keymap.set("n", "<leader>/s", function()
-      builtin.live_grep({
-        grep_open_files = true,
-        prompt_title = "Live Grep in Open Files",
+      { "nvim-telescope/telescope-ui-select.nvim" },
+      { "nvim-tree/nvim-web-devicons" },
+      { "ahmedkhalf/project.nvim" },
+      { "folke/trouble.nvim" },
+      { "folke/noice.nvim" },
+    },
+    cmd = "Telescope",
+    keys = {
+      { "<leader>/.", function() require("telescope.builtin").oldfiles() end, desc = "Search Recent Files" },
+      { "<leader>//", function() require("telescope.builtin").resume() end, desc = "Search Resume" },
+      { "<leader>/c", function() require("telescope.builtin").commands() end, desc = "Search Commands" },
+      { "<leader>/d", function() require("telescope.builtin").diagnostics() end, desc = "Search Diagnostics" },
+      { "<leader>/f", function() require("telescope.builtin").find_files() end, desc = "Search Files" },
+      { "<leader>/g", function() require("telescope.builtin").live_grep() end, desc = "Search by Grep" },
+      { "<leader>/h", function() require("telescope.builtin").help_tags() end, desc = "Search Help" },
+      { "<leader>/k", function() require("telescope.builtin").keymaps() end, desc = "Search Keymaps" },
+      { "<leader>/m", function() require("telescope.builtin").marks() end, desc = "Search Marks" },
+      { "<leader>/o", function() require("telescope.builtin").vim_options() end, desc = "Search Vim Options" },
+      { "<leader>/t", function() require("telescope.builtin").git_bcommits() end, desc = "Search Git Commits" },
+      { "<leader>/w", function() require("telescope.builtin").grep_string() end, desc = "Search current Word" },
+      { "<leader><leader>", function() require("telescope.builtin").buffers() end, desc = "Find existing buffers" },
+      {
+        "<leader>/b",
+        function()
+          require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+            winblend = 10,
+            previewer = false,
+          }))
+        end,
+        desc = "Fuzzily search in current buffer",
+      },
+      {
+        "<leader>/s",
+        function()
+          require("telescope.builtin").live_grep({ grep_open_files = true, prompt_title = "Live Grep in Open Files" })
+        end,
+        desc = "Search in Open Files",
+      },
+      {
+        "<leader>/n",
+        function()
+          require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
+        end,
+        desc = "Search Neovim files",
+      },
+      {
+        "z=",
+        function()
+          require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({}))
+        end,
+        desc = "Spell suggest",
+      },
+      {
+        "<leader>y",
+        function()
+          require("telescope").extensions.yank_history.yank_history({})
+        end,
+        mode = { "n", "x" },
+        desc = "Open Yank History",
+      },
+    },
+    config = function()
+      local telescope = require("telescope")
+      telescope.setup({
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown(),
+          },
+          fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+          },
+        },
       })
-    end, { desc = "[/] [S]earch in Open Files" })
 
-    vim.keymap.set("n", "<leader>/n", function()
-      builtin.find_files({ cwd = vim.fn.stdpath("config") })
-    end, { desc = "[S]earch [N]eovim files" })
-
-    vim.keymap.set("n", "z=", function()
-      builtin.spell_suggest(require("telescope.themes").get_cursor({}))
-    end, { desc = "[S]pell current word" })
-
-    vim.keymap.set({ "n", "x" }, "<leader>y", function()
-      telescope.extensions.yank_history.yank_history({})
-    end, { desc = "Open [Y]ank History" })
-
-    vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
-    vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
-    vim.keymap.set({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
-    vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
-  end,
+      local extensions = { "fzf", "projects", "ui-select", "notify", "noice", "yank_history" }
+      for _, ext in ipairs(extensions) do
+        pcall(telescope.load_extension, ext)
+      end
+    end,
+  },
+  {
+    "gbprod/yanky.nvim",
+    opts = { highlight = { timer = 150 } },
+    keys = {
+      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
+      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
+      { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
+    },
+  },
 }

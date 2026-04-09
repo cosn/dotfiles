@@ -10,6 +10,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       { "mason-org/mason.nvim", opts = {} }, -- NOTE: Must be loaded before dependants
       "mason-org/mason-lspconfig.nvim",
@@ -141,10 +142,23 @@ return {
             })
           end
 
-          -- The following code creates a keymap to toggle inlay hints in your
-          -- code, if the language server you are using supports them
-          --
-          -- This may be unwanted, since they displace some of your code
+          -- TS-specific keymaps (replaces typescript-tools.nvim commands)
+          local ts_fts = { typescript = true, typescriptreact = true, javascript = true, javascriptreact = true }
+          if ts_fts[vim.bo[event.buf].filetype] then
+            map("<leader>mi", function()
+              vim.lsp.buf.code_action({ apply = true, context = { only = { "source.addMissingImports.ts" } } })
+              vim.defer_fn(function()
+                vim.lsp.buf.code_action({ apply = true, context = { only = { "source.organizeImports.ts" } } })
+              end, 200)
+            end, "TS Add Missing Imports (sorted)")
+            map("<leader>ui", function()
+              vim.lsp.buf.code_action({ apply = true, context = { only = { "source.removeUnused.ts" } } })
+            end, "TS Remove Unused Imports")
+            map("<leader>tfa", function()
+              vim.lsp.buf.code_action({ apply = true, context = { only = { "source.fixAll.ts" } } })
+            end, "TS Fix All")
+          end
+
           if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
             map("<leader>th", function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
@@ -171,13 +185,12 @@ return {
           source = "if_many",
           spacing = 2,
           format = function(diagnostic)
-            local diagnostic_message = {
-              [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
-            }
-            return diagnostic_message[diagnostic.severity]
+            local max_len = 80
+            local msg = diagnostic.message
+            if #msg > max_len then
+              msg = msg:sub(1, max_len) .. "..."
+            end
+            return msg
           end,
         },
       })
@@ -220,10 +233,9 @@ return {
           marksman = {},
           pyright = {},
           puppet = {},
-          rust_analyzer = {},
           sqlls = {},
           tailwindcss = {},
-          -- ts_ls = {},
+          ts_ls = {},
         },
         others = {},
       }
@@ -261,9 +273,20 @@ return {
   },
   {
     "rmagatti/goto-preview",
+    keys = {
+      { "gpd", function() require("goto-preview").goto_preview_definition() end, desc = "Preview definition" },
+      { "gpi", function() require("goto-preview").goto_preview_implementation() end, desc = "Preview implementation" },
+      { "gpr", function() require("goto-preview").goto_preview_references() end, desc = "Preview references" },
+      { "gpt", function() require("goto-preview").goto_preview_type_definition() end, desc = "Preview type definition" },
+      { "gP", function() require("goto-preview").close_all_win() end, desc = "Close preview windows" },
+    },
     opts = {
-      default_mappings = true,
       stack_floating_preview_windows = false,
     },
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^6",
+    ft = { "rust" },
   },
 }

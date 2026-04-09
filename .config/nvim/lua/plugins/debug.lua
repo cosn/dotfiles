@@ -129,7 +129,6 @@ return {
   },
   {
     "folke/trouble.nvim",
-    event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
     cmd = "Trouble",
@@ -168,19 +167,21 @@ return {
   },
   {
     "vim-test/vim-test",
-    event = "VeryLazy",
-    dependencies = {
-      "preservim/vimux",
+    dependencies = { "preservim/vimux" },
+    keys = {
+      { "<leader>tt", ":TestNearest<cr>", desc = "Test Nearest" },
+      { "<leader>tf", ":TestFile<cr>", desc = "Test File" },
+      { "<leader>ts", ":TestSuite<cr>", desc = "Test Suite" },
+      { "<leader>tl", ":TestLast<cr>", desc = "Test Last" },
+      { "<leader>tv", ":TestVisit<cr>", desc = "Test Visit" },
     },
     config = function()
-      vim.keymap.set("n", "<leader>tt", ":TestNearest<cr>")
-      vim.keymap.set("n", "<leader>tf", ":TestFile<cr>")
-      vim.keymap.set("n", "<leader>ts", ":TestSuite<cr>")
-      vim.keymap.set("n", "<leader>tl", ":TestLast<cr>")
-      vim.keymap.set("n", "<leader>tv", ":TestVisit<cr>")
       vim.cmd("let test#strategy = 'vimux'")
       vim.cmd("let test#javascript#runner = 'vitest'")
     end,
   },
-  { "dmmulroy/ts-error-translator.nvim" },
+  {
+    "dmmulroy/ts-error-translator.nvim",
+    ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+  },
 }

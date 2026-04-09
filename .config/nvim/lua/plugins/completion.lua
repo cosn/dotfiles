@@ -1,7 +1,7 @@
 return {
   {
     "saghen/blink.cmp",
-    event = "VimEnter",
+    event = "InsertEnter",
     version = "1.*",
     dependencies = {
       {
@@ -55,7 +55,7 @@ return {
       completion = {
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
-        documentation = { auto_show = false, auto_show_delay_ms = 100 },
+        documentation = { auto_show = false, auto_show_delay_ms = 100, window = { max_width = 140 } },
         accept = { auto_brackets = { enabled = true } },
       },
 
@@ -82,8 +82,10 @@ return {
       -- See :h blink-cmp-config-fuzzy for more information
       fuzzy = { implementation = "prefer_rust" },
 
-      -- Shows a signature help window while you type arguments for a function
-      signature = { enabled = true },
+      signature = {
+        enabled = true,
+        window = { max_width = 140 },
+      },
     },
   },
   {
@@ -152,7 +154,6 @@ return {
     opts = {
       suggestion = { enabled = false },
       panel = { enabled = false },
-      copilot_model = "GPT-5.3-Codex",
     },
   },
   {

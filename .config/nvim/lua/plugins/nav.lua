@@ -26,7 +26,6 @@ return {
   },
   {
     "christoomey/vim-tmux-navigator",
-    event = "VeryLazy",
     cmd = {
       "TmuxNavigateLeft",
       "TmuxNavigateDown",
@@ -104,7 +103,6 @@ return {
   },
   {
     "kevinhwang91/nvim-ufo",
-    event = "VeryLazy",
     dependencies = { "kevinhwang91/promise-async" },
     keys = function()
       local ufo_keys = {

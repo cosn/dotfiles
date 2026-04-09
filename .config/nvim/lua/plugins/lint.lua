@@ -1,34 +1,17 @@
 return {
   'mfussenegger/nvim-lint',
-  event = { 'BufReadPre', 'BufNewFile', 'InsertLeave' },
+  event = { 'BufReadPost', 'BufNewFile', 'BufWritePost' },
   config = function()
     local lint = require 'lint'
+    local utils = require('utils')
 
-    -- Helper to check if file exists in project root
-    local function has_file(patterns)
-      local root = vim.fn.getcwd()
-      for _, pattern in ipairs(patterns) do
-        if vim.fn.glob(root .. '/' .. pattern) ~= '' then
-          return true
-        end
-      end
-      return false
-    end
-
-    -- Detect which JS linter to use based on project config
     local function get_js_linters()
-      local eslint_configs = {
-        '.eslintrc', '.eslintrc.js', '.eslintrc.cjs', '.eslintrc.json',
-        '.eslintrc.yml', '.eslintrc.yaml', 'eslint.config.js', 'eslint.config.mjs'
-      }
-      local oxlint_configs = { 'oxlint.json', 'oxlintrc.json', '.oxlintrc.json' }
-
-      if has_file(oxlint_configs) then
+      if utils.has_file(utils.oxlint_configs) then
         return { 'oxlint' }
-      elseif has_file(eslint_configs) then
+      elseif utils.has_file(utils.eslint_configs) then
         return { 'eslint' }
       else
-        return { 'oxlint' }  -- Default to faster option
+        return { 'oxlint' }
       end
     end
 

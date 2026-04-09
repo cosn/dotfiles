@@ -5,15 +5,18 @@ return {
   },
   {
     "nvim-lualine/lualine.nvim",
+    event = "UIEnter",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       sections = {
+        lualine_b = { "branch", "diff", "diagnostics" },
         lualine_c = {
           {
             "filename",
             path = 1,
           },
         },
+        lualine_x = { "filetype" },
       },
     },
   },
@@ -23,15 +26,12 @@ return {
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
-      "hrsh7th/nvim-cmp",
     },
     opts = {
       lsp = {
-        -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
         override = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
           ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
         },
       },
       presets = {

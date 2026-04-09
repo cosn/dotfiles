@@ -1,11 +1,11 @@
 return {
   {
     "tpope/vim-fugitive",
-    event = "VeryLazy",
+    cmd = { "Git", "G", "Gvdiffsplit", "Gread", "Gwrite", "Gdiffsplit", "Ggrep" },
   },
   {
     "lewis6991/gitsigns.nvim",
-    event = "VeryLazy",
+    event = "BufReadPost",
     opts = {
       signs = {
         add = { text = "+" },
@@ -48,7 +48,6 @@ return {
   },
   {
     "kdheepak/lazygit.nvim",
-    event = "VeryLazy",
     cmd = {
       "LazyGit",
       "LazyGitConfig",
@@ -64,15 +63,12 @@ return {
       { "<leader>lg", ":LazyGit<cr>", desc = "LazyGit" },
     },
     config = function()
-      local ok, err = pcall(require("telescope").load_extension, "lazygit")
-      if not ok then
-        vim.notify("Failed to load lazygit telescope extension: " .. err, vim.log.levels.WARN)
-      end
+      pcall(require("telescope").load_extension, "lazygit")
     end,
   },
   {
     "sindrets/diffview.nvim",
-    event = "VeryLazy",
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory", "DiffviewToggleFiles" },
     opts = {},
   },
 }
