@@ -108,5 +108,6 @@
     }
   },
   "alwaysThinkingEnabled": true,
-  "teammateMode": "in-process"
+  "teammateMode": "in-process",
+  "effortLevel": "high"
 }
