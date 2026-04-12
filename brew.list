@@ -327,6 +327,7 @@ tlrc
 tmux
 tree
 tree-sitter
+tree-sitter-cli
 tree-sitter@0.25
 typescript
 unar
