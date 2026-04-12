@@ -32,12 +32,24 @@ $ARGUMENTS
    Use the AskUserQuestion tool to confirm or override each recommendation before acting.
 
 5. **Execute the chosen action for each comment.**
-   - **address**: edit the file, commit, push, then reply:
+   - **address**: edit the file. No reply - the fix speaks for itself. Commit/push via graphite (see below).
+   - **respond**: post a reply (only when not fixing - discussing, clarifying, or pushing back):
      Run: gh api repos/<owner>/<repo>/pulls/<pr_number>/comments -X POST -f body="message" -F in_reply_to=<comment_id>
-   - **respond**: post a reply using the same API above with the agreed message.
    - **ignore**: skip silently, no reply.
 
    Batch all code fixes into a single commit when possible. Push once at the end.
+
+### Committing to the existing PR (graphite)
+
+Mirror the user's `gtmas` alias (`gt ma && gt s --stack --update-only`), but stage only the files you edited so unrelated tracked changes are not swept in:
+
+```bash
+gt add <file1> <file2> ...   # only the files you edited
+gt m                          # modify (amend) the current branch with staged changes
+gt s --stack --update-only    # submit/update the stack
+```
+
+Do NOT use `gt ma` here - it stages all tracked changes.
 
 6. **Show summary.** List each comment and what was done (addressed, responded, ignored).
 
