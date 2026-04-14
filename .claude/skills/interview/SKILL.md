@@ -18,4 +18,4 @@ If a question can be answered by exploring the codebase, or by reading a linked 
 
 Probe the non-obvious: non-goals and scope boundaries, success criteria, failure modes, hidden constraints (perf, compliance, deadlines, stakeholders), blast radius, and tradeoffs the user has already made vs. still open. Skip questions that merely confirm things already stated.
 
-When the tree is fully resolved, produce a short spec: **Goal** (one sentence), **Non-goals**, **Constraints**, **Success criteria**, **Open questions** (only if genuinely unresolvable - do not invent answers). Offer to hand off to `superpowers:writing-plans`.
+When the tree is fully resolved, produce a short spec: **Goal** (one sentence), **Non-goals**, **Constraints**, **Success criteria**, **Open questions** (only if genuinely unresolvable - do not invent answers).
