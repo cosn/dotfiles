@@ -87,7 +87,8 @@
     "tax@accrual-dev": true,
     "team@accrual-dev": true,
     "temporal@accrual-dev": true,
-    "claude-notifications-go@claude-notifications-go": true
+    "claude-notifications-go@claude-notifications-go": true,
+    "posthog@accrual-dev": true
   },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
@@ -108,10 +109,11 @@
       "source": {
         "source": "github",
         "repo": "777genius/claude-notifications-go"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "alwaysThinkingEnabled": true,
-  "teammateMode": "in-process",
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "teammateMode": "in-process"
 }
