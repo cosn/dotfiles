@@ -33,9 +33,11 @@
       "Bash(lsof:*)",
       "Bash(mkdir:*)",
       "Bash(mv:*)",
+      "Bash(ghostty:*)",
       "Bash(node:*)",
       "Bash(npm:*)",
       "Bash(npx:*)",
+      "Bash(op:*)",
       "Bash(pkill:*)",
       "Bash(pnpm:*)",
       "Bash(pnpx:*)",
@@ -46,6 +48,7 @@
       "Bash(source:*)",
       "Bash(tail:*)",
       "Bash(temporal:*)",
+      "Bash(terraform plan:*)",
       "Bash(touch:*)"
     ],
     "deny": [
@@ -88,7 +91,9 @@
     "team@accrual-dev": true,
     "temporal@accrual-dev": true,
     "claude-notifications-go@claude-notifications-go": true,
-    "posthog@accrual-dev": true
+    "posthog@accrual-dev": true,
+    "figma@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
@@ -114,6 +119,6 @@
     }
   },
   "alwaysThinkingEnabled": true,
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "teammateMode": "in-process"
 }
