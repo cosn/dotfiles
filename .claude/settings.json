@@ -63,7 +63,8 @@
       "Bash(rm:*)",
       "Bash(ssh:*)",
       "Bash(wget:*)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
   "statusLine": {
     "type": "command",
@@ -120,5 +121,6 @@
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
-  "teammateMode": "in-process"
+  "teammateMode": "in-process",
+  "skipAutoPermissionPrompt": true
 }
