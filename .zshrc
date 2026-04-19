@@ -160,6 +160,8 @@ elif [[ $OSTYPE == darwin* ]]; then
     eval "$(zoxide init --cmd cd zsh)"
   fi
 
+  eval "$($(brew --prefix)/bin/zsh-patina activate)"
+
   # Lazy load thefuck (slow to initialize)
   ffs() {
     unfunction ffs
