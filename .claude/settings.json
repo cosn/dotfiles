@@ -94,7 +94,8 @@
     "claude-notifications-go@claude-notifications-go": true,
     "posthog@accrual-dev": true,
     "figma@claude-plugins-official": true,
-    "claude-md-management@claude-plugins-official": true
+    "claude-md-management@claude-plugins-official": true,
+    "caveman@caveman": true
   },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
@@ -117,10 +118,17 @@
         "repo": "777genius/claude-notifications-go"
       },
       "autoUpdate": true
+    },
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      },
+      "autoUpdate": true
     }
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
-  "teammateMode": "in-process",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "teammateMode": "in-process"
 }
