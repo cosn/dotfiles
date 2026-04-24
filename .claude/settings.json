@@ -95,7 +95,9 @@
     "posthog@accrual-dev": true,
     "figma@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
-    "caveman@caveman": true
+    "caveman@caveman": true,
+    "slack@claude-plugins-official": true,
+    "sentry@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
@@ -129,6 +131,7 @@
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
+  "teammateMode": "in-process",
   "skipAutoPermissionPrompt": true,
-  "teammateMode": "in-process"
+  "agentPushNotifEnabled": true
 }
