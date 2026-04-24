@@ -218,6 +218,7 @@ make
 markdownlint-cli
 mbedtls
 mbedtls@3
+merve
 mlx
 mlx-c
 mpdecimal
@@ -225,6 +226,7 @@ mpfr
 mpg123
 msgpack
 mtr
+nbytes
 ncdu
 ncurses
 neovim
@@ -249,6 +251,7 @@ openjpeg
 openjph
 openldap
 openssl@3
+openssl@4
 opus
 oxfmt
 oxlint
