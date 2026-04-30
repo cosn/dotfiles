@@ -185,14 +185,16 @@ Present the review as a single structured report:
 
 ## Verdict
 
-**APPROVE** / **REQUEST CHANGES**
+**APPROVE** / **COMMENT**
 
-[One-paragraph justification. If requesting changes, list the critical and major items.]
+[One-paragraph justification. If commenting, list the critical and major items the author should address.]
 ```
 
-Zero critical + zero major = APPROVE. Otherwise REQUEST CHANGES.
+Default to APPROVE. Trust author to address feedback. Use COMMENT only when finding genuinely big problems (multiple critical issues, fundamental design flaw, security holes, data loss risk) that warrant blocking until discussed. Single major nit, style issues, test gaps: still APPROVE.
 
-After presenting the report, **await user instruction** on which comments to post and whether to approve or request changes.
+We never use REQUEST CHANGES on this team.
+
+After presenting report, **await user instruction** on which comments to post and whether to approve or comment.
 
 ## Creating Pending Review Comments
 
@@ -233,7 +235,7 @@ Example command:
 
 Run: gh api repos/<owner>/<repo>/pulls/<pr_number>/reviews/<review_id>/events --method POST -f event=COMMENT
 
-Event options: `APPROVE`, `REQUEST_CHANGES`, `COMMENT`
+Event options: `APPROVE` or `COMMENT`. Never `REQUEST_CHANGES`, team doesn't use it.
 
 ### Adding More Comments to Existing Pending Review
 
