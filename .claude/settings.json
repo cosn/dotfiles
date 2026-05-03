@@ -92,7 +92,6 @@
     "team@accrual-dev": true,
     "temporal@accrual-dev": true,
     "claude-notifications-go@claude-notifications-go": true,
-    "posthog@accrual-dev": true,
     "figma@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
     "caveman@caveman": true,
@@ -132,6 +131,6 @@
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
   "teammateMode": "in-process",
-  "skipAutoPermissionPrompt": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true
 }
