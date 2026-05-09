@@ -96,7 +96,8 @@
     "claude-md-management@claude-plugins-official": true,
     "caveman@caveman": true,
     "slack@claude-plugins-official": true,
-    "sentry@claude-plugins-official": true
+    "sentry@claude-plugins-official": true,
+    "posthog@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
