@@ -147,7 +147,6 @@ libgit2@1.7
 libgit2@1.8
 libgpg-error
 libheif
-libiconv
 libidn
 libidn2
 libksba
@@ -203,7 +202,6 @@ llhttp
 llm
 llvm
 llvm@16
-llvm@21
 lpeg
 lua
 luajit
@@ -275,6 +273,7 @@ postgresql@15
 powerlevel10k
 prettier
 prettierd
+pup
 pycparser
 pydantic
 pyenv
@@ -326,7 +325,6 @@ tmux
 tree
 tree-sitter
 tree-sitter-cli
-tree-sitter@0.25
 typescript
 unar
 unbound
