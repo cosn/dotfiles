@@ -97,7 +97,10 @@
     "caveman@caveman": true,
     "slack@claude-plugins-official": true,
     "sentry@claude-plugins-official": true,
-    "posthog@claude-plugins-official": true
+    "posthog@claude-plugins-official": true,
+    "double-shot-latte@superpowers-marketplace": true,
+    "andrej-karpathy-skills@karpathy-skills": true,
+    "context-mode@context-mode": true
   },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
@@ -127,6 +130,24 @@
         "repo": "JuliusBrussee/caveman"
       },
       "autoUpdate": true
+    },
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
+    },
+    "karpathy-skills": {
+      "source": {
+        "source": "github",
+        "repo": "forrestchang/andrej-karpathy-skills"
+      }
+    },
+    "context-mode": {
+      "source": {
+        "source": "github",
+        "repo": "mksglu/context-mode"
+      }
     }
   },
   "alwaysThinkingEnabled": true,
