@@ -154,5 +154,17 @@
   "effortLevel": "xhigh",
   "teammateMode": "in-process",
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/cos/.claude/hooks/context-mode-cache-heal.mjs\""
+          }
+        ]
+      }
+    ]
+  }
 }
