@@ -72,9 +72,6 @@ enabled = true
 [plugins."slack@openai-curated"]
 enabled = true
 
-[plugins."browser@openai-bundled"]
-enabled = true
-
 [plugins."documents@openai-primary-runtime"]
 enabled = true
 
@@ -84,8 +81,11 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
+[plugins."browser@openai-bundled"]
+enabled = true
+
 [marketplaces.openai-bundled]
-last_updated = "2026-05-28T00:27:03Z"
+last_updated = "2026-05-28T01:27:09Z"
 source_type = "local"
 source = "/Users/cos/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -99,6 +99,7 @@ js_repl = false
 
 [desktop]
 appearanceDarkCodeThemeId = "catppuccin"
+mac-menu-bar-enabled = false
 
 [desktop.appearanceDarkChromeTheme]
 accent = "#cba6f7"
