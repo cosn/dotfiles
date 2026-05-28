@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR Review"
+  short_description: "Deep review a PR or branch"
+  default_prompt: "Use $prr to run a deep GitHub PR or branch review across correctness, design consistency, test gaps, style, and performance."

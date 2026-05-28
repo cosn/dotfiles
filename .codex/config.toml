@@ -84,6 +84,9 @@ enabled = true
 [plugins."browser@openai-bundled"]
 enabled = true
 
+[plugins."github@openai-curated"]
+enabled = true
+
 [marketplaces.openai-bundled]
 last_updated = "2026-05-28T01:27:09Z"
 source_type = "local"

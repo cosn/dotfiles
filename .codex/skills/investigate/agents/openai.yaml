@@ -1,0 +1,4 @@
+interface:
+  display_name: "Investigate"
+  short_description: "Diagnose bugs before fixing"
+  default_prompt: "Use $investigate to diagnose the reported issue, gather evidence, identify the root cause, and propose the minimal fix."

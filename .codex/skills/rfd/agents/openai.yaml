@@ -1,0 +1,4 @@
+interface:
+  display_name: "RFD"
+  short_description: "Write a decision document"
+  default_prompt: "Use $rfd to interview the user about the decision, evaluate tradeoffs, and write a structured RFD document."

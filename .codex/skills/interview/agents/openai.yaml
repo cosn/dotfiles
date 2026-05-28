@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interview"
+  short_description: "Resolve ambiguous requirements before planning"
+  default_prompt: "Use $interview to explore the request, inspect available context, resolve open requirements, and produce a scoped spec."

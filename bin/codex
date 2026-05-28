@@ -1,0 +1,4 @@
+#!/bin/sh
+unset OPENAI_API_KEY
+unset CODEX_API_KEY
+exec /opt/homebrew/bin/codex "$@"

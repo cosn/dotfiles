@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR Follow-up"
+  short_description: "Address GitHub PR review comments"
+  default_prompt: "Use $pr to fetch actionable pull request review comments, triage them, implement selected fixes, and update the existing PR branch."
