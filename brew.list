@@ -279,6 +279,12 @@ pydantic
 pyenv
 pygments
 pypy
+python-packaging
+python-setuptools
+python-tabulate
+python@3.12
+python@3.13
+python@3.14
 qemu
 rav1e
 readline
