@@ -66,6 +66,7 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "claude-fable-5",
   "hooks": {
     "SessionStart": [
       {
@@ -166,6 +167,5 @@
   "effortLevel": "xhigh",
   "teammateMode": "in-process",
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "model": "claude-fable-5"
+  "skipAutoPermissionPrompt": true
 }
