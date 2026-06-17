@@ -140,6 +140,7 @@ libdatrie
 libde265
 libdeflate
 libevent
+libffi
 libgcrypt
 libgit2
 libgit2@1.6
