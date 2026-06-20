@@ -113,7 +113,8 @@
     "posthog@claude-plugins-official": true,
     "double-shot-latte@superpowers-marketplace": true,
     "andrej-karpathy-skills@karpathy-skills": true,
-    "context-mode@context-mode": true
+    "context-mode@context-mode": true,
+    "ponytail@ponytail": true
   },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
@@ -160,6 +161,12 @@
       "source": {
         "source": "github",
         "repo": "mksglu/context-mode"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
       }
     }
   },
