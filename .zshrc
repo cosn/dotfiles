@@ -411,3 +411,11 @@ alias n="nvim"
 alias pg="psql -U postgres"
 alias python="python3"
 alias tls="tmux list-sessions"
+
+# pnpm
+export PNPM_HOME="/Users/cos/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
