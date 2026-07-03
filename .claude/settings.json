@@ -174,5 +174,6 @@
   "effortLevel": "xhigh",
   "teammateMode": "in-process",
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "awaySummaryEnabled": false
 }
