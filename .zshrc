@@ -401,6 +401,7 @@ alias rfd="cd ~/src/accrual/decisions"
 alias cae="ae && cls"
 alias cat="bat"
 alias cc="claude --continue"
+alias cs="claude --model claude-sonnet-5"
 alias claude-mem='bun "/Users/cos/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
 alias cls="clear"
 alias gg="cae && gts && pni && pnb"
