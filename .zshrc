@@ -270,6 +270,12 @@ if [[ -d "$HOME/src/accrual" ]]; then
   export AWS_PROFILE=production
   export ACCRUAL_ENGINEER=cos
   path+="$HOME/src/accrual/epsilon/0/infrastructure/scripts/bin"
+
+  export TURBO_API='https://turbo.accrual.dev'
+  export TURBO_TEAM=accrual
+  export TURBO_READONLY='true'
+  export TURBO_TOKEN='readonly'
+  export TURBO_CACHE='local:rw,remote:r'
 fi
 
 #
