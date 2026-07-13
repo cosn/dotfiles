@@ -124,6 +124,7 @@ jpeg
 jpeg-turbo
 jpeg-xl
 jq
+json-c
 k6
 keyring
 kiota
@@ -164,6 +165,7 @@ libogg
 libomp
 libpcap
 libpng
+libpsl
 libraw
 librist
 librsvg
@@ -299,7 +301,8 @@ rubberband
 rust
 s4cmd
 sd
-sdl2
+sdl2-compat
+sdl3
 shared-mime-info
 sherlock
 shyaml
