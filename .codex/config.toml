@@ -96,9 +96,6 @@ enabled = true
 [plugins."github@openai-curated"]
 enabled = true
 
-[plugins."sites@openai-bundled"]
-enabled = true
-
 [plugins."visualize@openai-bundled"]
 enabled = true
 
@@ -112,12 +109,12 @@ enabled = true
 enabled = true
 
 [marketplaces.openai-bundled]
-last_updated = "2026-07-13T02:05:32Z"
+last_updated = "2026-07-17T15:36:35Z"
 source_type = "local"
 source = "/Users/cos/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-07-13T17:48:24Z"
+last_updated = "2026-07-18T10:03:31Z"
 source_type = "local"
 source = "/Users/cos/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
