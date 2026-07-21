@@ -310,6 +310,7 @@ alias ghsss="gh stack sync --prune && gh stack submit"
 alias gph="git push origin HEAD"
 alias gphf="git push -f origin HEAD"
 alias grb="git pull --rebase origin"
+alias gm="git checkout \$(git rev-parse --abbrev-ref origin/HEAD | sed 's@^origin/@@') && git pull --rebase --prune origin"
 alias gs="git status"
 
 ghr() {
