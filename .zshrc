@@ -308,6 +308,28 @@ alias ghs="gh stack"
 alias ghss="gh stack sync"
 alias ghsmas="git commit -a --amend --no-edit && gh stack rebase --upstack --no-trunk && gh stack push"
 alias ghsss="gh stack sync --prune && gh stack submit"
+
+ghr() {
+  gh api graphql -f query='
+  query {
+    search(query: "org:accrual-dev is:pr is:open draft:false review-requested:cosn -review:approved -review:changes_requested", type: ISSUE, first: 100) {
+      nodes {
+        ... on PullRequest {
+          number
+          title
+          url
+          repository { name }
+          reviewRequests(first: 10) {
+            nodes { requestedReviewer { __typename ... on User { login } } }
+          }
+        }
+      }
+    }
+  }' --jq '.data.search.nodes[] | select(.reviewRequests.nodes[]?.requestedReviewer.login == "cosn") | "\(.repository.name)#\(.number)\t\(.title)\t\(.url)"' \
+    | column -t -s $'\t'
+}
+
+alias ghra="gh search prs --owner accrual-dev --author cosn --state open --draft=false --review approved --json number,title,url,repository -q '.[] | \"\(.repository.name)#\(.number)\t\(.title)\t\(.url)\"' | column -t -s \$'\t'"
 alias gph="git push origin HEAD"
 alias gphf="git push -f origin HEAD"
 alias grb="git pull --rebase origin"
