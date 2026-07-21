@@ -300,14 +300,17 @@ bindkey '^[k' kill-line
 #
 # aliases
 #
-alias ghpr="gh pr view --web"
 alias gg="cae && grb && pni && pnb"
-alias gp="git pull"
-alias gs="git status"
+alias ghpr="gh pr view --web"
+alias ghra="gh search prs --owner accrual-dev --author cosn --state open --draft=false --review approved --json number,title,url,repository -q '.[] | \"\(.repository.name)#\(.number)\t\(.title)\t\(.url)\"' | column -t -s \$'\t'"
 alias ghs="gh stack"
-alias ghss="gh stack sync"
 alias ghsmas="git commit -a --amend --no-edit && gh stack rebase --upstack --no-trunk && gh stack push"
+alias ghss="gh stack sync"
 alias ghsss="gh stack sync --prune && gh stack submit"
+alias gph="git push origin HEAD"
+alias gphf="git push -f origin HEAD"
+alias grb="git pull --rebase origin"
+alias gs="git status"
 
 ghr() {
   gh api graphql -f query='
@@ -328,11 +331,6 @@ ghr() {
   }' --jq '.data.search.nodes[] | select(.reviewRequests.nodes[]?.requestedReviewer.login == "cosn") | "\(.repository.name)#\(.number)\t\(.title)\t\(.url)"' \
     | column -t -s $'\t'
 }
-
-alias ghra="gh search prs --owner accrual-dev --author cosn --state open --draft=false --review approved --json number,title,url,repository -q '.[] | \"\(.repository.name)#\(.number)\t\(.title)\t\(.url)\"' | column -t -s \$'\t'"
-alias gph="git push origin HEAD"
-alias gphf="git push -f origin HEAD"
-alias grb="git pull --rebase origin"
 
 alias pn="pnpm"
 alias pnb="pnpm build"
