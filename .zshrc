@@ -300,11 +300,11 @@ bindkey '^[k' kill-line
 #
 # aliases
 #
+alias gg="cae && grb && pni && pnb"
 alias gp="git pull"
 alias gs="git status"
 alias ghs="gh stack"
 alias ghsmas="git commit -a --amend --no-edit && gh stack rebase --upstack --no-trunk && gh stack push"
-alias ghss="gh stack sync --prune"
 alias ghsss="gh stack sync --prune && gh stack submit"
 alias gph="git push origin HEAD"
 alias gphf="git push -f origin HEAD"
@@ -399,7 +399,6 @@ alias cc="claude --continue"
 alias cs="claude --model claude-sonnet-5"
 alias claude-mem='bun "/Users/cos/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
 alias cls="clear"
-alias gg="cae && ghss && pni && pnb"
 alias lg="lazygit"
 alias ls="eza --icons=auto"
 alias lt="yazi"
