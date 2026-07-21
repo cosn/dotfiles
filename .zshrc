@@ -300,6 +300,7 @@ bindkey '^[k' kill-line
 #
 # aliases
 #
+alias ghpr="gh pr view --web"
 alias gg="cae && grb && pni && pnb"
 alias gp="git pull"
 alias gs="git status"
