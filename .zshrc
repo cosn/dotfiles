@@ -253,18 +253,6 @@ _fzf_comprun() {
   esac
 }
 
-# Graphite
-_gt_yargs_completions()
-{
-  local reply
-  local si=$IFS
-  IFS=$'
-' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" gt --get-yargs-completions "${words[@]}"))
-  IFS=$si
-  _describe 'values' reply
-}
-compdef _gt_yargs_completions gt
-
 # Accrual
 if [[ -d "$HOME/src/accrual" ]]; then
   export AWS_PROFILE=production
@@ -314,9 +302,10 @@ bindkey '^[k' kill-line
 #
 alias gp="git pull"
 alias gs="git status"
-alias gtmas="gt ma && gt s --stack --update-only"
-alias gts="gt sync -f"
-alias gtss="gt sync -f && gt s"
+alias ghs="gh stack"
+alias ghsmas="git commit -a --amend --no-edit && gh stack rebase --upstack --no-trunk && gh stack push"
+alias ghss="gh stack sync --prune"
+alias ghsss="gh stack sync --prune && gh stack submit"
 alias gph="git push origin HEAD"
 alias gphf="git push -f origin HEAD"
 alias grb="git pull --rebase origin"
@@ -410,7 +399,7 @@ alias cc="claude --continue"
 alias cs="claude --model claude-sonnet-5"
 alias claude-mem='bun "/Users/cos/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
 alias cls="clear"
-alias gg="cae && gts && pni && pnb"
+alias gg="cae && ghss && pni && pnb"
 alias lg="lazygit"
 alias ls="eza --icons=auto"
 alias lt="yazi"
