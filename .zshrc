@@ -308,6 +308,7 @@ alias ghsmas="git commit -a --amend --no-edit && gh stack rebase --upstack --no-
 alias ghss="gh stack sync"
 alias ghsss="gh stack sync --prune && gh stack submit"
 alias ghsv="gh stack view --short"
+alias gp="git pull"
 alias gph="git push origin HEAD"
 alias gphf="git push -f origin HEAD"
 alias grb="git pull --rebase origin"
