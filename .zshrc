@@ -311,11 +311,25 @@ alias ghss="gh stack sync"
 alias ghsss="gh stack sync --prune && gh stack submit"
 alias ghsv="gh stack view --short"
 alias gp="git pull"
-alias gph="git push origin HEAD"
+alias gph="git push -u origin HEAD"
 alias gphf="git push -f origin HEAD"
 alias grb="git pull --rebase origin"
-alias gm="git checkout \$(git rev-parse --abbrev-ref origin/HEAD | sed 's@^origin/@@') && git pull --rebase --prune origin"
 alias gs="git status"
+
+gm() {
+  local main; main="$(git rev-parse --abbrev-ref origin/HEAD | sed 's@^origin/@@')"
+  git checkout -q "$main" &&
+  git pull --rebase --prune origin &&
+  local remote=(${(f)"$(git ls-remote --heads origin | awk '{sub(/^refs\/heads\//,"",$2); print $2}')"})
+  local local_branches=(${(f)"$(git branch --format='%(refname:short)')"})
+  local gone=()
+  for b in "${local_branches[@]}"; do
+    [[ "$b" == "$main" ]] && continue
+    (( ${remote[(Ie)$b]} )) || gone+=("$b")
+  done
+  (( ${#gone} )) && git branch -D "${gone[@]}"
+  return 0
+}
 
 ghr() {
   gh api graphql -f query='
