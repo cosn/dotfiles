@@ -1,10 +1,10 @@
 ---
 name: investigate
-description: Use when diagnosing bugs, unexpected behavior, or user-reported issues. Takes a description or Linear ticket ID (e.g., A-3247). Use BEFORE attempting any fix.
+description: Use when diagnosing bugs, unexpected behavior, or user-reported issues. Takes a description, Linear ticket ID (e.g., A-3247), Sentry issue ID (e.g., API-SRV-123), or URL. Use BEFORE attempting any fix.
 user_invocable: true
 arguments:
   - name: args
-    description: Bug description, Linear ticket ID (e.g., A-3247), or URL
+    description: Bug description, Linear ticket ID (e.g., A-1234), Sentry issue ID (e.g. API-SRV-123) or URL
     required: true
 ---
 
@@ -26,13 +26,15 @@ $ARGUMENTS
 
 **Before reading any code, understand what's broken.**
 
-1. **If given a Linear ticket ID** (e.g., A-3247): fetch the issue with `mcp__plugin_linear_linear__get_issue` and `mcp__plugin_linear_linear__list_comments`. Extract the symptom, expected behavior, reproduction steps, and any screenshots.
+1. **If given a Linear ticket ID** (e.g., A-3247) **or a Linear URL**: fetch the issue with `mcp__plugin_linear_linear__get_issue` and `mcp__plugin_linear_linear__list_comments`. Extract the symptom, expected behavior, reproduction steps, and any screenshots.
 
-2. **If given a description**: parse it carefully. Separate facts from theories. If the description includes a proposed root cause, note it but do NOT adopt it as your theory. Proposed diagnoses are wrong more often than they're right.
+2. **If given a Sentry issue ID** (e.g., API-SRV-123) **or a Sentry URL**: fetch it with `mcp__plugin_sentry_sentry__get_sentry_resource` (use `mcp__plugin_sentry_sentry__search_issues` first if you only have a partial reference). Extract the stack trace, breadcrumbs, event tags, affected users/environment, and first/last seen + frequency. Treat the stack trace as a lead, not a diagnosis; still verify by reading the actual code path.
 
-3. **Ask clarifying questions if the reproduction path is vague.** "Which page?", "Which UI element shows the wrong value?", "What did you click before seeing this?" One good question can save 20 minutes of searching the wrong code path.
+3. **If given a description**: parse it carefully. Separate facts from theories. If the description includes a proposed root cause, note it but do NOT adopt it as your theory. Proposed diagnoses are wrong more often than they're right.
 
-4. **Document what you know:**
+4. **Ask clarifying questions if the reproduction path is vague.** "Which page?", "Which UI element shows the wrong value?", "What did you click before seeing this?" One good question can save 20 minutes of searching the wrong code path.
+
+5. **Document what you know:**
 
 ```
 ## Facts
@@ -93,25 +95,27 @@ Brainstorm at least 3 distinct root causes (aim for 5) that could produce the ob
 
 For each hypothesis, state:
 
-| # | Root Cause | Confirms if... | Disproves if... | Confidence |
-|---|-----------|----------------|-----------------|------------|
-| 1 | ...       | ...            | ...             | medium     |
-| 2 | ...       | ...            | ...             | low        |
+| #   | Root Cause | Confirms if... | Disproves if... | Confidence |
+| --- | ---------- | -------------- | --------------- | ---------- |
+| 1   | ...        | ...            | ...             | medium     |
+| 2   | ...        | ...            | ...             | low        |
 
 ## Phase 3: Eliminate Systematically
 
 Work through EVERY hypothesis with evidence. Do NOT skip any.
 
 For each hypothesis:
+
 1. Run the confirming/disproving checks from Phase 2 (read files, grep, trace logic, check configs).
 2. Mark it: **CONFIRMED**, **ELIMINATED** (with disproving evidence), or **INCONCLUSIVE**.
 
-| # | Root Cause | Verdict | Key Evidence |
-|---|-----------|---------|--------------|
-| 1 | ...       | ELIMINATED | [file:line or output that disproves] |
-| 2 | ...       | CONFIRMED  | [specific evidence] |
+| #   | Root Cause | Verdict    | Key Evidence                         |
+| --- | ---------- | ---------- | ------------------------------------ |
+| 1   | ...        | ELIMINATED | [file:line or output that disproves] |
+| 2   | ...        | CONFIRMED  | [specific evidence]                  |
 
 **Rules:**
+
 - Multiple survivors? Investigate further to differentiate. Do not pick arbitrarily.
 - Zero survivors? Go back to Phase 2 with broader hypotheses.
 - Exactly one confirmed with strong evidence? Proceed to Phase 4.
@@ -149,16 +153,16 @@ Only after a single root cause is confirmed with evidence:
 
 If any of these are true, you are off track:
 
-| Signal | What's wrong | Fix |
-|---|---|---|
-| "I'm pretty sure it's X" | No evidence yet | Grep the whole codebase first |
-| Searching same directory for 5+ min | Scope too narrow | Broaden to entire app |
-| Second theory is in the same file as the first | Anchored on one area | Reset scope entirely |
-| Reading server code for a client-side symptom | Wrong layer | Check where the user actually sees the bug |
-| Proposing a fix | Haven't finished Phase 3 | Complete elimination first |
-| User corrected your theory | You pivoted without broadening | Go back to Phase 1 with a wider search |
-| Haven't checked runtime data | Guessing when you could verify | Curl, log, or query the actual value |
-| Spent 20 min searching, 0 min asking the user | Skipping the fastest signal | Ask which page, which element, what they clicked |
-| Implementing fix from a ticket/plan without verifying | Trusting someone else's diagnosis | Verify the proposed root cause yourself |
-| Try fix A, fail, try fix B, fail | Whack-a-mole | Stop fixing. Start investigating. |
-| `git blame` would answer your question | Guessing at intent | Check the commit message and author |
+| Signal                                                | What's wrong                      | Fix                                              |
+| ----------------------------------------------------- | --------------------------------- | ------------------------------------------------ |
+| "I'm pretty sure it's X"                              | No evidence yet                   | Grep the whole codebase first                    |
+| Searching same directory for 5+ min                   | Scope too narrow                  | Broaden to entire app                            |
+| Second theory is in the same file as the first        | Anchored on one area              | Reset scope entirely                             |
+| Reading server code for a client-side symptom         | Wrong layer                       | Check where the user actually sees the bug       |
+| Proposing a fix                                       | Haven't finished Phase 3          | Complete elimination first                       |
+| User corrected your theory                            | You pivoted without broadening    | Go back to Phase 1 with a wider search           |
+| Haven't checked runtime data                          | Guessing when you could verify    | Curl, log, or query the actual value             |
+| Spent 20 min searching, 0 min asking the user         | Skipping the fastest signal       | Ask which page, which element, what they clicked |
+| Implementing fix from a ticket/plan without verifying | Trusting someone else's diagnosis | Verify the proposed root cause yourself          |
+| Try fix A, fail, try fix B, fail                      | Whack-a-mole                      | Stop fixing. Start investigating.                |
+| `git blame` would answer your question                | Guessing at intent                | Check the commit message and author              |
