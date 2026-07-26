@@ -313,7 +313,6 @@ alias gsp="gh stack push"
 alias gsr="gh stack rebase"
 alias gss="gh stack sync"
 alias gssp="gh stack sync --prune && gh stack push"
-alias gst="git status"
 alias gsv="gh stack view --short"
 
 gm() {
