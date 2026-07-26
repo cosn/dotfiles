@@ -440,7 +440,13 @@ alias cs="claude --model claude-sonnet-5"
 alias claude-mem='bun "/Users/cos/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
 alias cls="clear"
 alias lg="lazygit"
-alias ls="eza --icons=auto"
+# eza 0.23.5 consumes stdin as a file list when given no path operand and stdout
+# is not a TTY, despite --stdin being opt-in. Piped `ls` then returns nothing
+# (exit 0) or blocks forever. Keep eza interactive-only; scripts get real ls.
+unalias ls 2>/dev/null  # oh-my-zsh sets one; a function can't be defined over it
+ls() {
+  if [[ -t 1 ]]; then eza --icons=auto "$@"; else command ls "$@"; fi
+}
 alias lt="yazi"
 alias n="nvim"
 alias pg="psql -U postgres"
