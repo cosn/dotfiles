@@ -24,3 +24,11 @@ stow -v -t ~/ .
 if [ ! -h "$HOME/Library/Application Support/Claude/claude_desktop_config.json" ]; then
   ln -s "$PWD/claude_desktop_config.json" "$HOME/Library/Application Support/Claude/claude_desktop_config.json"
 fi
+
+# stow's ignore list excludes *.json, so this one is linked by hand. Keep
+# .claude/settings.local.json unlinked: it holds project-scoped permission
+# rules that must not apply to every project.
+if [ ! -h "$HOME/.claude/settings.json" ]; then
+  mkdir -p "$HOME/.claude"
+  ln -s "$PWD/.claude/settings.json" "$HOME/.claude/settings.json"
+fi
