@@ -300,7 +300,7 @@ bindkey '^[k' kill-line
 #
 # aliases
 #
-alias gg="cae && grb && pni && pnb"
+alias gg="cae && gm && pni && pnb"
 alias gp="git pull"
 alias gph="git push -u origin HEAD"
 alias gphf="git push -f origin HEAD"
