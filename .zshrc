@@ -312,8 +312,7 @@ alias gsi="gh stack init"
 alias gsp="gh stack push"
 alias gsr="gh stack rebase"
 alias gss="gh stack submit"
-alias gsy="gh stack sync"
-alias gssp="gh stack sync --prune && gh stack push"
+alias gsy="gh stack sync --prune"
 alias gsv="gh stack view --short"
 
 gm() {
