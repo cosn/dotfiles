@@ -8,6 +8,11 @@ name = "catppuccin"
 prefix = "ctrl+s"
 
 detach = "prefix+d"
+
+focus_pane_left = "ctrl+h"
+focus_pane_down = "ctrl+j"
+focus_pane_up = "ctrl+k"
+focus_pane_right = "ctrl+l"
 split_horizontal = "prefix+b"
 toggle_sidebar = "prefix+t"
 
