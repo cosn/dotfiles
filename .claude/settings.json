@@ -111,7 +111,7 @@
     "tax@accrual-dev": true,
     "team@accrual-dev": false,
     "temporal@accrual-dev": false,
-    "claude-notifications-go@claude-notifications-go": true,
+    "claude-notifications-go@claude-notifications-go": false,
     "figma@claude-plugins-official": false,
     "claude-md-management@claude-plugins-official": false,
     "caveman@caveman": true,

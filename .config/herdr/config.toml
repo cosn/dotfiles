@@ -22,3 +22,6 @@ next_tab = "prefix+shift+n"
 switch_workspace = "prefix+shift+1..9"
 previous_workspace = "prefix+ctrl+p"
 next_workspace = "prefix+ctrl+n"
+
+[ui.toast]
+delivery = "system"
