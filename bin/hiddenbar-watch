@@ -1,0 +1,31 @@
+#!/usr/bin/env swift
+import CoreGraphics
+import Dispatch
+import Foundation
+
+func restartHiddenBar() {
+    let kill = Process()
+    kill.launchPath = "/usr/bin/killall"
+    kill.arguments = ["Hidden Bar"]
+    try? kill.run()
+    kill.waitUntilExit()
+
+    let open = Process()
+    open.launchPath = "/usr/bin/open"
+    open.arguments = ["-a", "Hidden Bar"]
+    try? open.run()
+}
+
+var pending: DispatchWorkItem?
+
+let callback: CGDisplayReconfigurationCallBack = { _, flags, _ in
+    if flags.contains(.beginConfigurationFlag) { return }
+    pending?.cancel()
+    let work = DispatchWorkItem(block: restartHiddenBar)
+    pending = work
+    // debounce: a single monitor plug/unplug fires this once per display
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: work)
+}
+
+CGDisplayRegisterReconfigurationCallback(callback, nil)
+CFRunLoopRun()
