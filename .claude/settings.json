@@ -75,6 +75,16 @@
             "command": "\"/Users/cos/.claude/hooks/context-mode-cache-heal.mjs\""
           }
         ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/Users/cos/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
       }
     ]
   },

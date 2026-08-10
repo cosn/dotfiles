@@ -1,0 +1,25 @@
+onboarding = false
+# Mirrors ~/.tmux.conf keybindings/theme.
+
+[theme]
+name = "catppuccin"
+
+[keys]
+prefix = "ctrl+s"
+
+reload_config = "prefix+r"       # tmux: bind r source-file ~/.tmux.conf
+resize_mode = "prefix+shift+r"   # swapped with reload_config, default prefix+r
+
+new_tab = "prefix+c"             # tmux: bind c new-window
+split_vertical = "prefix+v"      # tmux: bind v split-window -h
+split_horizontal = "prefix+b"    # tmux: bind b split-window
+
+toggle_sidebar = "prefix+t"      # moved off prefix+b, taken by split_horizontal
+
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+[ui]
+mouse_capture = true
