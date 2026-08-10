@@ -7,6 +7,7 @@ name = "catppuccin"
 [keys]
 prefix = "ctrl+s"
 
+detach = "prefix+d"
 split_horizontal = "prefix+b"
 toggle_sidebar = "prefix+t"
 
