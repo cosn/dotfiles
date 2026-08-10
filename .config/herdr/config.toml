@@ -7,19 +7,9 @@ name = "catppuccin"
 [keys]
 prefix = "ctrl+s"
 
-reload_config = "prefix+r"       # tmux: bind r source-file ~/.tmux.conf
-resize_mode = "prefix+shift+r"   # swapped with reload_config, default prefix+r
+split_horizontal = "prefix+b"
+toggle_sidebar = "prefix+t"
 
-new_tab = "prefix+c"             # tmux: bind c new-window
-split_vertical = "prefix+v"      # tmux: bind v split-window -h
-split_horizontal = "prefix+b"    # tmux: bind b split-window
-
-toggle_sidebar = "prefix+t"      # moved off prefix+b, taken by split_horizontal
-
-focus_pane_left = "prefix+h"
-focus_pane_down = "prefix+j"
-focus_pane_up = "prefix+k"
-focus_pane_right = "prefix+l"
-
-[ui]
-mouse_capture = true
+switch_workspace = "prefix+shift+1..9"
+previous_workspace = "prefix+ctrl+p"
+next_workspace = "prefix+ctrl+n"
