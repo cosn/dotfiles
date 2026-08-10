@@ -16,6 +16,9 @@ focus_pane_right = "ctrl+l"
 split_horizontal = "prefix+b"
 toggle_sidebar = "prefix+t"
 
+new_workspace = "prefix+n"       # swapped with next_tab
+next_tab = "prefix+shift+n"
+
 switch_workspace = "prefix+shift+1..9"
 previous_workspace = "prefix+ctrl+p"
 next_workspace = "prefix+ctrl+n"
