@@ -8,20 +8,28 @@ name = "catppuccin"
 prefix = "ctrl+s"
 
 detach = "prefix+d"
+toggle_sidebar = "prefix+q"
 
 focus_pane_left = "ctrl+h"
 focus_pane_down = "ctrl+j"
 focus_pane_up = "ctrl+k"
 focus_pane_right = "ctrl+l"
 split_horizontal = "prefix+b"
-toggle_sidebar = "prefix+t"
 
-new_workspace = "prefix+n"       # swapped with next_tab
-next_tab = "prefix+shift+n"
-
-switch_workspace = "prefix+shift+1..9"
+new_workspace = "prefix+c"
 previous_workspace = "prefix+ctrl+p"
 next_workspace = "prefix+ctrl+n"
+switch_workspace = "prefix+shift+1..9"
+
+new_tab = "prefix+t"
+next_tab = "prefix+tab"
+previous_tab = "prefix+shift+tab"
+
+next_agent = "prefix+n"
+previous_agent = "prefix+p"
+
+cycle_pane_next = ""      # freed prefix+tab, use ctrl+h/j/k/l for pane focus
+cycle_pane_previous = ""
 
 [ui.toast]
 delivery = "system"
