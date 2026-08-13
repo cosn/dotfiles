@@ -117,7 +117,7 @@ source_type = "local"
 source = "/Users/cos/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-08-07T05:57:46Z"
+last_updated = "2026-08-12T20:57:58Z"
 source_type = "local"
 source = "/Users/cos/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
