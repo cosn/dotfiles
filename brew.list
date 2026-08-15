@@ -9,6 +9,17 @@ atac
 atuin
 autoconf
 automake
+aws-c-auth
+aws-c-cal
+aws-c-common
+aws-c-compression
+aws-c-event-stream
+aws-c-http
+aws-c-io
+aws-c-mqtt
+aws-c-s3
+aws-c-sdkutils
+aws-checksums
 aws-iam-authenticator
 awscli
 bash
@@ -166,6 +177,7 @@ libogg
 libomp
 libpcap
 libpng
+libpq
 libpsl
 libraw
 librist
@@ -266,6 +278,7 @@ pandoc
 pango
 pcre
 pcre2
+pgcli
 pgvector
 pinentry
 pipx
@@ -300,6 +313,7 @@ ripgrep
 rtmpdump
 rubberband
 rust
+s2n
 s4cmd
 sd
 sdl2-compat
