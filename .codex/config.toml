@@ -55,15 +55,15 @@ startup_timeout_sec = 120
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
 NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
 NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
-NODE_REPL_TRUSTED_CODE_PATHS = "/Users/cos/.codex"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/cos/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
 CODEX_HOME = "/Users/cos/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "028a14b6eaa6d98dac2aae00764345ab9f244801ed8493d42b9af3be5575006e,f204d340535055781952b10ed396de20b842f00a19e430852f7e121ad1ce91f6"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.727.51351"
+BROWSER_USE_CODEX_APP_VERSION = "26.814.41957"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/cos/.codex/plugins/cache/openai-bundled/browser/26.814.41957/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
 [mcp_servers.computer-use]
@@ -102,20 +102,23 @@ enabled = true
 [plugins."visualize@openai-bundled"]
 enabled = true
 
-[plugins."browser@openai-bundled"]
-enabled = true
-
 [plugins."pdf@openai-primary-runtime"]
 enabled = true
 
 [plugins."template-creator@openai-primary-runtime"]
 enabled = true
 
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
 [plugins."sites@openai-bundled"]
 enabled = true
 
+[plugins."browser@openai-bundled"]
+enabled = true
+
 [marketplaces.openai-bundled]
-last_updated = "2026-08-03T19:18:07Z"
+last_updated = "2026-08-19T15:36:31Z"
 source_type = "local"
 source = "/Users/cos/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -165,9 +168,7 @@ diffRemoved = "#d20f39"
 skill = "#8839ef"
 
 [shell_environment_policy.set]
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "028a14b6eaa6d98dac2aae00764345ab9f244801ed8493d42b9af3be5575006e,f204d340535055781952b10ed396de20b842f00a19e430852f7e121ad1ce91f6"
-NODE_REPL_TRUSTED_CODE_PATHS = "/Users/cos/.codex"
 
 [hooks.state]
 
