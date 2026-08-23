@@ -64,3 +64,4 @@ prefix_rule(pattern=["/bin/zsh", "-lc", "'/Users/cos/.cache/codex-runtimes/codex
 prefix_rule(pattern=["pdfinfo", "/Users/cos/Downloads/20260630_GCW Portfolio Review - CN updated.pdf"], decision="allow")
 prefix_rule(pattern=["curl", "-L", "--max-time", "20", "-sS", "https://accrual.com/exchange"], decision="allow")
 prefix_rule(pattern=["perl", "-0777", "-ne", "while (/aria-label=\"([^\"]+) — view bio\".*?<div style=\"font-size:16px[^>]*>([^<]+)<\\/div><div[^>]*>([^<]+)<\\/div>/sg) { print \"$1\\t$3\\n\" }"], decision="allow")
+prefix_rule(pattern=["command", "-v", "pdftotext"], decision="allow")
