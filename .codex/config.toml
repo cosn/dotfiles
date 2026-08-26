@@ -2,7 +2,6 @@ model = "gpt-5.6-sol"
 model_reasoning_effort = "xhigh"
 personality = "pragmatic"
 
-approval_policy = "untrusted"
 sandbox_mode = "danger-full-access"
 sandbox_permissions = ["disk-full-read-access"]
 
@@ -63,8 +62,8 @@ NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunc
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.818.21641"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/cos/.codex/plugins/cache/openai-bundled/browser/26.818.21641/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.820.60940"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/cos/.codex/plugins/cache/openai-bundled/browser/26.820.60940/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
 [mcp_servers.computer-use]
@@ -119,7 +118,6 @@ enabled = true
 enabled = true
 
 [marketplaces.openai-bundled]
-last_updated = "2026-08-21T16:59:02Z"
 source_type = "local"
 source = "/Users/cos/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -139,6 +137,7 @@ followUpQueueMode = "queue"
 dock-icon-preference = "codex-system"
 appearanceLightCodeThemeId = "catppuccin"
 enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "ultra", "max"]
+conversationDetailMode = "STEPS_COMMANDS"
 
 [desktop.appearanceDarkChromeTheme]
 accent = "#cba6f7"
@@ -175,3 +174,6 @@ NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "028a14b6eaa6d98dac2aae00764345ab9f24
 
 [hooks.state."/Users/cos/.codex/hooks.json:session_start:0:0"]
 trusted_hash = "sha256:b038b382a49a2f1180c1fb50cf1f4425850a158498bee29697db6add845e7cb3"
+
+[apps.connector_5f3c8c41a1e54ad7a76272c89e2554fa.tools."google_drive.batch_update_document"]
+approval_mode = "approve"
