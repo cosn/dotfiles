@@ -10,9 +10,7 @@ arguments:
 
 $ARGUMENTS
 
-Interview me relentlessly about this task until we reach a shared understanding. Walk down each branch of the decision tree, resolving dependencies between decisions one by one. For each question, provide your recommended answer.
-
-Ask questions one at a time via AskUserQuestion. Keep going until everything is exhausted - do not stop early.
+Interview me about this task until every branch of the decision tree is resolved and we share one understanding of it. Walk the tree resolving dependencies between decisions one by one, asking one question at a time via AskUserQuestion, and give your recommended answer with each question.
 
 If a question can be answered by exploring the codebase, or by reading a linked ticket/RFD/doc, do that instead of asking.
 

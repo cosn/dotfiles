@@ -52,7 +52,7 @@ Read every changed file end-to-end (not just the diff hunks; you need surroundin
 - **Security**: injection vectors, auth bypasses, secrets in code, unsafe deserialization.
 - **Data integrity**: race conditions, missing transactions, partial writes without cleanup.
 
-For each finding, think step-by-step about whether it is a real problem or a false alarm. Only surface findings you would bet money on.
+Only surface findings you would bet money on.
 
 ### Pass 2: Design Consistency
 

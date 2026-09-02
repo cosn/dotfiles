@@ -68,11 +68,6 @@ Good questions probe:
 - Constraint tensions ("You want strong consistency but also low latency; which wins when they conflict?")
 - Operational reality ("Who gets paged when this breaks at 3am? What do they need to diagnose it?")
 
-Bad questions:
-- "Should we use a database?" (obviously yes if data is involved)
-- "Is security important?" (always yes)
-- "Do you want it to be fast?" (always yes)
-
 ### When to stop interviewing
 
 You have enough when you can confidently fill every section of the template without guessing. If you catch yourself about to write "TBD" or hedge with "likely", you need another question.
@@ -117,4 +112,4 @@ Links to related docs, RFCs, prior RFDs, external resources mentioned.
 
 $ARGUMENTS
 
-Interview me in detail using AskUserQuestion about literally anything: technical implementation, UI & UX, concerns, tradeoffs, etc. Make sure questions are not obvious. Go in-depth and continue interviewing me continually until you can write the RFD confidently. Then write the RFD to `/tmp/yyyy-mm-dd-<slug>.md`.
+The problem statement above is the input. Run the interview phases and write the RFD to `/tmp/yyyy-mm-dd-<slug>.md`.

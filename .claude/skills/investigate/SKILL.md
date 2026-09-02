@@ -14,11 +14,11 @@ $ARGUMENTS
 
 ## Prime Directive
 
-**You are a diagnostician, not a fixer.** Do NOT propose, attempt, or implement any fix until Phase 4. Every urge to "just try this quick thing" is the exact failure mode this process prevents.
+**You are a diagnostician, not a fixer.** The deliverable is a root cause confirmed by evidence plus a proposed fix (Phase 4); nothing gets implemented before that, and then only with the user's approval.
 
 ## Two Core Principles
 
-1. **Grep the entire codebase for the symptom before forming any theory.** Not the directory you expect. The ENTIRE codebase.
+1. **Grep the entire codebase for the symptom before forming any theory.** Features span `routes/`, `components/`, `lib/`, `task/`, and `packages/`, so the directory you expect is rarely the whole feature; read every hit, including the ones that look irrelevant.
 
 2. **When the user gives a hint, translate it into a literal grep immediately.** "We load something by email and find a client" becomes `grep "email === client"` across the whole app. Do this BEFORE theorizing. User hints are the fastest path to the bug; treat them as search queries, not background context.
 
@@ -51,33 +51,19 @@ $ARGUMENTS
 
 1. **Identify the observable output.** What function, component, string, or variable produces the wrong result? (e.g., `makeName`, an email subject line, a displayed value)
 
-2. **Grep broadly for ALL callsites.** Search the entire app, not just the directory you expect. Features span `routes/`, `components/`, `lib/`, `task/`, and `packages/`.
-
-   ```
-   Grep for the function/variable across the ENTIRE codebase
-   Read ALL hits, not just the ones in the expected directory
-   ```
+2. **Grep for every callsite** of that function or variable across the codebase.
 
 3. **Check the actual data, not just the code.** If you can verify the runtime value (via logs, curl, a debugger port, or the database), do that before reading 10 files of code. Knowing "session.actor contains {givenName: 'Chance'}" eliminates half your hypotheses instantly.
 
 4. **Trace the data flow.** For each relevant callsite, trace where the data comes from. Read each file in the chain end-to-end; do not skim.
 
-5. **Collect environmental context.** Check recent changes (`git log --oneline -20` on relevant files), configuration, and related code.
+5. **Collect environmental context.** Check recent changes (`git log --oneline -20` on relevant files), configuration, and related code. Run `git blame` on suspicious lines; the commit message often reveals intent that changes your reading. A recent change near the symptom is a lead, not a verdict.
 
 ### Grep vs Subagent
 
 - **Direct grep**: use for "find all callsites of X." Fast, complete, no context wasted.
 - **Explore subagent**: use when you need to trace a data flow across 5+ files or understand an unfamiliar subsystem. Give it a focused question, not "find the bug."
 - **Never both at once.** If you dispatch a subagent to search, don't duplicate the same search yourself.
-
-### Rules for Phase 1
-
-- Search the WHOLE codebase. `app/routes/feature/` is not the whole feature.
-- Do NOT form theories yet. Collect evidence.
-- Do NOT trust pre-existing diagnoses (from tickets, plans, or prior conversations). Verify them.
-- Read ALL grep results. The answer is often in a hit you'd dismiss as "probably not relevant."
-- Correlation is not causation. A recent change near the symptom is not automatically the cause.
-- **Check git blame on suspicious code.** The commit message and author often reveal intent that changes your interpretation.
 
 ## Phase 2: Enumerate Hypotheses
 
@@ -102,7 +88,7 @@ For each hypothesis, state:
 
 ## Phase 3: Eliminate Systematically
 
-Work through EVERY hypothesis with evidence. Do NOT skip any.
+Test every hypothesis against evidence.
 
 For each hypothesis:
 
@@ -149,20 +135,6 @@ Only after a single root cause is confirmed with evidence:
 - [what could break and why]
 ```
 
-## Red Flags (STOP and go back to Phase 1)
+## Red Flags
 
-If any of these are true, you are off track:
-
-| Signal                                                | What's wrong                      | Fix                                              |
-| ----------------------------------------------------- | --------------------------------- | ------------------------------------------------ |
-| "I'm pretty sure it's X"                              | No evidence yet                   | Grep the whole codebase first                    |
-| Searching same directory for 5+ min                   | Scope too narrow                  | Broaden to entire app                            |
-| Second theory is in the same file as the first        | Anchored on one area              | Reset scope entirely                             |
-| Reading server code for a client-side symptom         | Wrong layer                       | Check where the user actually sees the bug       |
-| Proposing a fix                                       | Haven't finished Phase 3          | Complete elimination first                       |
-| User corrected your theory                            | You pivoted without broadening    | Go back to Phase 1 with a wider search           |
-| Haven't checked runtime data                          | Guessing when you could verify    | Curl, log, or query the actual value             |
-| Spent 20 min searching, 0 min asking the user         | Skipping the fastest signal       | Ask which page, which element, what they clicked |
-| Implementing fix from a ticket/plan without verifying | Trusting someone else's diagnosis | Verify the proposed root cause yourself          |
-| Try fix A, fail, try fix B, fail                      | Whack-a-mole                      | Stop fixing. Start investigating.                |
-| `git blame` would answer your question                | Guessing at intent                | Check the commit message and author              |
+Signs you are off track, each of which means going back to Phase 1 with a wider search: your second theory lives in the same file or directory as the first (anchored); you are reading server code for a symptom the user sees in the client (wrong layer); the user corrected your theory and you pivoted to a neighbor instead of broadening; you have tried a fix, watched it fail, and are reaching for the next one (stop fixing, start investigating).
