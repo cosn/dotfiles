@@ -49,6 +49,7 @@ dav1d
 deno
 depot
 direnv
+docker
 docker-completion
 docutils
 dolt
@@ -132,6 +133,7 @@ isl
 jansson
 jasper
 jbig2dec
+jemalloc
 jpeg
 jpeg-turbo
 jpeg-xl
@@ -220,6 +222,7 @@ llhttp
 llm
 llvm
 llvm@16
+llvm@22
 lpeg
 lua
 luajit
@@ -401,6 +404,7 @@ font-symbols-only-nerd-font
 gcloud-cli
 ghostty@tip
 hiddenbar
+homebrew-app
 iina
 imhex
 monitorcontrol
