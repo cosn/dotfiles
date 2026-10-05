@@ -122,7 +122,14 @@
     "andrej-karpathy-skills@karpathy-skills": false,
     "context-mode@context-mode": true,
     "ponytail@ponytail": true,
-    "typesafe@typesafe-ai": true
+    "typesafe@typesafe-ai": true,
+    "mattpocock-skills@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "aim@accrual-dev": true,
+    "crm@accrual-dev": true,
+    "depot@accrual-dev": true,
+    "cc-plugin-you-should-know@builtin": true
   },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
