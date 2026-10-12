@@ -129,7 +129,9 @@
     "aim@accrual-dev": true,
     "crm@accrual-dev": true,
     "depot@accrual-dev": true,
-    "cc-plugin-you-should-know@builtin": true
+    "cc-plugin-you-should-know@builtin": false,
+    "diagram-design@diagram-design": true,
+    "anatomy@anatomy": true
   },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
@@ -188,6 +190,18 @@
       "source": {
         "source": "github",
         "repo": "typesafe-ai/skills"
+      }
+    },
+    "diagram-design": {
+      "source": {
+        "source": "github",
+        "repo": "cathrynlavery/diagram-design"
+      }
+    },
+    "anatomy": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/cos/.claude/local-marketplaces/anatomy"
       }
     }
   },
