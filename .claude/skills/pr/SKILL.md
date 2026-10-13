@@ -42,16 +42,16 @@ $ARGUMENTS
 
 ### Committing to the existing PR (gh-stack)
 
-gh-stack has no amend command; use plain git to amend, then restack and push:
+Add a new commit on top of the branch (never amend), so reviewers can see what changed after their comments. Then restack and push:
 
 ```bash
-git add <file1> <file2> ...            # only the files you edited
-git commit --amend --no-edit           # amend the current branch with staged changes
-gh stack rebase --upstack --no-trunk   # restack branches above; skip if the PR is the top of the stack
-gh stack push                          # force-with-lease push of all stack branches; open PRs pick up the new commits
+git add <file1> <file2> ...                 # only the files you edited
+git commit -m "fix(<scope>): address review comments"   # conventional, lowercase, imperative
+gh stack rebase --upstack --no-trunk        # restack branches above; skip if the PR is the top of the stack
+gh stack push                               # force-with-lease push of all stack branches; open PRs pick up the new commits
 ```
 
-Do NOT use `git add -A` here - it stages all tracked changes. `gh stack push` never creates new PRs, so it is safe for update-only pushes. If the branch is not part of a stack, use `git push --force-with-lease origin <branch>` instead.
+Do NOT use `git add -A` here - it stages all tracked changes. `gh stack push` never creates new PRs, so it is safe for update-only pushes. If the branch is not part of a stack, use a plain `git push origin <branch>` instead (no force needed).
 
 6. **Show summary.** List each comment and what was done (addressed, responded, ignored).
 
