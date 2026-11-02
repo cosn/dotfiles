@@ -173,9 +173,11 @@ elif [[ $OSTYPE == darwin* ]]; then
    eval "$(fnm env --use-on-cd --shell zsh)"
  fi
 
-  path=("/opt/homebrew/opt/postgresql@15/bin" $path)
   path=("/opt/homebrew/opt/gnu-which/libexec/gnubin" $path)
   path=("/opt/homebrew/opt/make/libexec/gnubin" $path)
+  path=("/opt/homebrew/opt/postgresql@15/bin" $path)
+  path=("/opt/homebrew/opt/rustup/bin" $path)
+  path=("$HOME/.cargo/bin" $path)
   path=("$HOME/bin" $path)
   path=("$HOME/.local/bin" $path)
 fi
