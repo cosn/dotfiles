@@ -8,8 +8,8 @@
   },
   "permissions": {
     "allow": [
-      "Edit(*)",
-      "Write(*)",
+      "Edit",
+      "Write",
       "Update(*)",
       "Read",
       "Bash(bazel:*)",
